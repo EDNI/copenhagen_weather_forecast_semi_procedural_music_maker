@@ -78,5 +78,4 @@ while i < 10:
 
 
 f.close()
-print ("check")
 
