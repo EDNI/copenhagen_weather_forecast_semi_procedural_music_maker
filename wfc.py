@@ -24,26 +24,21 @@ def format2qlist(var, value):
   print(qlistline)
   f.write(qlistline + "\n")
 
-for temps in maxtemprow:
-  maxtemp = temps.findAll("span",{"class":"temp"})
-  for tempspan in maxtemp:
-    format2qlist("seq", tempspan.text.strip()) 
-    i = i + 2
+def dataloop(soupsource, var, tag):
+  global i
+  tag.append("")
+  for data in soupsource:
+    l1 = data.findAll(tag[0], tag[1])
+    for l2 in l1:
+      format2qlist(var, l2.text.strip())
+      i = i + 1
 
-i = 2
-for temps in mintemprow:
-  mintemp = temps.findAll("span",{"class":"temp"})
-  for tempspan in mintemp:
-    format2qlist("seq", tempspan.text.strip()) 
-    i = i + 2
+tag1 = ["span",{"class":"temp"}]
+tag2 = ["td"]
 
-i = 0
-for humhum in humidity:
-  hum = humhum.findAll("td")
-  for humtd in hum:
-    format2qlist("hum", humtd.text.strip())
-    i = i + 1
-
+dataloop(maxtemprow, "seq", tag1)
+dataloop(mintemprow, "seq", tag1)
+dataloop(humidity, "hum", tag2)
 
 f.close()
 print ("check")
