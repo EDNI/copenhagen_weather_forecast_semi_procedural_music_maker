@@ -42,30 +42,36 @@ def format2qlist(var, value):
   f.write(qlistline + "\n")
 
 def dataloop(soupsource, var, tag, datalist, dln):
-  global i
   global pertemp
   tag.append("")
   for data in soupsource:
     l1 = data.findAll(tag[0], tag[1])
     for l2 in l1:
-      i = i + 1
       datalist[pertemp % dln].append(l2.text.strip())
       pertemp += 1
 
-tag1 = ["span",{"class":"temp"}]
-tag2 = ["td"]
+temptag = ["span",{"class":"temp"}]
+humtag = ["td"]
 
-dataloop(maxtemprow, "seq", tag1, maxs, 3)
-dataloop(mintemprow, "seq", tag1, mins, 3)
-dataloop(humidity, "hum", tag2, hums, 1)
+dataloop(maxtemprow, "seq", temptag, maxs, 3)
+dataloop(mintemprow, "seq", temptag, mins, 3)
+dataloop(humidity, "hum", humtag, hums, 1)
 
-mode = 0
+decaseq = [maxam[0],minnt[0],maxam[1],minnt[1],maxam[2],minnt[2],maxam[3],minnt[3],maxam[4],minnt[4]]
 
-if mode == 0:
-  decaseq = [maxam[0],minnt[0],maxam[1],minnt[1],maxam[2],minnt[2],maxam[3],minnt[3],maxam[4],minnt[4]]
-else:
-  decaseq = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+def decaseqmaker(size=10, mdl=1, datalist1=[], datalist2=[], datalist3=[]):
+  sourcelist=[datalist1,datalist2,datalist3]
+  j = 0
+  while j < size:
+    decaseq[j]=sourcelist[0][int(j/2)]
+    decaseq[j+1]=sourcelist[1][int(j/2)]
+    j += 2
 
+decaseqmaker(10, 2, minnt, maxpm)
+
+print("minnt =", minnt)
+print("maxam =", maxpm)
+#print (decaseq)
 
 i = 0
 while i < 10:
