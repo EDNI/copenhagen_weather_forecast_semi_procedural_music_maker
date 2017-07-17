@@ -20,7 +20,6 @@ daynumb = soup.find("div", {"class":"dom"}).text.strip()
 perdic = {"AM": 0, "PM": 1, "Night" : 2}
 
 pertemp = perdic[periodstart]
-print(daynumb)
 
 maxam=[]
 minam=[]
@@ -59,6 +58,8 @@ dataloop(humidity, "hum", humtag, hums, 1)
 
 decaseq = [maxam[0],minnt[0],maxam[1],minnt[1],maxam[2],minnt[2],maxam[3],minnt[3],maxam[4],minnt[4]]
 
+format2qlist("day", daynumb)
+
 def decaseqmaker(size=10, mdl=1, datalist1=[], datalist2=[], datalist3=[]):
   sourcelist=[datalist1,datalist2,datalist3]
   j = 0
@@ -69,10 +70,6 @@ def decaseqmaker(size=10, mdl=1, datalist1=[], datalist2=[], datalist3=[]):
 
 decaseqmaker(10, 2, minnt, maxpm)
 
-print("minnt =", minnt)
-print("maxam =", maxpm)
-#print (decaseq)
-
 i = 0
 while i < 10:
   format2qlist("dseq", decaseq[i])
@@ -82,6 +79,4 @@ while i < 10:
   format2qlist("hum", hums[0][i])
   i += 1
 
-
 f.close()
-
