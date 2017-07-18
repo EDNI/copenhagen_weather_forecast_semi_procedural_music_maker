@@ -59,6 +59,7 @@ dataloop(humidity, "hum", humtag, hums, 1)
 decaseq = [maxam[0],minnt[0],maxam[1],minnt[1],maxam[2],minnt[2],maxam[3],minnt[3],maxam[4],minnt[4]]
 
 format2qlist("day", daynumb)
+format2qlist("seql", 10)
 
 def decaseqmaker(size=10, mdl=1, datalist1=[], datalist2=[], datalist3=[]):
   sourcelist=[datalist1,datalist2,datalist3]
