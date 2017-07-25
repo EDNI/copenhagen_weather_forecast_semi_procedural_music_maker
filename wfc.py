@@ -36,7 +36,7 @@ f = open(filename, "w")
 i = 1
 
 def format2qlist(var, value):
-  qlistline = "0" + " " + var + str(i) + " " + str(value) + ";"
+  qlistline = "0 " + var + str(i) + " " + str(value) + ";"
   print(qlistline)
   f.write(qlistline + "\n")
 
