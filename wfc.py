@@ -49,6 +49,28 @@ def dataloop(soupsource, var, tag, datalist, dln):
       datalist[pertemp % dln].append(l2.text.strip())
       pertemp += 1
 
+
+pnba = [3,4,25, "pnba"]
+pnbb = [4,6,25, "pnbb"]
+pnbc = [3,25,25, "pnbc"]
+pnbd = [2,25,25, "pnbd"]
+ppba = [8,25,25, "ppba"]
+ppbb = [12,25,25, "ppbb"]
+ppbc = [6,25,25, "ppbc" ]
+ppbd = [4,25,25, "ppbd" ]
+pwba = [7,25,25, "pwba" ]
+pwbb = [10,25,25, "pwbb" ]
+pwbc = [5,25,25, "pwbc" ]
+pwbd = [7,25,25, "pwbd" ]
+
+pnpwbs = [pnba,pnbb,pnbc,pnbd,ppba,ppbb,ppbc,ppbd,pwba,pwbb,pwbc,pwbd]
+
+i = 0
+while i < 3:
+  for shlurps in pnpwbs:
+    format2qlist(shlurps[3], shlurps[i])
+  i += 1
+
 temptag = ["span",{"class":"temp"}]
 humtag = ["td"]
 
