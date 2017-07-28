@@ -21,23 +21,23 @@ perdic = {"AM": 0, "PM": 1, "Night" : 2}
 
 pertemp = perdic[periodstart]
 
-maxam=[]
-minam=[]
-maxpm=[]
-minpm=[]
-maxnt=[]
-minnt=[]
+maxam, maxpm, maxnt = [],[],[]
+minam, minpm, minnt = [],[],[]
+#maxpm=[]
+#minpm=[]
+#maxnt=[]
+#minnt=[]
 maxs=[maxam,maxpm,maxnt]
 mins=[minam,minpm,minnt]
 hums=[[]]
-decaseq = [0,0,0,0,0,0,0,0,0,0]
+#decaseq = [0,0,0,0,0,0,0,0,0,0]
 
 filename = "partition.txt"
 f = open(filename, "w")
 i = 1
 
-def format2qlist(var, value):
-  qlistline = "0 " + var + str(i) + " " + str(value) + ";"
+def format2qlist(var, value, numb=0 ):
+  qlistline = "0 " + var + str(numb) + " " + str(value) + ";"
 #  print(qlistline)
   f.write(qlistline + "\n")
 
@@ -57,6 +57,19 @@ def decaseqmaker(datalist1=[], datalist2=[]):
     decaseq[j]=sourcelist[0][int(j/2)]
     decaseq[j+1]=sourcelist[1][int(j/2)]
     j += 2
+
+def whileformat(name,var,size):
+  j = 0
+  while j < size:
+    format2qlist(name, var[j], j)
+    j += 1
+
+def whileforformat(name,size):
+  j = 0
+  while j < size:
+    for element in name:
+      format2qlist(element[size], element[j], j)
+    j += 1
 
 temptag = ["span",{"class":"temp"}]
 humtag = ["td"]
@@ -100,12 +113,29 @@ pwbd = [7,25,25, "pwbd" ]
 ppqtset = [0,0,3,3,3,6,6,6,8,8,10,11,12,13,14,15,16,17,18,19]
 pEDOset = 10
 
-#global seqcpt1, 
+#global seqcpt1,seqcpt2 
 seqcpt1 = minnt
 seqcpt2 = maxpm
 
+#global bpm, seql
 bpm = daynumb * 2 + 70
 seql = 10
+
+usedeca = 1 #if set to 0 decaseq needs to be mannualy set
+usedeca4offset = 1
+
+decaseq = [0,0,0,0,0,0,0,0,0,0]
+decaseqoffset = [0,0,0,0,0,0,0,0,0,0]
+
+skeletonset = [4,2,2,10,0,7,2,10]
+#skeletonset = [4,2,2,2,0,1,2,10]
+
+
+osc1s = [1,1500,1000,2, "osc1s"]
+osc2s = [2,0,850,1, "osc2s"]
+osc3s = [2,102,800,1, "osc3s"]
+osc4s = [4,4000,1800,2, "osc4s"]
+
 
 ###########################################################
 
@@ -127,17 +157,9 @@ def chmod():
   pnbc = [22,25,25, "pnbc"]
   pnbd = [23,25,25, "pnbd"]
   ppba = [24,25,25, "ppba"]
-  ppbb = [20,25,25, "ppbb"]
-  ppbc = [21,25,25, "ppbc" ]
-  ppbd = [22,25,25, "ppbd" ]
-  pwba = [23,25,25, "pwba" ]
-  pwbb = [24,25,25, "pwbb" ]
-  pwbc = [20,25,25, "pwbc" ]
-  pwbd = [21,25,25, "pwbd" ]
   print("chmod done")
 
 
-#modsdic = {"m": m1mod, "c": chmod }
 modsdic = {"m": m1mod, "c": chmod}
 
 #altmodask = input("do you want to use other settings? Y / N ")
@@ -152,41 +174,28 @@ modsdic = {"m": m1mod, "c": chmod}
 #  modtocall()
 
 ##########################################################
-decaseqmaker(seqcpt1, seqcpt2)
+
+if usedeca == 1:
+  decaseqmaker(seqcpt1, seqcpt2)
+
+if usedeca4offset == 1:
+  decaseqoffset = decaseq
+
 cmxs = [cm1s,cm2s,cm3s,cm4s]
 pnpwbs = [pnba,pnbb,pnbc,pnbd,ppba,ppbb,ppbc,ppbd,pwba,pwbb,pwbc,pwbd]
+oscss = [osc1s,osc2s,osc3s,osc4s]
 
-i = 0
-while i < 4:
-  for shlurps in cmxs:
-    format2qlist(shlurps[4],shlurps[i])
-  i += 1
-
-i = 0
-while i < 3:
-  for shlurps in pnpwbs:
-    format2qlist(shlurps[3], shlurps[i])
-  i += 1
-
-i = 1
-format2qlist("bpm", bpm)
-format2qlist("seql", seql)
-
-i = 0
-while i < 10:
-  format2qlist("dseq", decaseq[i])
-  i += 1
-i = 0
-
-while i < 10:
-  format2qlist("hum", hums[0][i])
-  i += 1
-
-i = 0
+whileforformat(cmxs, 4)
+whileforformat(pnpwbs,3)
+whileforformat(oscss, 4)
+format2qlist("bpm", bpm, 1)
+format2qlist("seql", seql, 1)
+whileformat("dseq",decaseq,10)
+whileformat("dseqoff",decaseqoffset,10)
+whileformat("sks", skeletonset, 8)
+#whileformat("hum", hums[0], 10)
 format2qlist("pEDOset",pEDOset)
+whileformat("ppqtset",ppqtset,20)
 
-while i < 20:
- format2qlist("ppqtset", ppqtset[i])
- i += 1
 
 f.close()
