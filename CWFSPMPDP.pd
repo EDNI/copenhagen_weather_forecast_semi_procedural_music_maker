@@ -1,10 +1,10 @@
-#N canvas 11 22 1185 715 10;
-#N canvas 175 22 1207 752 SuperPolyClock 0;
+#N canvas 22 22 1280 752 10;
+#N canvas 242 22 1207 752 SuperPolyClock 0;
 #X obj 330 407 metro;
 #X obj 330 464 f;
 #X obj 356 464 + 1;
 #X obj 108 133 hsl 128 15 300 1200 0 0 empty empty speed -2 -8 0 10
--262144 -1 -1 2486 1;
+-262144 -1 -1 7208 1;
 #X floatatom 330 524 5 0 0 0 - - -, f 5;
 #X obj 330 503 %;
 #X obj 330 447 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
@@ -214,7 +214,7 @@
 #X obj 330 427 r PLL1;
 #X obj 340 270 s LFCS;
 #X obj 1096 248 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1
-1 1;
+0 1;
 #X obj 1087 267 spigot;
 #X obj 1087 288 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
@@ -222,7 +222,7 @@
 #X obj 1119 308 + 1;
 #X floatatom 1087 366 5 0 0 0 - - -, f 5;
 #X obj 1289 248 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1
-1 1;
+0 1;
 #X obj 1280 267 spigot;
 #X obj 1280 288 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
@@ -246,7 +246,7 @@
 #X obj 795 308 + 1;
 #X floatatom 763 366 5 0 0 0 - - -, f 5;
 #X obj 763 331 % 2;
-#X obj 889 248 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 889 248 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 880 267 spigot;
 #X obj 880 288 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
@@ -290,7 +290,7 @@
 -1 -1;
 #X msg 713 291 -1, f 2;
 #X msg 1493 93 48;
-#X obj 831 248 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 831 248 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 822 267 spigot;
 #X obj 822 288 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
@@ -305,7 +305,7 @@
 #X obj 831 228 >= 15;
 #X msg 822 154 15;
 #X obj 1004 248 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1
-0 1;
+1 1;
 #X obj 995 267 spigot;
 #X obj 995 288 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
@@ -415,7 +415,7 @@
 #X obj 666 445 r PLL3b;
 #X floatatom 718 483 5 0 0 0 - - -, f 5;
 #X msg 545 171 10;
-#X obj 946 252 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 946 252 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 937 270 spigot;
 #X obj 937 289 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
@@ -750,7 +750,7 @@
 #X connect 226 0 15 0;
 #X coords 0 -1 1 1 280 60 1 100 100;
 #X restore 6 -10 pd SuperPolyClock;
-#N canvas 98 22 1109 731 CLCKMXRYOLO 0;
+#N canvas 10 22 960 431 CLCKMXRYOLO 0;
 #X obj 428 87 inlet;
 #X obj 388 87 inlet;
 #X obj 509 87 inlet;
@@ -984,7 +984,7 @@
 #X connect 33 0 26 0;
 #X restore -39 68 pd CM1set;
 #X obj -100 114 unpack 0 0 0 0 0 0 0 0;
-#N canvas 237 348 766 605 CM2set 0;
+#N canvas 215 72 766 605 CM2set 0;
 #X msg 102 145 \$1;
 #X msg 283 345 1, f 1;
 #X msg 245 145 \$1;
@@ -1331,6 +1331,676 @@
 #X connect 32 0 18 0;
 #X connect 33 0 26 0;
 #X restore -223 137 pd CM4set;
+#X obj -239 1575 expr if ($f1 \, (if ($f2 \, (if ($f3 \, (if ($f4 \,
+4 \, (if($f5 \, 5 \, (if($f6 \, 6 \, (if($f7 \, 7 \, (if($f8 \, 8 \,
+0)))))))))) \, (if ($f4 \, (if($f5 \, 5 \, (if($f6 \, 6 \, (if($f7
+\, 7 \, (if($f8 \, 8 \, 0)))))))) \, (if ($f5 \, (if($f6 \, 6 \, (if($f7
+\, 7 \, (if($f8 \, 8 \, 0)))))) \, (if ($f6 \, (if($f7 \, 7 \, (if($f8
+\, 8 \, 0)))) \, (if ($f7 \, (if($f8 \, 8 \, 0)) \, 0))))))))) ) \,
+(if ($f3 \, (if ($f4 \, (if($f5 \, 5 \, (if($f6 \, 6 \, (if($f7 \,
+7 \, (if($f8 \, 8 \, 0)))))))) \, (if ($f5 \, (if($f6 \, 6 \, (if($f7
+\, 7 \, (if($f8 \, 8 \, 0)))))) \, (if ($f6 \, (if($f7 \, 7 \, (if($f8
+\, 8 \, 0)))) \, (if ($f7 \, (if($f8 \, 8 \, 0)) \, 0)))))))) \, (if
+($f4 \, (if($f5 \, (if($f6 \, 6 \, (if($f7 \, 7 \, (if($f8 \, 8 \,
+0)))))) \, (if ($f5 \, (if($f6 \, 6 \, (if($f7 \, 7 \, (if($f8 \, 8
+\, 0)))))) \, (if ($f6 \, (if($f7 \, 7 \, (if($f8 \, 8 \, 0)))) \,
+(if ($f7 \, (if($f8 \, 8 \, 0)) \, 0)))))))) \, 0))))) ) \, 0) \;;
+#N canvas 151 22 949 721 CLCKMXRCM1SAVER1 0;
+#X obj 53 63 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
+;
+#X obj 157 63 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 261 63 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 365 63 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 469 63 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 573 63 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 677 63 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 782 63 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X floatatom 53 508 5 0 0 0 - - -, f 5;
+#X obj 31 63 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X floatatom 296 508 5 0 0 0 - - -, f 5;
+#X floatatom 539 508 5 0 0 0 - - -, f 5;
+#X floatatom 782 508 5 0 0 0 - - -, f 5;
+#X obj 53 104 expr if ($f1 \, 1 \, if ($f2 \, 2 \, if ($f3 \, 3 \,
+if ($f4 \, 4 \, if ($f5 \, 5 \, if ($f6 \, 6 \, if ($f7 \, 7 \, if
+($f8 \, 8 \, 0)))))))) \; if ($f1 \, if ($f2 \, 2 \, if ($f3 \, 3 \,
+if ($f4 \, 4 \, if ($f5 \, 5 \, if ($f6 \, 6 \, if ($f7 \, 7 \, if
+($f8 \, 8 \, 0))))))) \, if ($f2 \, if ($f3 \, 3 \, if ($f4 \, 4 \,
+if ($f5 \, 5 \, if ($f6 \, 6 \, if ($f7 \, 7 \, if ($f8 \, 8 \, 0))))))
+\, if ($f3 \, if ($f4 \, 4 \, if ($f5 \, 5 \, if ($f6 \, 6 \, if ($f7
+\, 7 \, if ($f8 \, 8 \, 0))))) \, if ($f4 \, if ($f5 \, 5 \, if ($f6
+\, 6 \, if ($f7 \, 7 \, if ($f8 \, 8 \, 0)))) \, if ($f5 \, if ($f6
+\, 6 \, if ($f7 \, 7 \, if ($f8 \, 8 \, 0))) \, if ($f6 \, if ($f7
+\, 7 \, if ($f8 \, 8 \, 0)) \, if ($f7 \, if ($f8 \, 8 \, 0) \, if
+($f8 \, 8 \, 0)))))))) \; if ($f1 \, (if ($f2 \, if ($f3 \, 3 \, if
+($f4 \, 4 \, if ($f5 \, 5 \, if ($f6 \, 6 \, if ($f7 \, 7 \, if ($f8
+\, 8 \, 0)))))) \, if ($f3 \, if ($f4 \, 4 \, if ($f5 \, 5 \, if ($f6
+\, 6 \, if ($f7 \, 7 \, if ($f8 \, 8 \, 0))))) \, if ($f4 \, if ($f5
+\, 5 \, if ($f6 \, 6 \, if ($f7 \, 7 \, if ($f8 \, 8 \, 0)))) \, if
+($f5 \, if ($f6 \, 6 \, if ($f7 \, 7 \, if ($f8 \, 8 \, 0))) \, if
+($f6 \, if ($f7 \, 7 \, if ($f8 \, 8 \, 0)) \, if ($f7 \, if ($f8 \,
+8 \, 0) \, if ($f8 \, 8 \, 0)))))))) \, if ($f2 \, if ($f3 \, if ($f4
+\, 4 \, if ($f5 \, 5 \, if ($f6 \, 6 \, if ($f7 \, 7 \, if ($f8 \,
+8 \, 0))))) \, if ($f4 \, if ($f5 \, 5 \, if ($f6 \, 6 \, if ($f7 \,
+7 \, if ($f8 \, 8 \, 0)))) \, if ($f5 \, if ($f6 \, 6 \, if ($f7 \,
+7 \, if ($f8 \, 8 \, 0))) \, if ($f6 \, if ($f7 \, 7 \, if ($f8 \,
+8 \, 0)) \, if ($f7 \, if ($f8 \, 8 \, 0) \, if ($f8 \, 8 \, 0))))))
+\, (if($f3 \, (if($f4 \, if($f5 \, 5 \, if($f6 \, 6 \, if($f7 \, 7
+\, if($f8 \, 8 \, 0)))) \, if($f5 \, if($f6 \, 6 \, if($f7 \, 7 \,
+if($f8 \, 8 \, 0))) \, if($f6 \, if($f7 \, 7 \, if($f8 \, 8 \, 0))
+\, if($f7 \, if($f8 \, 8 \, 0) \, if($f8 \, 8 \, 0)))))) \, (if($f4
+\, if($f5 \, if($f6 \, 6 \, if($f7 \, 7 \, if($f8 \, 8 \, 0))) \, if($f6
+\, if($f7 \, 7 \, if($f8 \, 8 \, 0)) \, if($f7 \, if($f8 \, 8 \, 0)
+\, if($f8 \, 8 \, 0)))) \, (if($f5 \, if($f6 \, if($f7 \, 7 \, if($f8
+\, 8 \, 0)) \, if($f7 \, if($f8 \, 8 \, 0) \, if($f8 \, 8 \, 0))) \,
+(if($f6 \, if($f7 \, if($f8 \, 8 \, 0) \, if($f8 \, 8 \, 0)) \, (if($f7
+\, if($f8 \, 8 \, 0) \, (if($f8 \, 8 \, 0)))))))))))))) \; if ($f1
+\, (if ($f2 \, (if ($f3 \, (if ($f4 \, 4 \, (if($f5 \, 5 \, (if($f6
+\, 6 \, (if($f7 \, 7 \, (if($f8 \, 8 \, 0)))))))))) \, (if ($f4 \,
+(if($f5 \, 5 \, (if($f6 \, 6 \, (if($f7 \, 7 \, (if($f8 \, 8 \, 0))))))))
+\, (if ($f5 \, (if($f6 \, 6 \, (if($f7 \, 7 \, (if($f8 \, 8 \, 0))))))
+\, (if ($f6 \, (if($f7 \, 7 \, (if($f8 \, 8 \, 0)))) \, (if ($f7 \,
+(if($f8 \, 8 \, 0)) \, 0)))))))))) \, (if ($f3 \, (if ($f4 \, (if($f5
+\, 5 \, (if($f6 \, 6 \, (if($f7 \, 7 \, (if($f8 \, 8 \, 0)))))))) \,
+(if ($f5 \, (if($f6 \, 6 \, (if($f7 \, 7 \, (if($f8 \, 8 \, 0))))))
+\, (if ($f6 \, (if($f7 \, 7 \, (if($f8 \, 8 \, 0)))) \, (if ($f7 \,
+(if($f8 \, 8 \, 0)) \, 0)))))))) \, (if ($f4 \, (if($f5 \, (if($f6
+\, 6 \, (if($f7 \, 7 \, (if($f8 \, 8 \, 0)))))) \, (if ($f6 \, (if($f7
+\, 7 \, (if($f8 \, 8 \, 0)))) \, (if ($f7 \, (if($f8 \, 8 \, 0)) \,
+0)))))) \, (if ($f5 \, (if($f6 \, (if($f7 \, 7 \, (if($f8 \, 8 \, 0))))
+\, (if ($f7 \, (if($f8 \, 8 \, 0)) \, 0)))) \, (if($f6 \, (if($f7 \,
+(if($f8 \, 8 \, 0)) \, 0)) \, 0)))))))))) \, ( if ($f2 \, (if ($f3
+\, (if ($f4 \, (if($f5 \, 5 \, (if($f6 \, 6 \, (if($f7 \, 7 \, (if($f8
+\, 8 \, 0)))))))) \, (if ($f5 \, (if($f6 \, 6 \, (if($f7 \, 7 \, (if($f8
+\, 8 \, 0)))))) \, (if ($f6 \, (if($f7 \, 7 \, (if($f8 \, 8 \, 0))))
+\, (if ($f7 \, (if($f8 \, 8 \, 0)) \, 0)))))))) \, (if ($f4 \, (if($f5
+\, (if($f6 \, 6 \, (if($f7 \, 7 \, (if($f8 \, 8 \, 0)))))) \, (if ($f6
+\, (if($f7 \, 7 \, (if($f8 \, 8 \, 0)))) \, (if ($f7 \, (if($f8 \,
+8 \, 0)) \, 0)))))) \, (if ($f5 \, (if($f6 \, (if($f7 \, 7 \, (if($f8
+\, 8 \, 0)))) \, (if ($f7 \, (if($f8 \, 8 \, 0)) \, 0)))) \, (if($f6
+\, (if($f7 \, (if($f8 \, 8 \, 0)) \, 0)) \, 0)))))))) \, ( if ($f3
+\, (if ($f4 \, (if($f5 \, (if($f6 \, 6 \, (if($f7 \, 7 \, (if($f8 \,
+8 \, 0)))))) \, (if ($f6 \, (if($f7 \, 7 \, (if($f8 \, 8 \, 0)))) \,
+(if ($f7 \, (if($f8 \, 8 \, 0)) \, 0)))))) \, (if ($f5 \, (if($f6 \,
+(if($f7 \, 7 \, (if($f8 \, 8 \, 0)))) \, (if ($f7 \, (if($f8 \, 8 \,
+0)) \, 0)))) \, (if($f6 \, (if($f7 \, (if($f8 \, 8 \, 0)) \, 0)) \,
+0)))))) \, ( if ($f4 \, (if ($f5 \, (if($f6 \, (if($f7 \, 7 \, (if($f8
+\, 8 \, 0)))) \, (if ($f7 \, (if($f8 \, 8 \, 0)) \, 0)))) \, (if($f6
+\, (if($f7 \, (if($f8 \, 8 \, 0)) \, 0)) \, 0)))) \, ( if ($f5 \, (if($f6
+\, (if($f7 \, (if($f8 \, 8 \, 0)) \, 0)) \, 0)) \, 0))))))))) \;,
+f 122;
+#X obj 53 39 inlet;
+#X obj 157 39 inlet;
+#X obj 261 39 inlet;
+#X obj 365 39 inlet;
+#X obj 469 39 inlet;
+#X obj 573 39 inlet;
+#X obj 677 39 inlet;
+#X obj 782 39 inlet;
+#X obj 53 536 spigot;
+#X floatatom 53 558 5 0 0 0 - - -, f 5;
+#X obj 296 536 spigot;
+#X floatatom 296 558 5 0 0 0 - - -, f 5;
+#X obj 539 536 spigot;
+#X floatatom 539 558 5 0 0 0 - - -, f 5;
+#X obj 782 536 spigot;
+#X floatatom 782 558 5 0 0 0 - - -, f 5;
+#X obj 864 521 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 799 469 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 864 502 r msuscmd3;
+#X obj 799 446 r msuscmd4;
+#X obj 31 15 r msuscmd2;
+#X obj 53 572 pack 0 0 0 0;
+#X obj 53 598 s stmcm1;
+#X obj 799 491 t b b b b;
+#X connect 0 0 13 0;
+#X connect 1 0 13 1;
+#X connect 2 0 13 2;
+#X connect 3 0 13 3;
+#X connect 4 0 13 4;
+#X connect 5 0 13 5;
+#X connect 6 0 13 6;
+#X connect 7 0 13 7;
+#X connect 8 0 22 0;
+#X connect 9 0 13 0;
+#X connect 10 0 24 0;
+#X connect 11 0 26 0;
+#X connect 12 0 28 0;
+#X connect 13 0 8 0;
+#X connect 13 1 10 0;
+#X connect 13 2 11 0;
+#X connect 13 3 12 0;
+#X connect 14 0 0 0;
+#X connect 15 0 1 0;
+#X connect 16 0 2 0;
+#X connect 17 0 3 0;
+#X connect 18 0 4 0;
+#X connect 19 0 5 0;
+#X connect 20 0 6 0;
+#X connect 21 0 7 0;
+#X connect 22 0 23 0;
+#X connect 23 0 35 0;
+#X connect 24 0 25 0;
+#X connect 25 0 35 1;
+#X connect 26 0 27 0;
+#X connect 27 0 35 2;
+#X connect 28 0 29 0;
+#X connect 29 0 35 3;
+#X connect 30 0 28 1;
+#X connect 30 0 26 1;
+#X connect 30 0 24 1;
+#X connect 30 0 22 1;
+#X connect 31 0 37 0;
+#X connect 32 0 30 0;
+#X connect 33 0 31 0;
+#X connect 34 0 9 0;
+#X connect 35 0 36 0;
+#X connect 37 0 8 0;
+#X connect 37 1 10 0;
+#X connect 37 2 11 0;
+#X connect 37 3 12 0;
+#X restore 81 307 pd CLCKMXRCM1SAVER1;
+#N canvas 151 22 949 721 CLCKMXRCM1SAVER2 0;
+#X obj 53 63 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
+;
+#X obj 157 63 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 261 63 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 365 63 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 469 63 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 573 63 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 677 63 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 782 63 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X floatatom 53 508 5 0 0 0 - - -, f 5;
+#X obj 31 63 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X floatatom 296 508 5 0 0 0 - - -, f 5;
+#X floatatom 539 508 5 0 0 0 - - -, f 5;
+#X floatatom 782 508 5 0 0 0 - - -, f 5;
+#X obj 53 104 expr if ($f1 \, 1 \, if ($f2 \, 2 \, if ($f3 \, 3 \,
+if ($f4 \, 4 \, if ($f5 \, 5 \, if ($f6 \, 6 \, if ($f7 \, 7 \, if
+($f8 \, 8 \, 0)))))))) \; if ($f1 \, if ($f2 \, 2 \, if ($f3 \, 3 \,
+if ($f4 \, 4 \, if ($f5 \, 5 \, if ($f6 \, 6 \, if ($f7 \, 7 \, if
+($f8 \, 8 \, 0))))))) \, if ($f2 \, if ($f3 \, 3 \, if ($f4 \, 4 \,
+if ($f5 \, 5 \, if ($f6 \, 6 \, if ($f7 \, 7 \, if ($f8 \, 8 \, 0))))))
+\, if ($f3 \, if ($f4 \, 4 \, if ($f5 \, 5 \, if ($f6 \, 6 \, if ($f7
+\, 7 \, if ($f8 \, 8 \, 0))))) \, if ($f4 \, if ($f5 \, 5 \, if ($f6
+\, 6 \, if ($f7 \, 7 \, if ($f8 \, 8 \, 0)))) \, if ($f5 \, if ($f6
+\, 6 \, if ($f7 \, 7 \, if ($f8 \, 8 \, 0))) \, if ($f6 \, if ($f7
+\, 7 \, if ($f8 \, 8 \, 0)) \, if ($f7 \, if ($f8 \, 8 \, 0) \, if
+($f8 \, 8 \, 0)))))))) \; if ($f1 \, (if ($f2 \, if ($f3 \, 3 \, if
+($f4 \, 4 \, if ($f5 \, 5 \, if ($f6 \, 6 \, if ($f7 \, 7 \, if ($f8
+\, 8 \, 0)))))) \, if ($f3 \, if ($f4 \, 4 \, if ($f5 \, 5 \, if ($f6
+\, 6 \, if ($f7 \, 7 \, if ($f8 \, 8 \, 0))))) \, if ($f4 \, if ($f5
+\, 5 \, if ($f6 \, 6 \, if ($f7 \, 7 \, if ($f8 \, 8 \, 0)))) \, if
+($f5 \, if ($f6 \, 6 \, if ($f7 \, 7 \, if ($f8 \, 8 \, 0))) \, if
+($f6 \, if ($f7 \, 7 \, if ($f8 \, 8 \, 0)) \, if ($f7 \, if ($f8 \,
+8 \, 0) \, if ($f8 \, 8 \, 0)))))))) \, if ($f2 \, if ($f3 \, if ($f4
+\, 4 \, if ($f5 \, 5 \, if ($f6 \, 6 \, if ($f7 \, 7 \, if ($f8 \,
+8 \, 0))))) \, if ($f4 \, if ($f5 \, 5 \, if ($f6 \, 6 \, if ($f7 \,
+7 \, if ($f8 \, 8 \, 0)))) \, if ($f5 \, if ($f6 \, 6 \, if ($f7 \,
+7 \, if ($f8 \, 8 \, 0))) \, if ($f6 \, if ($f7 \, 7 \, if ($f8 \,
+8 \, 0)) \, if ($f7 \, if ($f8 \, 8 \, 0) \, if ($f8 \, 8 \, 0))))))
+\, (if($f3 \, (if($f4 \, if($f5 \, 5 \, if($f6 \, 6 \, if($f7 \, 7
+\, if($f8 \, 8 \, 0)))) \, if($f5 \, if($f6 \, 6 \, if($f7 \, 7 \,
+if($f8 \, 8 \, 0))) \, if($f6 \, if($f7 \, 7 \, if($f8 \, 8 \, 0))
+\, if($f7 \, if($f8 \, 8 \, 0) \, if($f8 \, 8 \, 0)))))) \, (if($f4
+\, if($f5 \, if($f6 \, 6 \, if($f7 \, 7 \, if($f8 \, 8 \, 0))) \, if($f6
+\, if($f7 \, 7 \, if($f8 \, 8 \, 0)) \, if($f7 \, if($f8 \, 8 \, 0)
+\, if($f8 \, 8 \, 0)))) \, (if($f5 \, if($f6 \, if($f7 \, 7 \, if($f8
+\, 8 \, 0)) \, if($f7 \, if($f8 \, 8 \, 0) \, if($f8 \, 8 \, 0))) \,
+(if($f6 \, if($f7 \, if($f8 \, 8 \, 0) \, if($f8 \, 8 \, 0)) \, (if($f7
+\, if($f8 \, 8 \, 0) \, (if($f8 \, 8 \, 0)))))))))))))) \; if ($f1
+\, (if ($f2 \, (if ($f3 \, (if ($f4 \, 4 \, (if($f5 \, 5 \, (if($f6
+\, 6 \, (if($f7 \, 7 \, (if($f8 \, 8 \, 0)))))))))) \, (if ($f4 \,
+(if($f5 \, 5 \, (if($f6 \, 6 \, (if($f7 \, 7 \, (if($f8 \, 8 \, 0))))))))
+\, (if ($f5 \, (if($f6 \, 6 \, (if($f7 \, 7 \, (if($f8 \, 8 \, 0))))))
+\, (if ($f6 \, (if($f7 \, 7 \, (if($f8 \, 8 \, 0)))) \, (if ($f7 \,
+(if($f8 \, 8 \, 0)) \, 0)))))))))) \, (if ($f3 \, (if ($f4 \, (if($f5
+\, 5 \, (if($f6 \, 6 \, (if($f7 \, 7 \, (if($f8 \, 8 \, 0)))))))) \,
+(if ($f5 \, (if($f6 \, 6 \, (if($f7 \, 7 \, (if($f8 \, 8 \, 0))))))
+\, (if ($f6 \, (if($f7 \, 7 \, (if($f8 \, 8 \, 0)))) \, (if ($f7 \,
+(if($f8 \, 8 \, 0)) \, 0)))))))) \, (if ($f4 \, (if($f5 \, (if($f6
+\, 6 \, (if($f7 \, 7 \, (if($f8 \, 8 \, 0)))))) \, (if ($f6 \, (if($f7
+\, 7 \, (if($f8 \, 8 \, 0)))) \, (if ($f7 \, (if($f8 \, 8 \, 0)) \,
+0)))))) \, (if ($f5 \, (if($f6 \, (if($f7 \, 7 \, (if($f8 \, 8 \, 0))))
+\, (if ($f7 \, (if($f8 \, 8 \, 0)) \, 0)))) \, (if($f6 \, (if($f7 \,
+(if($f8 \, 8 \, 0)) \, 0)) \, 0)))))))))) \, ( if ($f2 \, (if ($f3
+\, (if ($f4 \, (if($f5 \, 5 \, (if($f6 \, 6 \, (if($f7 \, 7 \, (if($f8
+\, 8 \, 0)))))))) \, (if ($f5 \, (if($f6 \, 6 \, (if($f7 \, 7 \, (if($f8
+\, 8 \, 0)))))) \, (if ($f6 \, (if($f7 \, 7 \, (if($f8 \, 8 \, 0))))
+\, (if ($f7 \, (if($f8 \, 8 \, 0)) \, 0)))))))) \, (if ($f4 \, (if($f5
+\, (if($f6 \, 6 \, (if($f7 \, 7 \, (if($f8 \, 8 \, 0)))))) \, (if ($f6
+\, (if($f7 \, 7 \, (if($f8 \, 8 \, 0)))) \, (if ($f7 \, (if($f8 \,
+8 \, 0)) \, 0)))))) \, (if ($f5 \, (if($f6 \, (if($f7 \, 7 \, (if($f8
+\, 8 \, 0)))) \, (if ($f7 \, (if($f8 \, 8 \, 0)) \, 0)))) \, (if($f6
+\, (if($f7 \, (if($f8 \, 8 \, 0)) \, 0)) \, 0)))))))) \, ( if ($f3
+\, (if ($f4 \, (if($f5 \, (if($f6 \, 6 \, (if($f7 \, 7 \, (if($f8 \,
+8 \, 0)))))) \, (if ($f6 \, (if($f7 \, 7 \, (if($f8 \, 8 \, 0)))) \,
+(if ($f7 \, (if($f8 \, 8 \, 0)) \, 0)))))) \, (if ($f5 \, (if($f6 \,
+(if($f7 \, 7 \, (if($f8 \, 8 \, 0)))) \, (if ($f7 \, (if($f8 \, 8 \,
+0)) \, 0)))) \, (if($f6 \, (if($f7 \, (if($f8 \, 8 \, 0)) \, 0)) \,
+0)))))) \, ( if ($f4 \, (if ($f5 \, (if($f6 \, (if($f7 \, 7 \, (if($f8
+\, 8 \, 0)))) \, (if ($f7 \, (if($f8 \, 8 \, 0)) \, 0)))) \, (if($f6
+\, (if($f7 \, (if($f8 \, 8 \, 0)) \, 0)) \, 0)))) \, ( if ($f5 \, (if($f6
+\, (if($f7 \, (if($f8 \, 8 \, 0)) \, 0)) \, 0)) \, 0))))))))) \;,
+f 122;
+#X obj 53 39 inlet;
+#X obj 157 39 inlet;
+#X obj 261 39 inlet;
+#X obj 365 39 inlet;
+#X obj 469 39 inlet;
+#X obj 573 39 inlet;
+#X obj 677 39 inlet;
+#X obj 782 39 inlet;
+#X obj 53 536 spigot;
+#X floatatom 53 558 5 0 0 0 - - -, f 5;
+#X obj 296 536 spigot;
+#X floatatom 296 558 5 0 0 0 - - -, f 5;
+#X obj 539 536 spigot;
+#X floatatom 539 558 5 0 0 0 - - -, f 5;
+#X obj 782 536 spigot;
+#X floatatom 782 558 5 0 0 0 - - -, f 5;
+#X obj 864 521 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 799 469 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 864 502 r msuscmd3;
+#X obj 799 446 r msuscmd4;
+#X obj 31 15 r msuscmd2;
+#X obj 53 572 pack 0 0 0 0;
+#X obj 799 491 t b b b b;
+#X obj 53 598 s stmcm2;
+#X connect 0 0 13 0;
+#X connect 1 0 13 1;
+#X connect 2 0 13 2;
+#X connect 3 0 13 3;
+#X connect 4 0 13 4;
+#X connect 5 0 13 5;
+#X connect 6 0 13 6;
+#X connect 7 0 13 7;
+#X connect 8 0 22 0;
+#X connect 9 0 13 0;
+#X connect 10 0 24 0;
+#X connect 11 0 26 0;
+#X connect 12 0 28 0;
+#X connect 13 0 8 0;
+#X connect 13 1 10 0;
+#X connect 13 2 11 0;
+#X connect 13 3 12 0;
+#X connect 14 0 0 0;
+#X connect 15 0 1 0;
+#X connect 16 0 2 0;
+#X connect 17 0 3 0;
+#X connect 18 0 4 0;
+#X connect 19 0 5 0;
+#X connect 20 0 6 0;
+#X connect 21 0 7 0;
+#X connect 22 0 23 0;
+#X connect 23 0 35 0;
+#X connect 24 0 25 0;
+#X connect 25 0 35 1;
+#X connect 26 0 27 0;
+#X connect 27 0 35 2;
+#X connect 28 0 29 0;
+#X connect 29 0 35 3;
+#X connect 30 0 28 1;
+#X connect 30 0 26 1;
+#X connect 30 0 24 1;
+#X connect 30 0 22 1;
+#X connect 31 0 36 0;
+#X connect 32 0 30 0;
+#X connect 33 0 31 0;
+#X connect 34 0 9 0;
+#X connect 35 0 37 0;
+#X connect 36 0 8 0;
+#X connect 36 1 10 0;
+#X connect 36 2 11 0;
+#X connect 36 3 12 0;
+#X restore 203 307 pd CLCKMXRCM1SAVER2;
+#N canvas 151 22 949 721 CLCKMXRCM1SAVER3 0;
+#X obj 53 63 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
+;
+#X obj 157 63 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 261 63 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 365 63 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 469 63 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 573 63 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 677 63 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 782 63 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X floatatom 53 508 5 0 0 0 - - -, f 5;
+#X obj 31 63 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X floatatom 296 508 5 0 0 0 - - -, f 5;
+#X floatatom 539 508 5 0 0 0 - - -, f 5;
+#X floatatom 782 508 5 0 0 0 - - -, f 5;
+#X obj 53 104 expr if ($f1 \, 1 \, if ($f2 \, 2 \, if ($f3 \, 3 \,
+if ($f4 \, 4 \, if ($f5 \, 5 \, if ($f6 \, 6 \, if ($f7 \, 7 \, if
+($f8 \, 8 \, 0)))))))) \; if ($f1 \, if ($f2 \, 2 \, if ($f3 \, 3 \,
+if ($f4 \, 4 \, if ($f5 \, 5 \, if ($f6 \, 6 \, if ($f7 \, 7 \, if
+($f8 \, 8 \, 0))))))) \, if ($f2 \, if ($f3 \, 3 \, if ($f4 \, 4 \,
+if ($f5 \, 5 \, if ($f6 \, 6 \, if ($f7 \, 7 \, if ($f8 \, 8 \, 0))))))
+\, if ($f3 \, if ($f4 \, 4 \, if ($f5 \, 5 \, if ($f6 \, 6 \, if ($f7
+\, 7 \, if ($f8 \, 8 \, 0))))) \, if ($f4 \, if ($f5 \, 5 \, if ($f6
+\, 6 \, if ($f7 \, 7 \, if ($f8 \, 8 \, 0)))) \, if ($f5 \, if ($f6
+\, 6 \, if ($f7 \, 7 \, if ($f8 \, 8 \, 0))) \, if ($f6 \, if ($f7
+\, 7 \, if ($f8 \, 8 \, 0)) \, if ($f7 \, if ($f8 \, 8 \, 0) \, if
+($f8 \, 8 \, 0)))))))) \; if ($f1 \, (if ($f2 \, if ($f3 \, 3 \, if
+($f4 \, 4 \, if ($f5 \, 5 \, if ($f6 \, 6 \, if ($f7 \, 7 \, if ($f8
+\, 8 \, 0)))))) \, if ($f3 \, if ($f4 \, 4 \, if ($f5 \, 5 \, if ($f6
+\, 6 \, if ($f7 \, 7 \, if ($f8 \, 8 \, 0))))) \, if ($f4 \, if ($f5
+\, 5 \, if ($f6 \, 6 \, if ($f7 \, 7 \, if ($f8 \, 8 \, 0)))) \, if
+($f5 \, if ($f6 \, 6 \, if ($f7 \, 7 \, if ($f8 \, 8 \, 0))) \, if
+($f6 \, if ($f7 \, 7 \, if ($f8 \, 8 \, 0)) \, if ($f7 \, if ($f8 \,
+8 \, 0) \, if ($f8 \, 8 \, 0)))))))) \, if ($f2 \, if ($f3 \, if ($f4
+\, 4 \, if ($f5 \, 5 \, if ($f6 \, 6 \, if ($f7 \, 7 \, if ($f8 \,
+8 \, 0))))) \, if ($f4 \, if ($f5 \, 5 \, if ($f6 \, 6 \, if ($f7 \,
+7 \, if ($f8 \, 8 \, 0)))) \, if ($f5 \, if ($f6 \, 6 \, if ($f7 \,
+7 \, if ($f8 \, 8 \, 0))) \, if ($f6 \, if ($f7 \, 7 \, if ($f8 \,
+8 \, 0)) \, if ($f7 \, if ($f8 \, 8 \, 0) \, if ($f8 \, 8 \, 0))))))
+\, (if($f3 \, (if($f4 \, if($f5 \, 5 \, if($f6 \, 6 \, if($f7 \, 7
+\, if($f8 \, 8 \, 0)))) \, if($f5 \, if($f6 \, 6 \, if($f7 \, 7 \,
+if($f8 \, 8 \, 0))) \, if($f6 \, if($f7 \, 7 \, if($f8 \, 8 \, 0))
+\, if($f7 \, if($f8 \, 8 \, 0) \, if($f8 \, 8 \, 0)))))) \, (if($f4
+\, if($f5 \, if($f6 \, 6 \, if($f7 \, 7 \, if($f8 \, 8 \, 0))) \, if($f6
+\, if($f7 \, 7 \, if($f8 \, 8 \, 0)) \, if($f7 \, if($f8 \, 8 \, 0)
+\, if($f8 \, 8 \, 0)))) \, (if($f5 \, if($f6 \, if($f7 \, 7 \, if($f8
+\, 8 \, 0)) \, if($f7 \, if($f8 \, 8 \, 0) \, if($f8 \, 8 \, 0))) \,
+(if($f6 \, if($f7 \, if($f8 \, 8 \, 0) \, if($f8 \, 8 \, 0)) \, (if($f7
+\, if($f8 \, 8 \, 0) \, (if($f8 \, 8 \, 0)))))))))))))) \; if ($f1
+\, (if ($f2 \, (if ($f3 \, (if ($f4 \, 4 \, (if($f5 \, 5 \, (if($f6
+\, 6 \, (if($f7 \, 7 \, (if($f8 \, 8 \, 0)))))))))) \, (if ($f4 \,
+(if($f5 \, 5 \, (if($f6 \, 6 \, (if($f7 \, 7 \, (if($f8 \, 8 \, 0))))))))
+\, (if ($f5 \, (if($f6 \, 6 \, (if($f7 \, 7 \, (if($f8 \, 8 \, 0))))))
+\, (if ($f6 \, (if($f7 \, 7 \, (if($f8 \, 8 \, 0)))) \, (if ($f7 \,
+(if($f8 \, 8 \, 0)) \, 0)))))))))) \, (if ($f3 \, (if ($f4 \, (if($f5
+\, 5 \, (if($f6 \, 6 \, (if($f7 \, 7 \, (if($f8 \, 8 \, 0)))))))) \,
+(if ($f5 \, (if($f6 \, 6 \, (if($f7 \, 7 \, (if($f8 \, 8 \, 0))))))
+\, (if ($f6 \, (if($f7 \, 7 \, (if($f8 \, 8 \, 0)))) \, (if ($f7 \,
+(if($f8 \, 8 \, 0)) \, 0)))))))) \, (if ($f4 \, (if($f5 \, (if($f6
+\, 6 \, (if($f7 \, 7 \, (if($f8 \, 8 \, 0)))))) \, (if ($f6 \, (if($f7
+\, 7 \, (if($f8 \, 8 \, 0)))) \, (if ($f7 \, (if($f8 \, 8 \, 0)) \,
+0)))))) \, (if ($f5 \, (if($f6 \, (if($f7 \, 7 \, (if($f8 \, 8 \, 0))))
+\, (if ($f7 \, (if($f8 \, 8 \, 0)) \, 0)))) \, (if($f6 \, (if($f7 \,
+(if($f8 \, 8 \, 0)) \, 0)) \, 0)))))))))) \, ( if ($f2 \, (if ($f3
+\, (if ($f4 \, (if($f5 \, 5 \, (if($f6 \, 6 \, (if($f7 \, 7 \, (if($f8
+\, 8 \, 0)))))))) \, (if ($f5 \, (if($f6 \, 6 \, (if($f7 \, 7 \, (if($f8
+\, 8 \, 0)))))) \, (if ($f6 \, (if($f7 \, 7 \, (if($f8 \, 8 \, 0))))
+\, (if ($f7 \, (if($f8 \, 8 \, 0)) \, 0)))))))) \, (if ($f4 \, (if($f5
+\, (if($f6 \, 6 \, (if($f7 \, 7 \, (if($f8 \, 8 \, 0)))))) \, (if ($f6
+\, (if($f7 \, 7 \, (if($f8 \, 8 \, 0)))) \, (if ($f7 \, (if($f8 \,
+8 \, 0)) \, 0)))))) \, (if ($f5 \, (if($f6 \, (if($f7 \, 7 \, (if($f8
+\, 8 \, 0)))) \, (if ($f7 \, (if($f8 \, 8 \, 0)) \, 0)))) \, (if($f6
+\, (if($f7 \, (if($f8 \, 8 \, 0)) \, 0)) \, 0)))))))) \, ( if ($f3
+\, (if ($f4 \, (if($f5 \, (if($f6 \, 6 \, (if($f7 \, 7 \, (if($f8 \,
+8 \, 0)))))) \, (if ($f6 \, (if($f7 \, 7 \, (if($f8 \, 8 \, 0)))) \,
+(if ($f7 \, (if($f8 \, 8 \, 0)) \, 0)))))) \, (if ($f5 \, (if($f6 \,
+(if($f7 \, 7 \, (if($f8 \, 8 \, 0)))) \, (if ($f7 \, (if($f8 \, 8 \,
+0)) \, 0)))) \, (if($f6 \, (if($f7 \, (if($f8 \, 8 \, 0)) \, 0)) \,
+0)))))) \, ( if ($f4 \, (if ($f5 \, (if($f6 \, (if($f7 \, 7 \, (if($f8
+\, 8 \, 0)))) \, (if ($f7 \, (if($f8 \, 8 \, 0)) \, 0)))) \, (if($f6
+\, (if($f7 \, (if($f8 \, 8 \, 0)) \, 0)) \, 0)))) \, ( if ($f5 \, (if($f6
+\, (if($f7 \, (if($f8 \, 8 \, 0)) \, 0)) \, 0)) \, 0))))))))) \;,
+f 122;
+#X obj 53 39 inlet;
+#X obj 157 39 inlet;
+#X obj 261 39 inlet;
+#X obj 365 39 inlet;
+#X obj 469 39 inlet;
+#X obj 573 39 inlet;
+#X obj 677 39 inlet;
+#X obj 782 39 inlet;
+#X obj 53 536 spigot;
+#X floatatom 53 558 5 0 0 0 - - -, f 5;
+#X obj 296 536 spigot;
+#X floatatom 296 558 5 0 0 0 - - -, f 5;
+#X obj 539 536 spigot;
+#X floatatom 539 558 5 0 0 0 - - -, f 5;
+#X obj 782 536 spigot;
+#X floatatom 782 558 5 0 0 0 - - -, f 5;
+#X obj 864 521 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 799 469 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 864 502 r msuscmd3;
+#X obj 799 446 r msuscmd4;
+#X obj 31 15 r msuscmd2;
+#X obj 53 572 pack 0 0 0 0;
+#X obj 799 491 t b b b b;
+#X obj 53 598 s stmcm3;
+#X connect 0 0 13 0;
+#X connect 1 0 13 1;
+#X connect 2 0 13 2;
+#X connect 3 0 13 3;
+#X connect 4 0 13 4;
+#X connect 5 0 13 5;
+#X connect 6 0 13 6;
+#X connect 7 0 13 7;
+#X connect 8 0 22 0;
+#X connect 9 0 13 0;
+#X connect 10 0 24 0;
+#X connect 11 0 26 0;
+#X connect 12 0 28 0;
+#X connect 13 0 8 0;
+#X connect 13 1 10 0;
+#X connect 13 2 11 0;
+#X connect 13 3 12 0;
+#X connect 14 0 0 0;
+#X connect 15 0 1 0;
+#X connect 16 0 2 0;
+#X connect 17 0 3 0;
+#X connect 18 0 4 0;
+#X connect 19 0 5 0;
+#X connect 20 0 6 0;
+#X connect 21 0 7 0;
+#X connect 22 0 23 0;
+#X connect 23 0 35 0;
+#X connect 24 0 25 0;
+#X connect 25 0 35 1;
+#X connect 26 0 27 0;
+#X connect 27 0 35 2;
+#X connect 28 0 29 0;
+#X connect 29 0 35 3;
+#X connect 30 0 28 1;
+#X connect 30 0 26 1;
+#X connect 30 0 24 1;
+#X connect 30 0 22 1;
+#X connect 31 0 36 0;
+#X connect 32 0 30 0;
+#X connect 33 0 31 0;
+#X connect 34 0 9 0;
+#X connect 35 0 37 0;
+#X connect 36 0 8 0;
+#X connect 36 1 10 0;
+#X connect 36 2 11 0;
+#X connect 36 3 12 0;
+#X restore 324 307 pd CLCKMXRCM1SAVER3;
+#N canvas 151 22 949 721 CLCKMXRCM1SAVER4 0;
+#X obj 53 63 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
+;
+#X obj 157 63 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 261 63 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 365 63 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 469 63 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 573 63 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 677 63 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 782 63 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X floatatom 53 508 5 0 0 0 - - -, f 5;
+#X obj 31 63 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X floatatom 296 508 5 0 0 0 - - -, f 5;
+#X floatatom 539 508 5 0 0 0 - - -, f 5;
+#X floatatom 782 508 5 0 0 0 - - -, f 5;
+#X obj 53 104 expr if ($f1 \, 1 \, if ($f2 \, 2 \, if ($f3 \, 3 \,
+if ($f4 \, 4 \, if ($f5 \, 5 \, if ($f6 \, 6 \, if ($f7 \, 7 \, if
+($f8 \, 8 \, 0)))))))) \; if ($f1 \, if ($f2 \, 2 \, if ($f3 \, 3 \,
+if ($f4 \, 4 \, if ($f5 \, 5 \, if ($f6 \, 6 \, if ($f7 \, 7 \, if
+($f8 \, 8 \, 0))))))) \, if ($f2 \, if ($f3 \, 3 \, if ($f4 \, 4 \,
+if ($f5 \, 5 \, if ($f6 \, 6 \, if ($f7 \, 7 \, if ($f8 \, 8 \, 0))))))
+\, if ($f3 \, if ($f4 \, 4 \, if ($f5 \, 5 \, if ($f6 \, 6 \, if ($f7
+\, 7 \, if ($f8 \, 8 \, 0))))) \, if ($f4 \, if ($f5 \, 5 \, if ($f6
+\, 6 \, if ($f7 \, 7 \, if ($f8 \, 8 \, 0)))) \, if ($f5 \, if ($f6
+\, 6 \, if ($f7 \, 7 \, if ($f8 \, 8 \, 0))) \, if ($f6 \, if ($f7
+\, 7 \, if ($f8 \, 8 \, 0)) \, if ($f7 \, if ($f8 \, 8 \, 0) \, if
+($f8 \, 8 \, 0)))))))) \; if ($f1 \, (if ($f2 \, if ($f3 \, 3 \, if
+($f4 \, 4 \, if ($f5 \, 5 \, if ($f6 \, 6 \, if ($f7 \, 7 \, if ($f8
+\, 8 \, 0)))))) \, if ($f3 \, if ($f4 \, 4 \, if ($f5 \, 5 \, if ($f6
+\, 6 \, if ($f7 \, 7 \, if ($f8 \, 8 \, 0))))) \, if ($f4 \, if ($f5
+\, 5 \, if ($f6 \, 6 \, if ($f7 \, 7 \, if ($f8 \, 8 \, 0)))) \, if
+($f5 \, if ($f6 \, 6 \, if ($f7 \, 7 \, if ($f8 \, 8 \, 0))) \, if
+($f6 \, if ($f7 \, 7 \, if ($f8 \, 8 \, 0)) \, if ($f7 \, if ($f8 \,
+8 \, 0) \, if ($f8 \, 8 \, 0)))))))) \, if ($f2 \, if ($f3 \, if ($f4
+\, 4 \, if ($f5 \, 5 \, if ($f6 \, 6 \, if ($f7 \, 7 \, if ($f8 \,
+8 \, 0))))) \, if ($f4 \, if ($f5 \, 5 \, if ($f6 \, 6 \, if ($f7 \,
+7 \, if ($f8 \, 8 \, 0)))) \, if ($f5 \, if ($f6 \, 6 \, if ($f7 \,
+7 \, if ($f8 \, 8 \, 0))) \, if ($f6 \, if ($f7 \, 7 \, if ($f8 \,
+8 \, 0)) \, if ($f7 \, if ($f8 \, 8 \, 0) \, if ($f8 \, 8 \, 0))))))
+\, (if($f3 \, (if($f4 \, if($f5 \, 5 \, if($f6 \, 6 \, if($f7 \, 7
+\, if($f8 \, 8 \, 0)))) \, if($f5 \, if($f6 \, 6 \, if($f7 \, 7 \,
+if($f8 \, 8 \, 0))) \, if($f6 \, if($f7 \, 7 \, if($f8 \, 8 \, 0))
+\, if($f7 \, if($f8 \, 8 \, 0) \, if($f8 \, 8 \, 0)))))) \, (if($f4
+\, if($f5 \, if($f6 \, 6 \, if($f7 \, 7 \, if($f8 \, 8 \, 0))) \, if($f6
+\, if($f7 \, 7 \, if($f8 \, 8 \, 0)) \, if($f7 \, if($f8 \, 8 \, 0)
+\, if($f8 \, 8 \, 0)))) \, (if($f5 \, if($f6 \, if($f7 \, 7 \, if($f8
+\, 8 \, 0)) \, if($f7 \, if($f8 \, 8 \, 0) \, if($f8 \, 8 \, 0))) \,
+(if($f6 \, if($f7 \, if($f8 \, 8 \, 0) \, if($f8 \, 8 \, 0)) \, (if($f7
+\, if($f8 \, 8 \, 0) \, (if($f8 \, 8 \, 0)))))))))))))) \; if ($f1
+\, (if ($f2 \, (if ($f3 \, (if ($f4 \, 4 \, (if($f5 \, 5 \, (if($f6
+\, 6 \, (if($f7 \, 7 \, (if($f8 \, 8 \, 0)))))))))) \, (if ($f4 \,
+(if($f5 \, 5 \, (if($f6 \, 6 \, (if($f7 \, 7 \, (if($f8 \, 8 \, 0))))))))
+\, (if ($f5 \, (if($f6 \, 6 \, (if($f7 \, 7 \, (if($f8 \, 8 \, 0))))))
+\, (if ($f6 \, (if($f7 \, 7 \, (if($f8 \, 8 \, 0)))) \, (if ($f7 \,
+(if($f8 \, 8 \, 0)) \, 0)))))))))) \, (if ($f3 \, (if ($f4 \, (if($f5
+\, 5 \, (if($f6 \, 6 \, (if($f7 \, 7 \, (if($f8 \, 8 \, 0)))))))) \,
+(if ($f5 \, (if($f6 \, 6 \, (if($f7 \, 7 \, (if($f8 \, 8 \, 0))))))
+\, (if ($f6 \, (if($f7 \, 7 \, (if($f8 \, 8 \, 0)))) \, (if ($f7 \,
+(if($f8 \, 8 \, 0)) \, 0)))))))) \, (if ($f4 \, (if($f5 \, (if($f6
+\, 6 \, (if($f7 \, 7 \, (if($f8 \, 8 \, 0)))))) \, (if ($f6 \, (if($f7
+\, 7 \, (if($f8 \, 8 \, 0)))) \, (if ($f7 \, (if($f8 \, 8 \, 0)) \,
+0)))))) \, (if ($f5 \, (if($f6 \, (if($f7 \, 7 \, (if($f8 \, 8 \, 0))))
+\, (if ($f7 \, (if($f8 \, 8 \, 0)) \, 0)))) \, (if($f6 \, (if($f7 \,
+(if($f8 \, 8 \, 0)) \, 0)) \, 0)))))))))) \, ( if ($f2 \, (if ($f3
+\, (if ($f4 \, (if($f5 \, 5 \, (if($f6 \, 6 \, (if($f7 \, 7 \, (if($f8
+\, 8 \, 0)))))))) \, (if ($f5 \, (if($f6 \, 6 \, (if($f7 \, 7 \, (if($f8
+\, 8 \, 0)))))) \, (if ($f6 \, (if($f7 \, 7 \, (if($f8 \, 8 \, 0))))
+\, (if ($f7 \, (if($f8 \, 8 \, 0)) \, 0)))))))) \, (if ($f4 \, (if($f5
+\, (if($f6 \, 6 \, (if($f7 \, 7 \, (if($f8 \, 8 \, 0)))))) \, (if ($f6
+\, (if($f7 \, 7 \, (if($f8 \, 8 \, 0)))) \, (if ($f7 \, (if($f8 \,
+8 \, 0)) \, 0)))))) \, (if ($f5 \, (if($f6 \, (if($f7 \, 7 \, (if($f8
+\, 8 \, 0)))) \, (if ($f7 \, (if($f8 \, 8 \, 0)) \, 0)))) \, (if($f6
+\, (if($f7 \, (if($f8 \, 8 \, 0)) \, 0)) \, 0)))))))) \, ( if ($f3
+\, (if ($f4 \, (if($f5 \, (if($f6 \, 6 \, (if($f7 \, 7 \, (if($f8 \,
+8 \, 0)))))) \, (if ($f6 \, (if($f7 \, 7 \, (if($f8 \, 8 \, 0)))) \,
+(if ($f7 \, (if($f8 \, 8 \, 0)) \, 0)))))) \, (if ($f5 \, (if($f6 \,
+(if($f7 \, 7 \, (if($f8 \, 8 \, 0)))) \, (if ($f7 \, (if($f8 \, 8 \,
+0)) \, 0)))) \, (if($f6 \, (if($f7 \, (if($f8 \, 8 \, 0)) \, 0)) \,
+0)))))) \, ( if ($f4 \, (if ($f5 \, (if($f6 \, (if($f7 \, 7 \, (if($f8
+\, 8 \, 0)))) \, (if ($f7 \, (if($f8 \, 8 \, 0)) \, 0)))) \, (if($f6
+\, (if($f7 \, (if($f8 \, 8 \, 0)) \, 0)) \, 0)))) \, ( if ($f5 \, (if($f6
+\, (if($f7 \, (if($f8 \, 8 \, 0)) \, 0)) \, 0)) \, 0))))))))) \;,
+f 122;
+#X obj 53 39 inlet;
+#X obj 157 39 inlet;
+#X obj 261 39 inlet;
+#X obj 365 39 inlet;
+#X obj 469 39 inlet;
+#X obj 573 39 inlet;
+#X obj 677 39 inlet;
+#X obj 782 39 inlet;
+#X obj 53 536 spigot;
+#X floatatom 53 558 5 0 0 0 - - -, f 5;
+#X obj 296 536 spigot;
+#X floatatom 296 558 5 0 0 0 - - -, f 5;
+#X obj 539 536 spigot;
+#X floatatom 539 558 5 0 0 0 - - -, f 5;
+#X obj 782 536 spigot;
+#X floatatom 782 558 5 0 0 0 - - -, f 5;
+#X obj 864 521 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 799 469 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 864 502 r msuscmd3;
+#X obj 799 446 r msuscmd4;
+#X obj 31 15 r msuscmd2;
+#X obj 53 572 pack 0 0 0 0;
+#X obj 799 491 t b b b b;
+#X obj 53 598 s stmcm4;
+#X connect 0 0 13 0;
+#X connect 1 0 13 1;
+#X connect 2 0 13 2;
+#X connect 3 0 13 3;
+#X connect 4 0 13 4;
+#X connect 5 0 13 5;
+#X connect 6 0 13 6;
+#X connect 7 0 13 7;
+#X connect 8 0 22 0;
+#X connect 9 0 13 0;
+#X connect 10 0 24 0;
+#X connect 11 0 26 0;
+#X connect 12 0 28 0;
+#X connect 13 0 8 0;
+#X connect 13 1 10 0;
+#X connect 13 2 11 0;
+#X connect 13 3 12 0;
+#X connect 14 0 0 0;
+#X connect 15 0 1 0;
+#X connect 16 0 2 0;
+#X connect 17 0 3 0;
+#X connect 18 0 4 0;
+#X connect 19 0 5 0;
+#X connect 20 0 6 0;
+#X connect 21 0 7 0;
+#X connect 22 0 23 0;
+#X connect 23 0 35 0;
+#X connect 24 0 25 0;
+#X connect 25 0 35 1;
+#X connect 26 0 27 0;
+#X connect 27 0 35 2;
+#X connect 28 0 29 0;
+#X connect 29 0 35 3;
+#X connect 30 0 28 1;
+#X connect 30 0 26 1;
+#X connect 30 0 24 1;
+#X connect 30 0 22 1;
+#X connect 31 0 36 0;
+#X connect 32 0 30 0;
+#X connect 33 0 31 0;
+#X connect 34 0 9 0;
+#X connect 35 0 37 0;
+#X connect 36 0 8 0;
+#X connect 36 1 10 0;
+#X connect 36 2 11 0;
+#X connect 36 3 12 0;
+#X restore 447 307 pd CLCKMXRCM1SAVER4;
 #X connect 0 0 17 0;
 #X connect 0 0 34 0;
 #X connect 0 0 68 0;
@@ -1364,13 +2034,21 @@
 #X connect 7 0 73 0;
 #X connect 7 0 56 0;
 #X connect 8 0 19 1;
+#X connect 8 0 89 3;
 #X connect 9 0 16 1;
+#X connect 9 0 89 0;
 #X connect 10 0 17 1;
+#X connect 10 0 89 1;
 #X connect 11 0 18 1;
+#X connect 11 0 89 2;
 #X connect 12 0 23 1;
+#X connect 12 0 89 7;
 #X connect 13 0 20 1;
+#X connect 13 0 89 4;
 #X connect 14 0 21 1;
+#X connect 14 0 89 5;
 #X connect 15 0 22 1;
+#X connect 15 0 89 6;
 #X connect 16 0 24 0;
 #X connect 17 0 24 0;
 #X connect 18 0 24 0;
@@ -1381,13 +2059,21 @@
 #X connect 23 0 24 0;
 #X connect 24 0 76 0;
 #X connect 25 0 36 1;
+#X connect 25 0 90 3;
 #X connect 26 0 33 1;
+#X connect 26 0 90 0;
 #X connect 27 0 34 1;
+#X connect 27 0 90 1;
 #X connect 28 0 35 1;
+#X connect 28 0 90 2;
 #X connect 29 0 40 1;
+#X connect 29 0 90 7;
 #X connect 30 0 37 1;
+#X connect 30 0 90 4;
 #X connect 31 0 38 1;
+#X connect 31 0 90 5;
 #X connect 32 0 39 1;
+#X connect 32 0 90 6;
 #X connect 33 0 41 0;
 #X connect 34 0 41 0;
 #X connect 35 0 41 0;
@@ -1398,13 +2084,21 @@
 #X connect 40 0 41 0;
 #X connect 41 0 77 0;
 #X connect 42 0 53 1;
+#X connect 42 0 91 3;
 #X connect 43 0 50 1;
+#X connect 43 0 91 0;
 #X connect 44 0 51 1;
+#X connect 44 0 91 1;
 #X connect 45 0 52 1;
+#X connect 45 0 91 2;
 #X connect 46 0 57 1;
+#X connect 46 0 91 7;
 #X connect 47 0 54 1;
+#X connect 47 0 91 4;
 #X connect 48 0 55 1;
+#X connect 48 0 91 5;
 #X connect 49 0 56 1;
+#X connect 49 0 91 6;
 #X connect 50 0 58 0;
 #X connect 51 0 58 0;
 #X connect 52 0 58 0;
@@ -1415,13 +2109,21 @@
 #X connect 57 0 58 0;
 #X connect 58 0 78 0;
 #X connect 59 0 70 1;
+#X connect 59 0 92 3;
 #X connect 60 0 67 1;
+#X connect 60 0 92 0;
 #X connect 61 0 68 1;
+#X connect 61 0 92 1;
 #X connect 62 0 69 1;
+#X connect 62 0 92 2;
 #X connect 63 0 74 1;
+#X connect 63 0 92 7;
 #X connect 64 0 71 1;
+#X connect 64 0 92 4;
 #X connect 65 0 72 1;
+#X connect 65 0 92 5;
 #X connect 66 0 73 1;
+#X connect 66 0 92 6;
 #X connect 67 0 75 0;
 #X connect 68 0 75 0;
 #X connect 69 0 75 0;
@@ -1469,7 +2171,7 @@
 #X connect 87 0 85 0;
 #X coords 0 -1 1 1 180 100 2 100 100;
 #X restore 21 102 pd CLCKMXRYOLO;
-#N canvas 452 208 783 428 EDO 0;
+#N canvas 99 142 783 428 EDO 0;
 #N canvas 0 22 450 278 (subpatch) 0;
 #X array pqt 20 float 3;
 #A 0 0 0 3 3 3 6 6 6 8 8 10 11 12 13 14 15 16 17 18 19;
@@ -1491,7 +2193,7 @@
 \$12 \$13 \$14 \$15 \$16 \$17 \$18 \$19, f 12;
 #X obj 627 -86 loadbang;
 #X obj 642 -25 i;
-#N canvas 744 22 450 300 xenscalemaker 0;
+#N canvas 111 261 450 300 xenscalemaker 0;
 #X obj 238 101 inlet;
 #X obj 201 118 inlet;
 #X obj 73 265 outlet, f 10;
@@ -1506,7 +2208,6 @@
 #X obj 73 156 %;
 #X obj 73 219 +;
 #X obj 73 102 inlet;
-#X floatatom 24 223 5 0 0 0 - - -, f 5;
 #X connect 0 0 7 1;
 #X connect 1 0 8 0;
 #X connect 3 0 10 0;
@@ -1521,7 +2222,6 @@
 #X connect 9 0 5 1;
 #X connect 10 0 4 0;
 #X connect 11 0 6 0;
-#X connect 11 0 14 0;
 #X connect 12 0 7 0;
 #X connect 13 0 3 0;
 #X restore 12 236 pd xenscalemaker;
@@ -1682,7 +2382,7 @@
 #X coords 0 -1 1 1 250 140 1 0 0;
 #X restore 7 283 pd EDO;
 #X obj 533 195 s EDOIN2;
-#X obj 643 327 r EDOOUT2;
+#X obj 646 413 r EDOOUT2;
 #N canvas 485 112 619 568 FMB1CLCKSRC 0;
 #X floatatom -40 159 5 0 0 0 - - -, f 5;
 #X obj 103 105 hradio 18 1 0 6 empty empty empty 0 -8 0 10 -262144
@@ -2795,9 +3495,9 @@
 #X coords 0 -1 1 1 675 60 2 100 100;
 #X restore 7 217 pd Quantifier;
 #X obj 378 143 s EDOIN1;
-#X obj 535 327 r EDOOUT1;
-#X obj 688 248 s EDOIN3;
-#X obj 751 327 r EDOOUT3;
+#X obj 538 413 r EDOOUT1;
+#X obj 689 270 s EDOIN3;
+#X obj 754 412 r EDOOUT3;
 #N canvas 227 22 1048 672 partitionread 0;
 #X obj -134 97 qlist;
 #X msg 4 46 bang;
@@ -2916,8 +3616,8 @@
 #X connect 58 1 1 0;
 #X connect 58 2 2 0;
 #X coords 0 -1 1 1 85 35 1 100 100;
-#X restore 835 5 pd partitionread;
-#N canvas 386 186 445 299 ppsqok 0;
+#X restore 835 -17 pd partitionread;
+#N canvas 538 112 445 299 ppsqok 0;
 #X floatatom 30 176 3 0 0 0 - - -, f 3;
 #X floatatom 30 217 5 0 0 0 - - -, f 5;
 #X obj 234 42 f;
@@ -2982,15 +3682,15 @@
 #X connect 19 10 20 0;
 #X connect 20 0 18 1;
 #X connect 21 0 2 0;
-#X restore 378 78 pd ppsqok;
+#X restore 378 56 pd ppsqok;
 #X obj 378 120 +;
-#X obj 429 56 r metapartition;
-#N canvas 340 103 645 613 ppsqt 0;
-#X obj 172 12 r CPR1;
-#X obj 172 35 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+#X obj 429 34 r metapartition;
+#N canvas 576 22 645 613 ppsqt 0;
+#X obj 172 5 r CPR1;
+#X obj 172 28 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
-#X obj 172 58 f;
-#X obj 202 58 + 1;
+#X obj 172 51 f;
+#X obj 202 51 + 1;
 #X floatatom 172 129 5 0 0 0 - - -, f 5;
 #X obj 172 175 spigot;
 #X floatatom 334 375 3 0 0 0 - - -, f 3;
@@ -3014,17 +3714,16 @@
 #X floatatom 187 295 3 0 0 0 - - -, f 3;
 #X floatatom 194 240 3 0 0 0 - - -, f 3;
 #X obj 172 148 == 0;
-#X obj 334 427 % 10;
 #X obj 214 274 spigot;
 #X obj 214 294 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 247 254 == 10;
 #X obj 214 312 s setdownorderStart;
-#X obj -64 172 spigot;
+#X obj -64 165 spigot;
 #X obj -64 193 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj -64 145 == 0;
-#X obj -64 124 % 2;
+#X obj -64 138 == 0;
+#X obj -64 117 % 2;
 #X obj -64 212 f;
 #X obj -40 212 + 1;
 #X obj -64 552 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
@@ -3047,7 +3746,7 @@
 #X obj -41 532 s panicBeat;
 #X msg 192 197 0;
 #X obj 42 475 s weirdBeat;
-#X obj 334 451 s seqOffset;
+#X obj 334 457 s seqOffset;
 #X obj 334 255 r metaoffsetpartition;
 #X obj -49 236 r sks1;
 #X obj 7 342 r sks2;
@@ -3055,7 +3754,7 @@
 #X obj 13 383 r sks4;
 #X obj 187 85 r sks0;
 #X obj 96 385 r sks5;
-#X obj -49 101 r sks6;
+#X obj -49 94 r sks6;
 #X obj 172 105 %;
 #X obj -64 279 select 0 1 2;
 #X obj 42 296 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
@@ -3064,10 +3763,10 @@
 #X obj 75 364 % 2;
 #X obj 75 406 == 1;
 #X obj 274 231 r sks7;
-#X obj -64 75 spigot;
-#X obj -31 54 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj -64 68 spigot;
+#X obj -31 47 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
-#X obj -31 31 loadbang;
+#X obj -31 24 loadbang;
 #X obj 110 118 bng 15 250 50 0 empty empty norm 17 7 0 10 -262144 -1
 -1;
 #X obj 110 136 bng 15 250 50 0 empty empty panic 17 7 0 10 -262144
@@ -3076,28 +3775,29 @@
 -1 -1;
 #X obj 110 172 bng 15 250 50 0 empty empty auto 17 7 0 10 -262144 -1
 -1;
-#X msg 110 37 0, f 1;
-#X msg 83 187 1, f 1;
+#X msg 110 30 0, f 1;
+#X msg -31 187 1, f 1;
 #X obj 110 537 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 110 495 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
-#X obj 110 438 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
+#X floatatom 296 462 5 0 0 0 - - -, f 5;
+#X obj 334 433 % 10;
+#X obj 21 151 s mpanicBeat;
+#X obj 21 169 s mweirdBeat;
+#X obj 21 133 s mnormalBeat;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
 #X connect 2 0 3 0;
-#X connect 2 0 61 0;
-#X connect 2 0 68 0;
+#X connect 2 0 60 0;
+#X connect 2 0 67 0;
 #X connect 3 0 2 1;
 #X connect 4 0 25 0;
 #X connect 5 0 10 0;
 #X connect 6 0 7 0;
-#X connect 7 0 26 0;
+#X connect 7 0 78 0;
 #X connect 8 0 9 0;
 #X connect 8 0 21 0;
 #X connect 8 0 24 0;
-#X connect 8 0 27 0;
+#X connect 8 0 26 0;
 #X connect 9 0 8 1;
 #X connect 10 0 8 0;
 #X connect 11 0 6 0;
@@ -3132,73 +3832,73 @@
 #X connect 22 9 20 0;
 #X connect 22 10 23 0;
 #X connect 23 0 21 1;
-#X connect 24 0 29 0;
+#X connect 24 0 28 0;
 #X connect 25 0 5 1;
 #X connect 25 0 5 0;
-#X connect 26 0 52 0;
-#X connect 27 0 28 0;
-#X connect 28 0 30 0;
-#X connect 29 0 27 1;
-#X connect 31 0 32 0;
-#X connect 32 0 35 0;
-#X connect 33 0 31 1;
-#X connect 33 0 31 0;
-#X connect 34 0 33 0;
-#X connect 35 0 36 0;
-#X connect 35 0 64 0;
-#X connect 36 0 35 1;
-#X connect 37 0 48 0;
-#X connect 38 0 42 0;
-#X connect 38 0 46 0;
+#X connect 26 0 27 0;
+#X connect 27 0 29 0;
+#X connect 28 0 26 1;
+#X connect 30 0 31 0;
+#X connect 31 0 34 0;
+#X connect 32 0 30 1;
+#X connect 32 0 30 0;
+#X connect 33 0 32 0;
+#X connect 34 0 35 0;
+#X connect 34 0 63 0;
+#X connect 35 0 34 1;
+#X connect 36 0 47 0;
+#X connect 37 0 41 0;
+#X connect 37 0 45 0;
+#X connect 38 0 39 0;
 #X connect 39 0 40 0;
-#X connect 40 0 41 0;
-#X connect 41 0 42 1;
-#X connect 42 0 43 0;
-#X connect 43 0 49 0;
-#X connect 44 0 65 0;
-#X connect 45 0 47 0;
-#X connect 46 0 45 0;
-#X connect 47 0 51 0;
-#X connect 50 0 8 0;
-#X connect 53 0 22 0;
-#X connect 54 0 64 1;
-#X connect 55 0 40 1;
-#X connect 56 0 65 1;
-#X connect 57 0 41 1;
-#X connect 58 0 61 1;
-#X connect 59 0 66 1;
-#X connect 60 0 34 1;
-#X connect 61 0 4 0;
-#X connect 62 0 37 0;
-#X connect 62 1 38 0;
-#X connect 62 2 63 0;
-#X connect 63 0 47 0;
-#X connect 64 0 62 0;
-#X connect 65 0 66 0;
-#X connect 66 0 45 1;
-#X connect 67 0 29 1;
-#X connect 68 0 34 0;
-#X connect 69 0 68 1;
-#X connect 70 0 69 0;
-#X connect 71 0 75 0;
-#X connect 71 0 77 0;
-#X connect 72 0 75 0;
-#X connect 72 0 78 0;
+#X connect 40 0 41 1;
+#X connect 41 0 42 0;
+#X connect 42 0 48 0;
+#X connect 43 0 64 0;
+#X connect 44 0 46 0;
+#X connect 45 0 44 0;
+#X connect 46 0 50 0;
+#X connect 49 0 8 0;
+#X connect 52 0 22 0;
+#X connect 53 0 63 1;
+#X connect 54 0 39 1;
+#X connect 55 0 64 1;
+#X connect 56 0 40 1;
+#X connect 57 0 60 1;
+#X connect 58 0 65 1;
+#X connect 59 0 33 1;
+#X connect 60 0 4 0;
+#X connect 61 0 36 0;
+#X connect 61 1 37 0;
+#X connect 61 2 62 0;
+#X connect 62 0 46 0;
+#X connect 63 0 61 0;
+#X connect 64 0 65 0;
+#X connect 65 0 44 1;
+#X connect 66 0 28 1;
+#X connect 67 0 33 0;
+#X connect 68 0 67 1;
+#X connect 69 0 68 0;
+#X connect 70 0 74 0;
+#X connect 70 0 81 0;
+#X connect 71 0 74 0;
+#X connect 71 0 79 0;
+#X connect 72 0 74 0;
+#X connect 72 0 80 0;
 #X connect 73 0 75 0;
-#X connect 73 0 79 0;
-#X connect 74 0 76 0;
-#X connect 75 0 69 0;
-#X connect 76 0 69 0;
-#X connect 77 0 37 0;
-#X connect 78 0 43 0;
-#X connect 79 0 47 0;
+#X connect 73 0 76 0;
+#X connect 74 0 68 0;
+#X connect 75 0 68 0;
+#X connect 76 0 36 0;
+#X connect 78 0 51 0;
+#X connect 78 0 77 0;
 #X coords 0 -1 1 1 60 90 1 100 100;
-#X restore 963 -4 pd ppsqt;
+#X restore 963 -26 pd ppsqt;
 #X obj 393 100 r seqOffset;
-#X obj 378 57 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+#X obj 378 35 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
-#X obj 839 298 s EDOIN4;
-#X obj 859 327 r EDOOUT4;
+#X obj 778 369 s EDOIN4;
+#X obj 862 412 r EDOOUT4;
 #N canvas 386 186 445 299 ppsqok 0;
 #X floatatom 30 176 3 0 0 0 - - -, f 3;
 #X floatatom 30 217 5 0 0 0 - - -, f 5;
@@ -3270,21 +3970,20 @@
 #X obj 548 153 r seqOffset;
 #X obj 533 110 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#N canvas 180 22 619 752 multiosc1 0;
+#N canvas 13 22 619 752 multiosc1 0;
 #X obj 333 545 *~;
-#X obj 348 30 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+#X obj 348 7 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X obj 333 574 outlet~;
-#X obj 348 1 inlet;
+#X obj 348 -22 inlet;
 #X obj 151 131 vsl 15 50 0 2000 0 0 empty empty D 0 -9 0 10 -262144
 -1 -1 2450 1;
 #X obj 129 131 vsl 15 50 0 5000 0 0 empty empty X 0 -9 0 10 -262144
 -1 -1 1470 1;
 #X obj 104 131 vsl 15 50 1 4 0 0 empty empty f1 0 -9 0 10 -262144 -1
--1 1633 1;
-#X obj -139 13 inlet;
-#X obj 104 9 loadbang;
-#X msg 104 48 2, f 1;
+-1 4900 1;
+#X obj -139 -10 inlet;
+#X obj 104 -73 loadbang;
 #N canvas 802 22 600 601 FMiso 0;
 #X obj 202 474 osc~;
 #X obj 217 366 osc~;
@@ -3349,11 +4048,11 @@
 #X connect 26 0 19 0;
 #X connect 26 0 18 0;
 #X connect 27 0 13 0;
-#X restore -138 447 pd FMiso;
+#X restore -139 447 pd FMiso;
 #X floatatom -139 271 5 0 0 0 pitch - -, f 5;
 #X floatatom -124 184 5 0 0 0 f1 - -, f 5;
 #X floatatom 129 271 5 0 0 0 X - -, f 5;
-#X obj -93 45 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+#X obj -94 22 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #N canvas 720 112 211 198 ENVLP 0;
 #X obj 23 79 pack 0 0 0;
@@ -3382,7 +4081,7 @@
 #X connect 10 0 6 0;
 #X connect 11 0 3 0;
 #X restore 348 184 pd ENVLP;
-#N canvas 466 22 458 490 Triangle 0;
+#N canvas 778 22 458 490 Triangle 0;
 #X floatatom 28 57 5 0 0 0 - - -, f 5;
 #X obj 28 117 phasor~;
 #X obj 101 117 phasor~;
@@ -3549,99 +4248,108 @@
 #X obj 161 500 +~;
 #X obj 183 500 +~;
 #X obj 161 528 +~;
-#X msg 129 79 1500;
-#X msg 151 60 1000;
-#X msg 176 78 2, f 1;
+#X msg 129 -27 1500;
+#X msg 151 -46 1000;
+#X msg 176 -28 2, f 1;
+#X obj 104 78 r osc1s0;
+#X obj 129 37 r osc1s1;
+#X obj 151 58 r osc1s2;
+#X obj 176 77 r osc1s3;
+#X obj -139 230 *;
 #X connect 0 0 2 0;
-#X connect 1 0 15 0;
 #X connect 1 0 14 0;
+#X connect 1 0 13 0;
 #X connect 3 0 1 0;
-#X connect 4 0 15 1;
-#X connect 5 0 13 0;
-#X connect 6 0 12 0;
-#X connect 7 0 11 0;
+#X connect 4 0 14 1;
+#X connect 5 0 12 0;
+#X connect 6 0 11 0;
 #X connect 7 0 1 0;
-#X connect 8 0 9 0;
-#X connect 8 0 46 0;
+#X connect 7 0 51 0;
 #X connect 8 0 45 0;
-#X connect 8 0 47 0;
-#X connect 9 0 6 0;
-#X connect 10 0 22 0;
-#X connect 11 0 10 0;
-#X connect 11 0 16 0;
-#X connect 11 0 18 0;
-#X connect 11 0 17 0;
-#X connect 12 0 10 1;
-#X connect 13 0 10 2;
-#X connect 13 0 16 1;
-#X connect 13 0 18 1;
-#X connect 13 0 17 1;
-#X connect 14 0 10 3;
-#X connect 15 0 0 1;
-#X connect 16 0 23 0;
-#X connect 17 0 25 0;
-#X connect 18 0 24 0;
+#X connect 8 0 44 0;
+#X connect 8 0 46 0;
+#X connect 9 0 21 0;
+#X connect 10 0 9 0;
+#X connect 10 0 15 0;
+#X connect 10 0 17 0;
+#X connect 10 0 16 0;
+#X connect 11 0 9 1;
+#X connect 11 0 51 1;
+#X connect 12 0 9 2;
+#X connect 12 0 15 1;
+#X connect 12 0 17 1;
+#X connect 12 0 16 1;
+#X connect 13 0 9 3;
+#X connect 14 0 0 1;
+#X connect 15 0 22 0;
+#X connect 16 0 24 0;
+#X connect 17 0 23 0;
+#X connect 18 0 19 0;
 #X connect 19 0 20 0;
-#X connect 20 0 21 0;
-#X connect 21 0 30 0;
-#X connect 21 1 31 0;
-#X connect 21 2 32 0;
-#X connect 21 3 33 0;
-#X connect 22 0 42 0;
-#X connect 23 0 42 1;
-#X connect 24 0 43 0;
-#X connect 25 0 43 1;
+#X connect 20 0 29 0;
+#X connect 20 1 30 0;
+#X connect 20 2 31 0;
+#X connect 20 3 32 0;
+#X connect 21 0 41 0;
+#X connect 22 0 41 1;
+#X connect 23 0 42 0;
+#X connect 24 0 42 1;
+#X connect 25 0 21 1;
 #X connect 26 0 22 1;
 #X connect 27 0 23 1;
 #X connect 28 0 24 1;
-#X connect 29 0 25 1;
-#X connect 30 0 34 0;
+#X connect 29 0 33 0;
+#X connect 29 0 34 0;
 #X connect 30 0 35 0;
-#X connect 31 0 36 0;
+#X connect 30 0 36 0;
 #X connect 31 0 37 0;
-#X connect 32 0 38 0;
+#X connect 31 0 38 0;
 #X connect 32 0 39 0;
-#X connect 33 0 40 0;
-#X connect 33 0 41 0;
+#X connect 32 0 40 0;
+#X connect 33 0 25 0;
 #X connect 34 0 26 0;
-#X connect 35 0 27 0;
-#X connect 35 0 28 0;
-#X connect 35 0 29 0;
+#X connect 34 0 27 0;
+#X connect 34 0 28 0;
+#X connect 35 0 26 0;
 #X connect 36 0 27 0;
-#X connect 37 0 28 0;
-#X connect 37 0 29 0;
-#X connect 37 0 26 0;
+#X connect 36 0 28 0;
+#X connect 36 0 25 0;
+#X connect 37 0 27 0;
 #X connect 38 0 28 0;
-#X connect 39 0 29 0;
-#X connect 39 0 27 0;
-#X connect 39 0 26 0;
-#X connect 40 0 29 0;
-#X connect 41 0 28 0;
-#X connect 41 0 27 0;
-#X connect 41 0 26 0;
-#X connect 42 0 44 0;
-#X connect 43 0 44 1;
-#X connect 44 0 0 0;
-#X connect 45 0 5 0;
-#X connect 46 0 4 0;
-#X connect 47 0 19 0;
+#X connect 38 0 26 0;
+#X connect 38 0 25 0;
+#X connect 39 0 28 0;
+#X connect 40 0 27 0;
+#X connect 40 0 26 0;
+#X connect 40 0 25 0;
+#X connect 41 0 43 0;
+#X connect 42 0 43 1;
+#X connect 43 0 0 0;
+#X connect 44 0 5 0;
+#X connect 45 0 4 0;
+#X connect 46 0 18 0;
+#X connect 47 0 6 0;
+#X connect 48 0 5 0;
+#X connect 49 0 4 0;
+#X connect 50 0 18 0;
+#X connect 51 0 10 0;
 #X coords 0 -1 1 1 100 90 1 100 100;
-#X restore 535 370 pd multiosc1;
-#N canvas 327 32 619 752 multiosc2 0;
+#X restore 538 434 pd multiosc1;
+#N canvas 732 23 619 752 multiosc2 0;
 #X obj 333 545 *~;
-#X obj 348 -18 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 348 -68 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 333 574 outlet~;
-#X obj 348 -47 inlet;
+#X obj 348 -97 inlet;
 #X obj 151 131 vsl 15 50 0 2000 0 0 empty empty D 0 -9 0 10 -262144
 -1 -1 2082 1;
 #X obj 129 131 vsl 15 50 0 5000 0 0 empty empty X 0 -9 0 10 -262144
 -1 -1 0 1;
 #X obj 104 131 vsl 15 50 1 4 0 0 empty empty f1 0 -9 0 10 -262144 -1
 -1 1633 1;
-#X obj -139 -35 inlet;
-#X obj 104 7 loadbang;
-#X msg 104 32 2, f 1;
+#X obj -139 -85 inlet;
+#X obj 104 -43 loadbang;
+#X msg 104 -15 2, f 1;
 #N canvas 633 22 600 601 FMiso 0;
 #X obj 202 474 osc~;
 #X obj 217 366 osc~;
@@ -3710,8 +4418,8 @@
 #X floatatom -139 271 5 0 0 0 pitch - -, f 5;
 #X floatatom -124 184 5 0 0 0 f1 - -, f 5;
 #X floatatom 129 271 5 0 0 0 X - -, f 5;
-#X obj -93 -3 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
+#X obj -93 -53 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
 #N canvas 720 112 211 198 ENVLP 0;
 #X obj 23 79 pack 0 0 0;
 #X obj 23 123 line;
@@ -3906,9 +4614,14 @@
 #X obj 161 500 +~;
 #X obj 183 500 +~;
 #X obj 161 528 +~;
-#X msg 176 24 1, f 1;
-#X msg 151 45 850;
-#X msg 129 69 0;
+#X msg 176 -20 1, f 1;
+#X msg 151 -2 850;
+#X msg 129 -2 0, f 1;
+#X obj -139 87 *;
+#X obj -124 67 r osc2s0;
+#X obj 129 38 r osc2s1;
+#X obj 151 59 r osc2s2;
+#X obj 176 78 r osc2s3;
 #X connect 0 0 2 0;
 #X connect 1 0 15 0;
 #X connect 1 0 14 0;
@@ -3916,8 +4629,8 @@
 #X connect 4 0 15 1;
 #X connect 5 0 13 0;
 #X connect 6 0 12 0;
-#X connect 7 0 11 0;
 #X connect 7 0 1 0;
+#X connect 7 0 48 0;
 #X connect 8 0 9 0;
 #X connect 8 0 46 0;
 #X connect 8 0 45 0;
@@ -3982,23 +4695,28 @@
 #X connect 45 0 19 0;
 #X connect 46 0 4 0;
 #X connect 47 0 5 0;
+#X connect 48 0 11 0;
+#X connect 49 0 48 1;
+#X connect 50 0 5 0;
+#X connect 51 0 4 0;
+#X connect 52 0 19 0;
 #X coords 0 -1 1 1 100 90 1 100 100;
-#X restore 643 370 pd multiosc2;
+#X restore 646 434 pd multiosc2;
 #N canvas 236 22 619 752 multiosc3 0;
 #X obj 333 545 *~;
-#X obj 348 -14 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 348 -72 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 333 574 outlet~;
-#X obj 348 -43 inlet;
+#X obj 348 -101 inlet;
 #X obj 151 131 vsl 15 50 0 2000 0 0 empty empty D 0 -9 0 10 -262144
 -1 -1 1960 1;
 #X obj 129 131 vsl 15 50 0 5000 0 0 empty empty X 0 -9 0 10 -262144
 -1 -1 100 1;
 #X obj 104 131 vsl 15 50 1 4 0 0 empty empty f1 0 -9 0 10 -262144 -1
 -1 1633 1;
-#X obj -139 -31 inlet;
-#X obj 104 8 loadbang;
-#X msg 104 76 2;
+#X obj -139 -89 inlet;
+#X obj 104 -50 loadbang;
+#X msg 104 18 2;
 #N canvas 633 22 600 601 FMiso 0;
 #X obj 202 474 osc~;
 #X obj 217 366 osc~;
@@ -4067,8 +4785,8 @@
 #X floatatom -139 271 5 0 0 0 pitch - -, f 5;
 #X floatatom -124 184 5 0 0 0 f1 - -, f 5;
 #X floatatom 129 271 5 0 0 0 X - -, f 5;
-#X obj -93 1 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
+#X obj -93 -57 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
 #N canvas 720 112 211 198 ENVLP 0;
 #X obj 23 79 pack 0 0 0;
 #X obj 23 123 line;
@@ -4263,9 +4981,14 @@
 #X obj 161 500 +~;
 #X obj 183 500 +~;
 #X obj 161 528 +~;
-#X msg 151 42 800;
-#X msg 176 25 1;
-#X msg 129 59 102;
+#X msg 151 -16 800;
+#X msg 176 -33 1;
+#X msg 129 1 102;
+#X obj -124 77 r osc3s0;
+#X obj 129 42 r osc3s1;
+#X obj 151 62 r osc3s2;
+#X obj 176 81 r osc3s3;
+#X obj -139 97 /;
 #X connect 0 0 2 0;
 #X connect 1 0 15 0;
 #X connect 1 0 14 0;
@@ -4273,8 +4996,8 @@
 #X connect 4 0 15 1;
 #X connect 5 0 13 0;
 #X connect 6 0 12 0;
-#X connect 7 0 11 0;
 #X connect 7 0 1 0;
+#X connect 7 0 52 0;
 #X connect 8 0 9 0;
 #X connect 8 0 45 0;
 #X connect 8 0 46 0;
@@ -4339,23 +5062,28 @@
 #X connect 45 0 4 0;
 #X connect 46 0 19 0;
 #X connect 47 0 5 0;
+#X connect 48 0 52 1;
+#X connect 49 0 5 0;
+#X connect 50 0 4 0;
+#X connect 51 0 19 0;
+#X connect 52 0 11 0;
 #X coords 0 -1 1 1 100 90 1 100 100;
-#X restore 751 370 pd multiosc3;
+#X restore 754 434 pd multiosc3;
 #N canvas 329 22 619 752 multiosc4 0;
 #X obj 333 545 *~;
-#X obj 348 -11 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 348 -82 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 333 574 outlet~;
-#X obj 348 -40 inlet;
+#X obj 348 -111 inlet;
 #X obj 151 131 vsl 15 50 0 2000 0 0 empty empty D 0 -9 0 10 -262144
 -1 -1 4410 1;
 #X obj 129 131 vsl 15 50 0 5000 0 0 empty empty X 0 -9 0 10 -262144
 -1 -1 3920 1;
 #X obj 104 131 vsl 15 50 1 4 0 0 empty empty f1 0 -9 0 10 -262144 -1
 -1 1633 1;
-#X obj -139 -28 inlet;
-#X obj 104 10 loadbang;
-#X msg 104 78 2;
+#X obj -139 -99 inlet;
+#X obj 104 -61 loadbang;
+#X msg 104 7 2;
 #N canvas 633 22 600 601 FMiso 0;
 #X obj 202 474 osc~;
 #X obj 217 366 osc~;
@@ -4424,8 +5152,8 @@
 #X floatatom -139 271 5 0 0 0 pitch - -, f 5;
 #X floatatom -124 184 5 0 0 0 f1 - -, f 5;
 #X floatatom 129 271 5 0 0 0 X - -, f 5;
-#X obj -93 4 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
+#X obj -93 -67 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
 #N canvas 720 112 211 198 ENVLP 0;
 #X obj 23 79 pack 0 0 0;
 #X obj 23 123 line;
@@ -4620,9 +5348,14 @@
 #X obj 161 500 +~;
 #X obj 183 500 +~;
 #X obj 161 528 +~;
-#X msg 151 44 1800;
-#X msg 176 27 2;
-#X msg 129 61 4000;
+#X msg 151 -27 1800;
+#X msg 176 -44 2;
+#X msg 129 -10 4000;
+#X obj 129 42 r osc4s1;
+#X obj 151 62 r osc4s2;
+#X obj 176 81 r osc4s3;
+#X obj -139 97 /;
+#X obj -124 77 r osc4s0;
 #X connect 0 0 2 0;
 #X connect 1 0 15 0;
 #X connect 1 0 14 0;
@@ -4630,8 +5363,8 @@
 #X connect 4 0 15 1;
 #X connect 5 0 13 0;
 #X connect 6 0 12 0;
-#X connect 7 0 11 0;
 #X connect 7 0 1 0;
+#X connect 7 0 51 0;
 #X connect 8 0 9 0;
 #X connect 8 0 45 0;
 #X connect 8 0 46 0;
@@ -4696,8 +5429,13 @@
 #X connect 45 0 4 0;
 #X connect 46 0 19 0;
 #X connect 47 0 5 0;
+#X connect 48 0 5 0;
+#X connect 49 0 4 0;
+#X connect 50 0 19 0;
+#X connect 51 0 11 0;
+#X connect 52 0 51 1;
 #X coords 0 -1 1 1 100 90 1 100 100;
-#X restore 859 370 pd multiosc4;
+#X restore 862 434 pd multiosc4;
 #N canvas 190 296 445 299 ppsqok 0;
 #X floatatom 30 176 3 0 0 0 - - -, f 3;
 #X floatatom 30 217 5 0 0 0 - - -, f 5;
@@ -4763,11 +5501,11 @@
 #X connect 19 10 20 0;
 #X connect 20 0 18 1;
 #X connect 21 0 2 0;
-#X restore 688 183 pd ppsqok;
-#X obj 688 225 +;
-#X obj 739 161 r metapartition;
-#X obj 703 205 r seqOffset;
-#X obj 688 162 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X restore 689 205 pd ppsqok;
+#X obj 689 247 +;
+#X obj 740 183 r metapartition;
+#X obj 704 227 r seqOffset;
+#X obj 689 184 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #N canvas 190 296 445 299 ppsqok 0;
 #X floatatom 30 176 3 0 0 0 - - -, f 3;
@@ -4834,16 +5572,12 @@
 #X connect 19 10 20 0;
 #X connect 20 0 18 1;
 #X connect 21 0 2 0;
-#X restore 839 234 pd ppsqok;
-#X obj 839 276 +;
-#X obj 890 212 r metapartition;
-#X obj 854 256 r seqOffset;
-#X obj 839 213 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X restore 778 305 pd ppsqok;
+#X obj 778 347 +;
+#X obj 829 283 r metapartition;
+#X obj 793 327 r seqOffset;
+#X obj 778 284 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 859 349 / 4;
-#X obj 751 349 / 2;
-#X obj 535 349 / 1;
-#X obj 643 349 * 2;
 #N canvas 102 22 1031 710 setup 0;
 #X obj 28 242 metro;
 #X obj 28 202 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
@@ -5046,8 +5780,8 @@
 #X connect 77 0 37 0;
 #X connect 78 0 73 0;
 #X coords 0 -1 1 1 85 60 1 100 100;
-#X restore 732 -9 pd setup;
-#N canvas 205 57 505 405 clckdvdr 0;
+#X restore 732 -31 pd setup;
+#N canvas 363 62 505 405 clckdvdr 0;
 #X obj 103 269 outlet;
 #X obj 125 249 outlet;
 #X obj 147 227 outlet;
@@ -5060,7 +5794,7 @@
 #X floatatom 156 -12 5 0 0 0 - - -, f 5;
 #X obj 125 -51 + 1;
 #X obj 156 8 - 1;
-#X obj 156 54 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 156 54 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 156 31 >=;
 #X obj 156 74 spigot;
@@ -5079,7 +5813,7 @@
 #X msg 198 -58 3;
 #X floatatom 240 -12 5 0 0 0 - - -, f 5;
 #X obj 240 8 - 1;
-#X obj 240 54 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 240 54 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 240 31 >=;
 #X obj 240 74 spigot;
@@ -5087,7 +5821,7 @@
 -1 -1;
 #X floatatom 282 -12 5 0 0 0 - - -, f 5;
 #X obj 282 8 - 1;
-#X obj 282 54 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 282 54 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 282 31 >=;
 #X obj 282 74 spigot;
@@ -5095,7 +5829,7 @@
 -1 -1;
 #X floatatom 324 -12 5 0 0 0 - - -, f 5;
 #X obj 324 8 - 1;
-#X obj 324 54 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 324 54 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 324 31 >=;
 #X obj 324 74 spigot;
@@ -5226,7 +5960,7 @@
 #X connect 69 0 48 0;
 #X coords 0 -1 1 1 180 25 2 100 100;
 #X restore 21 77 pd clckdvdr;
-#N canvas 0 22 396 432 MixMaster 0;
+#N canvas 104 256 396 432 MixMaster 0;
 #X obj 94 394 dac~;
 #X obj 94 366 *~;
 #X floatatom 306 352 5 0 0 0 - - -, f 5;
@@ -5263,9 +5997,11 @@
 #X msg 19 73 start;
 #X msg 28 115 stop;
 #X obj 11 10 r setuporderN1;
-#X obj 68 116 inlet~;
+#X obj 68 115 inlet~;
 #X obj 19 52 r setuporderN4;
 #X obj 28 93 r setdownorderN2;
+#X obj 140 56 inlet;
+#X obj 203 98 inlet;
 #X connect 1 0 0 0;
 #X connect 2 0 0 0;
 #X connect 3 0 0 0;
@@ -5274,6 +6010,8 @@
 #X connect 5 0 0 0;
 #X connect 6 0 2 0;
 #X connect 7 0 3 0;
+#X connect 8 0 2 0;
+#X connect 9 0 3 0;
 #X restore 132 394 pd magneto;
 #X obj 94 294 r~ MOCS1;
 #X obj 144 294 r~ MOCS2;
@@ -5315,55 +6053,55 @@
 #X connect 29 0 18 0;
 #X coords 0 -1 1 1 245 170 1 100 100;
 #X restore 269 287 pd MixMaster;
-#X obj 535 464 s~ MOCS1;
-#X obj 643 464 s~ MOCS2;
-#X obj 751 464 s~ MOCS3;
-#X obj 859 464 s~ MOCS4;
-#N canvas 554 22 677 752 pbaClock 0;
-#X obj 72 806 outlet;
-#X obj 72 152 r CPR1;
-#X obj 105 128 tgl 15 0 empty empty 1 4 -7 0 10 -262144 -1 -1 0 1;
-#X obj 72 173 spigot;
-#X obj 124 128 tgl 15 0 empty empty 2 4 -7 0 10 -262144 -1 -1 0 1;
-#X obj 91 214 spigot;
-#X obj 91 193 r CPR2;
-#X obj 143 128 tgl 15 0 empty empty 3 4 -7 0 10 -262144 -1 -1 0 1;
-#X obj 110 255 spigot;
-#X obj 110 234 r CPR3;
-#X obj 162 128 tgl 15 0 empty empty 4 4 -7 0 10 -262144 -1 -1 0 1;
-#X obj 129 296 spigot;
-#X obj 129 275 r CPR4;
-#X obj 181 128 tgl 15 0 empty empty 5 4 -7 0 10 -262144 -1 -1 0 1;
-#X obj 148 337 spigot;
-#X obj 200 128 tgl 15 0 empty empty 6 4 -7 0 10 -262144 -1 -1 0 1;
-#X obj 167 378 spigot;
-#X obj 219 128 tgl 15 0 empty empty 7 4 -7 0 10 -262144 -1 -1 0 1;
-#X obj 186 419 spigot;
-#X obj 238 128 tgl 15 0 empty empty 8 4 -7 0 10 -262144 -1 -1 1 1;
-#X obj 205 460 spigot;
-#X obj 148 316 r CPR5;
-#X obj 167 357 r CPR6;
-#X obj 186 398 r CPR7;
-#X obj 205 439 r CPR8;
-#X obj 257 128 tgl 15 0 empty empty 9 4 -7 0 10 -262144 -1 -1 0 1;
-#X obj 224 502 spigot;
-#X obj 276 128 tgl 15 0 empty empty 10 4 -7 0 10 -262144 -1 -1 0 1
+#X obj 538 528 s~ MOCS1;
+#X obj 646 528 s~ MOCS2;
+#X obj 754 528 s~ MOCS3;
+#X obj 862 528 s~ MOCS4;
+#N canvas 107 22 976 752 pbaClock 0;
+#X obj 72 828 outlet;
+#X obj 72 174 r CPR1;
+#X obj 105 150 tgl 15 0 empty empty 1 4 -7 0 10 -262144 -1 -1 0 1;
+#X obj 72 195 spigot;
+#X obj 124 150 tgl 15 0 empty empty 2 4 -7 0 10 -262144 -1 -1 0 1;
+#X obj 91 236 spigot;
+#X obj 91 215 r CPR2;
+#X obj 143 150 tgl 15 0 empty empty 3 4 -7 0 10 -262144 -1 -1 1 1;
+#X obj 110 277 spigot;
+#X obj 110 256 r CPR3;
+#X obj 162 150 tgl 15 0 empty empty 4 4 -7 0 10 -262144 -1 -1 1 1;
+#X obj 129 318 spigot;
+#X obj 129 297 r CPR4;
+#X obj 181 150 tgl 15 0 empty empty 5 4 -7 0 10 -262144 -1 -1 0 1;
+#X obj 148 359 spigot;
+#X obj 200 150 tgl 15 0 empty empty 6 4 -7 0 10 -262144 -1 -1 0 1;
+#X obj 167 400 spigot;
+#X obj 219 150 tgl 15 0 empty empty 7 4 -7 0 10 -262144 -1 -1 0 1;
+#X obj 186 441 spigot;
+#X obj 238 150 tgl 15 0 empty empty 8 4 -7 0 10 -262144 -1 -1 0 1;
+#X obj 205 482 spigot;
+#X obj 148 338 r CPR5;
+#X obj 167 379 r CPR6;
+#X obj 186 420 r CPR7;
+#X obj 205 461 r CPR8;
+#X obj 257 150 tgl 15 0 empty empty 9 4 -7 0 10 -262144 -1 -1 0 1;
+#X obj 224 524 spigot;
+#X obj 276 150 tgl 15 0 empty empty 10 4 -7 0 10 -262144 -1 -1 0 1
 ;
-#X obj 243 543 spigot;
-#X obj 295 128 tgl 15 0 empty empty 12 4 -7 0 10 -262144 -1 -1 0 1
+#X obj 243 565 spigot;
+#X obj 295 150 tgl 15 0 empty empty 12 4 -7 0 10 -262144 -1 -1 0 1
 ;
-#X obj 262 584 spigot;
-#X obj 314 128 tgl 15 0 empty empty 16 4 -7 0 10 -262144 -1 -1 0 1
+#X obj 262 606 spigot;
+#X obj 314 150 tgl 15 0 empty empty 16 4 -7 0 10 -262144 -1 -1 0 1
 ;
-#X obj 281 625 spigot;
-#X obj 224 481 r CPR9;
-#X obj 243 522 r CPR10;
-#X obj 262 563 r CPR12;
-#X obj 281 604 r CPR16;
-#X obj 414 48 r normalBeat;
-#X obj 494 48 r panicBeat;
-#X obj 414 111 unpack 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
-#N canvas 13 22 766 605 pnba 0;
+#X obj 281 647 spigot;
+#X obj 224 503 r CPR9;
+#X obj 243 544 r CPR10;
+#X obj 262 585 r CPR12;
+#X obj 281 626 r CPR16;
+#X obj 661 76 r normalBeat;
+#X obj 741 76 r panicBeat;
+#X obj 414 133 unpack 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
+#N canvas 395 22 766 605 pnba 0;
 #X msg 102 145 \$1;
 #X msg 233 316 1, f 1;
 #X obj 14 430 pack 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0, f 37;
@@ -5502,7 +6240,7 @@
 #X connect 34 0 30 0;
 #X connect 35 0 25 0;
 #X connect 36 0 25 0;
-#X restore 414 69 pd pnba;
+#X restore 661 97 pd pnba;
 #N canvas 13 22 842 637 ppba 0;
 #X msg 102 145 \$1;
 #X msg 233 316 1, f 1;
@@ -5642,8 +6380,8 @@
 #X connect 34 0 6 0;
 #X connect 35 0 7 0;
 #X connect 36 0 30 0;
-#X restore 494 69 pd ppba;
-#N canvas 13 22 842 637 pwba 0;
+#X restore 741 97 pd ppba;
+#N canvas 156 292 842 637 pwba 0;
 #X msg 102 145 \$1;
 #X msg 233 316 1, f 1;
 #X obj 14 430 pack 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0, f 37;
@@ -5782,24 +6520,624 @@
 #X connect 34 0 6 0;
 #X connect 35 0 7 0;
 #X connect 36 0 30 0;
-#X restore 568 69 pd pwba;
-#X obj 568 48 r weirdBeat;
-#X obj 333 128 tgl 15 0 empty empty CM1 0 -7 0 10 -262144 -1 -1 0 1
+#X restore 815 97 pd pwba;
+#X obj 815 76 r weirdBeat;
+#X obj 333 150 tgl 15 0 empty empty CM1 0 -7 0 10 -262144 -1 -1 0 1
 ;
-#X obj 352 128 tgl 15 0 empty empty CM2 0 -7 0 10 -262144 -1 -1 0 1
+#X obj 352 150 tgl 15 0 empty empty CM2 0 -7 0 10 -262144 -1 -1 0 1
 ;
-#X obj 371 128 tgl 15 0 empty empty CM3 0 -7 0 10 -262144 -1 -1 0 1
+#X obj 371 150 tgl 15 0 empty empty CM3 0 -7 0 10 -262144 -1 -1 0 1
 ;
-#X obj 390 128 tgl 15 0 empty empty CM4 0 -7 0 10 -262144 -1 -1 0 1
+#X obj 390 150 tgl 15 0 empty empty CM4 0 -7 0 10 -262144 -1 -1 0 1
 ;
-#X obj 300 666 spigot;
-#X obj 300 645 r CM1;
-#X obj 319 707 spigot;
-#X obj 319 686 r CM2;
-#X obj 338 748 spigot;
-#X obj 357 789 spigot;
-#X obj 338 727 r CM3;
-#X obj 357 768 r CM4;
+#X obj 300 688 spigot;
+#X obj 300 667 r CM1;
+#X obj 319 729 spigot;
+#X obj 319 708 r CM2;
+#X obj 338 770 spigot;
+#X obj 357 811 spigot;
+#X obj 338 749 r CM3;
+#X obj 357 790 r CM4;
+#X obj 414 76 r mnormalBeat;
+#X obj 500 76 r mpanicBeat;
+#X obj 581 76 r mweirdBeat;
+#N canvas 363 103 240 412 anticolision 0;
+#X obj 9 49 spigot;
+#X obj 42 -3 == 1;
+#X obj 42 -90 pack 0 0 0;
+#X obj 42 -46 line;
+#X msg 42 -68 \$1 \, \$2 \$3;
+#X floatatom 99 -110 5 0 0 0 - - -, f 5;
+#X obj 99 -261 vsl 15 128 50 100 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X msg 42 -113 0;
+#X msg 70 -113 1;
+#X floatatom 42 -23 5 0 0 0 - - -, f 5;
+#X obj 42 26 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
+;
+#X obj 9 -174 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 41 -154 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 9 -139 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 9 79 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X connect 0 0 14 0;
+#X connect 1 0 10 0;
+#X connect 2 0 4 0;
+#X connect 3 0 9 0;
+#X connect 4 0 3 0;
+#X connect 5 0 2 2;
+#X connect 6 0 5 0;
+#X connect 7 0 2 0;
+#X connect 8 0 2 1;
+#X connect 9 0 1 0;
+#X connect 10 0 0 1;
+#X connect 11 0 13 0;
+#X connect 12 0 13 0;
+#X connect 12 0 7 0;
+#X connect 13 0 0 0;
+#X restore 87 908 pd anticolision;
+#X text 184 909 <-don't mind this or do \, whatever....;
+#X floatatom 110 118 3 0 25 2 mnb0 - tmnba0, f 3;
+#X floatatom 138 118 3 0 25 2 mnb1 - tmnba1, f 3;
+#X floatatom 166 118 3 0 25 2 mnb2 - tmnba2, f 3;
+#N canvas 37 22 858 752 mnba 0;
+#X msg 102 145 \$1;
+#X msg 233 316 1, f 1;
+#X obj 14 430 pack 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0, f 37;
+#X msg 402 145 \$1;
+#X obj 40 6 inlet;
+#X obj 14 451 outlet;
+#X floatatom 102 125 5 0 0 0 - - -, f 5;
+#X floatatom 402 125 5 0 0 0 - - -, f 5;
+#X msg 248 316 1, f 1;
+#X msg 263 316 1, f 1;
+#X msg 278 316 1, f 1;
+#X msg 293 316 1, f 1;
+#X msg 308 316 1, f 1;
+#X msg 323 316 1, f 1;
+#X msg 338 316 1, f 1;
+#X msg 353 316 1, f 1;
+#X msg 368 316 1, f 1;
+#X msg 383 316 1, f 1;
+#X msg 398 316 1, f 1;
+#X msg 413 316 1, f 1;
+#X msg 428 316 1, f 1;
+#X msg 443 316 1, f 1;
+#X msg 458 316 1, f 1;
+#X obj 80 110 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X msg 67 316 0, f 1;
+#X obj 40 70 t b b;
+#X obj 102 167 select 1 2 3 4 5 6 7 8 9 10 12 16 20 21 22 23 25;
+#X obj 402 167 select 1 2 3 4 5 6 7 8 9 10 12 16 20 21 22 23 25;
+#X msg 704 145 \$1;
+#X floatatom 704 125 5 0 0 0 - - -, f 5;
+#X obj 704 167 select 1 2 3 4 5 6 7 8 9 10 12 16 20 21 22 23 25;
+#X obj 102 101 r tmnba0;
+#X obj 402 101 r tmnba1;
+#X obj 704 101 r tmnba2;
+#X obj 40 38 t b b;
+#X obj 197 23 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 197 118 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X floatatom 102 507 5 0 0 0 - - -, f 5;
+#X floatatom 402 507 5 0 0 0 - - -, f 5;
+#X floatatom 704 507 5 0 0 0 - - -, f 5;
+#X obj 102 568 s stmnba0;
+#X obj 102 525 spigot;
+#X obj 803 510 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 402 525 spigot;
+#X obj 704 525 spigot;
+#X floatatom 102 546 5 0 0 0 - - -, f 5;
+#X floatatom 402 546 5 0 0 0 - - -, f 5;
+#X floatatom 704 546 5 0 0 0 - - -, f 5;
+#X obj 781 492 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 402 566 s stmnba1;
+#X obj 704 565 s stmnba2;
+#X obj 803 469 r msuscmd2;
+#X obj 781 452 r msuscmd3;
+#X connect 0 0 26 0;
+#X connect 1 0 2 0;
+#X connect 2 0 5 0;
+#X connect 3 0 27 0;
+#X connect 4 0 34 0;
+#X connect 6 0 0 0;
+#X connect 6 0 37 0;
+#X connect 7 0 3 0;
+#X connect 7 0 38 0;
+#X connect 8 0 2 1;
+#X connect 9 0 2 2;
+#X connect 10 0 2 3;
+#X connect 11 0 2 4;
+#X connect 12 0 2 5;
+#X connect 13 0 2 6;
+#X connect 14 0 2 7;
+#X connect 15 0 2 8;
+#X connect 16 0 2 9;
+#X connect 17 0 2 10;
+#X connect 18 0 2 11;
+#X connect 19 0 2 12;
+#X connect 20 0 2 13;
+#X connect 21 0 2 14;
+#X connect 22 0 2 15;
+#X connect 23 0 6 0;
+#X connect 23 0 7 0;
+#X connect 23 0 29 0;
+#X connect 24 0 2 0;
+#X connect 24 0 2 1;
+#X connect 24 0 2 2;
+#X connect 24 0 2 3;
+#X connect 24 0 2 4;
+#X connect 24 0 2 5;
+#X connect 24 0 2 6;
+#X connect 24 0 2 7;
+#X connect 24 0 2 8;
+#X connect 24 0 2 9;
+#X connect 24 0 2 10;
+#X connect 24 0 2 11;
+#X connect 24 0 2 12;
+#X connect 24 0 2 13;
+#X connect 24 0 2 14;
+#X connect 24 0 2 15;
+#X connect 25 0 23 0;
+#X connect 25 1 24 0;
+#X connect 26 0 1 0;
+#X connect 26 1 8 0;
+#X connect 26 2 9 0;
+#X connect 26 3 10 0;
+#X connect 26 4 11 0;
+#X connect 26 5 12 0;
+#X connect 26 6 13 0;
+#X connect 26 7 14 0;
+#X connect 26 8 15 0;
+#X connect 26 9 16 0;
+#X connect 26 10 17 0;
+#X connect 26 11 18 0;
+#X connect 26 12 19 0;
+#X connect 26 13 20 0;
+#X connect 26 14 21 0;
+#X connect 26 15 22 0;
+#X connect 27 0 1 0;
+#X connect 27 1 8 0;
+#X connect 27 2 9 0;
+#X connect 27 3 10 0;
+#X connect 27 4 11 0;
+#X connect 27 5 12 0;
+#X connect 27 6 13 0;
+#X connect 27 7 14 0;
+#X connect 27 8 15 0;
+#X connect 27 9 16 0;
+#X connect 27 10 17 0;
+#X connect 27 11 18 0;
+#X connect 27 12 19 0;
+#X connect 27 13 20 0;
+#X connect 27 14 21 0;
+#X connect 27 15 22 0;
+#X connect 28 0 30 0;
+#X connect 29 0 28 0;
+#X connect 29 0 39 0;
+#X connect 30 0 1 0;
+#X connect 30 1 8 0;
+#X connect 30 2 9 0;
+#X connect 30 3 10 0;
+#X connect 30 4 11 0;
+#X connect 30 5 12 0;
+#X connect 30 6 13 0;
+#X connect 30 7 14 0;
+#X connect 30 8 15 0;
+#X connect 30 9 16 0;
+#X connect 30 10 17 0;
+#X connect 30 11 18 0;
+#X connect 30 12 19 0;
+#X connect 30 13 20 0;
+#X connect 30 14 21 0;
+#X connect 30 15 22 0;
+#X connect 31 0 6 0;
+#X connect 31 0 36 0;
+#X connect 32 0 7 0;
+#X connect 32 0 36 0;
+#X connect 33 0 29 0;
+#X connect 33 0 36 0;
+#X connect 34 0 25 0;
+#X connect 34 1 25 0;
+#X connect 35 0 34 0;
+#X connect 36 0 35 0;
+#X connect 37 0 41 0;
+#X connect 38 0 43 0;
+#X connect 39 0 44 0;
+#X connect 41 0 45 0;
+#X connect 42 0 41 1;
+#X connect 42 0 43 1;
+#X connect 42 0 44 1;
+#X connect 43 0 46 0;
+#X connect 44 0 47 0;
+#X connect 45 0 40 0;
+#X connect 46 0 49 0;
+#X connect 47 0 50 0;
+#X connect 48 0 39 0;
+#X connect 48 0 38 0;
+#X connect 48 0 37 0;
+#X connect 51 0 42 0;
+#X connect 52 0 48 0;
+#X restore 414 97 pd mnba;
+#X floatatom 218 118 3 0 25 2 mpb0 - tmpba0, f 3;
+#X floatatom 246 118 3 0 25 2 mpb1 - tmpba1, f 3;
+#X floatatom 274 118 3 0 25 2 mpb2 - tmpba2, f 3;
+#X floatatom 324 118 3 0 25 2 mwb0 - tmwba0, f 3;
+#X floatatom 352 118 3 0 25 2 mwb1 - tmwba1, f 3;
+#X floatatom 380 118 3 0 25 2 mwb2 - tmwba2, f 3;
+#N canvas 363 22 858 752 mpba 0;
+#X msg 102 145 \$1;
+#X msg 233 316 1, f 1;
+#X obj 14 430 pack 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0, f 37;
+#X msg 402 145 \$1;
+#X obj 40 6 inlet;
+#X obj 14 451 outlet;
+#X floatatom 102 125 5 0 0 0 - - -, f 5;
+#X floatatom 402 125 5 0 0 0 - - -, f 5;
+#X msg 248 316 1, f 1;
+#X msg 263 316 1, f 1;
+#X msg 278 316 1, f 1;
+#X msg 293 316 1, f 1;
+#X msg 308 316 1, f 1;
+#X msg 323 316 1, f 1;
+#X msg 338 316 1, f 1;
+#X msg 353 316 1, f 1;
+#X msg 368 316 1, f 1;
+#X msg 383 316 1, f 1;
+#X msg 398 316 1, f 1;
+#X msg 413 316 1, f 1;
+#X msg 428 316 1, f 1;
+#X msg 443 316 1, f 1;
+#X msg 458 316 1, f 1;
+#X obj 80 110 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X msg 67 316 0, f 1;
+#X obj 40 70 t b b;
+#X obj 102 167 select 1 2 3 4 5 6 7 8 9 10 12 16 20 21 22 23 25;
+#X obj 402 167 select 1 2 3 4 5 6 7 8 9 10 12 16 20 21 22 23 25;
+#X msg 704 145 \$1;
+#X floatatom 704 125 5 0 0 0 - - -, f 5;
+#X obj 704 167 select 1 2 3 4 5 6 7 8 9 10 12 16 20 21 22 23 25;
+#X obj 40 38 t b b;
+#X obj 197 23 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 197 118 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X floatatom 102 507 5 0 0 0 - - -, f 5;
+#X floatatom 402 507 5 0 0 0 - - -, f 5;
+#X floatatom 704 507 5 0 0 0 - - -, f 5;
+#X obj 102 525 spigot;
+#X obj 803 510 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 402 525 spigot;
+#X obj 704 525 spigot;
+#X floatatom 102 546 5 0 0 0 - - -, f 5;
+#X floatatom 402 546 5 0 0 0 - - -, f 5;
+#X floatatom 704 546 5 0 0 0 - - -, f 5;
+#X obj 781 492 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 102 101 r tmpba0;
+#X obj 402 101 r tmpba1;
+#X obj 704 101 r tmpba2;
+#X obj 102 568 s stmpba0;
+#X obj 402 566 s stmpba1;
+#X obj 704 565 s stmpba2;
+#X obj 803 469 r msuscmd2;
+#X obj 781 452 r msuscmd3;
+#X connect 0 0 26 0;
+#X connect 1 0 2 0;
+#X connect 2 0 5 0;
+#X connect 3 0 27 0;
+#X connect 4 0 31 0;
+#X connect 6 0 0 0;
+#X connect 6 0 34 0;
+#X connect 7 0 3 0;
+#X connect 7 0 35 0;
+#X connect 8 0 2 1;
+#X connect 9 0 2 2;
+#X connect 10 0 2 3;
+#X connect 11 0 2 4;
+#X connect 12 0 2 5;
+#X connect 13 0 2 6;
+#X connect 14 0 2 7;
+#X connect 15 0 2 8;
+#X connect 16 0 2 9;
+#X connect 17 0 2 10;
+#X connect 18 0 2 11;
+#X connect 19 0 2 12;
+#X connect 20 0 2 13;
+#X connect 21 0 2 14;
+#X connect 22 0 2 15;
+#X connect 23 0 6 0;
+#X connect 23 0 7 0;
+#X connect 23 0 29 0;
+#X connect 24 0 2 0;
+#X connect 24 0 2 1;
+#X connect 24 0 2 2;
+#X connect 24 0 2 3;
+#X connect 24 0 2 4;
+#X connect 24 0 2 5;
+#X connect 24 0 2 6;
+#X connect 24 0 2 7;
+#X connect 24 0 2 8;
+#X connect 24 0 2 9;
+#X connect 24 0 2 10;
+#X connect 24 0 2 11;
+#X connect 24 0 2 12;
+#X connect 24 0 2 13;
+#X connect 24 0 2 14;
+#X connect 24 0 2 15;
+#X connect 25 0 23 0;
+#X connect 25 1 24 0;
+#X connect 26 0 1 0;
+#X connect 26 1 8 0;
+#X connect 26 2 9 0;
+#X connect 26 3 10 0;
+#X connect 26 4 11 0;
+#X connect 26 5 12 0;
+#X connect 26 6 13 0;
+#X connect 26 7 14 0;
+#X connect 26 8 15 0;
+#X connect 26 9 16 0;
+#X connect 26 10 17 0;
+#X connect 26 11 18 0;
+#X connect 26 12 19 0;
+#X connect 26 13 20 0;
+#X connect 26 14 21 0;
+#X connect 26 15 22 0;
+#X connect 27 0 1 0;
+#X connect 27 1 8 0;
+#X connect 27 2 9 0;
+#X connect 27 3 10 0;
+#X connect 27 4 11 0;
+#X connect 27 5 12 0;
+#X connect 27 6 13 0;
+#X connect 27 7 14 0;
+#X connect 27 8 15 0;
+#X connect 27 9 16 0;
+#X connect 27 10 17 0;
+#X connect 27 11 18 0;
+#X connect 27 12 19 0;
+#X connect 27 13 20 0;
+#X connect 27 14 21 0;
+#X connect 27 15 22 0;
+#X connect 28 0 30 0;
+#X connect 29 0 28 0;
+#X connect 29 0 36 0;
+#X connect 30 0 1 0;
+#X connect 30 1 8 0;
+#X connect 30 2 9 0;
+#X connect 30 3 10 0;
+#X connect 30 4 11 0;
+#X connect 30 5 12 0;
+#X connect 30 6 13 0;
+#X connect 30 7 14 0;
+#X connect 30 8 15 0;
+#X connect 30 9 16 0;
+#X connect 30 10 17 0;
+#X connect 30 11 18 0;
+#X connect 30 12 19 0;
+#X connect 30 13 20 0;
+#X connect 30 14 21 0;
+#X connect 30 15 22 0;
+#X connect 31 0 25 0;
+#X connect 31 1 25 0;
+#X connect 32 0 31 0;
+#X connect 33 0 32 0;
+#X connect 34 0 37 0;
+#X connect 35 0 39 0;
+#X connect 36 0 40 0;
+#X connect 37 0 41 0;
+#X connect 38 0 37 1;
+#X connect 38 0 39 1;
+#X connect 38 0 40 1;
+#X connect 39 0 42 0;
+#X connect 40 0 43 0;
+#X connect 41 0 48 0;
+#X connect 42 0 49 0;
+#X connect 43 0 50 0;
+#X connect 44 0 36 0;
+#X connect 44 0 35 0;
+#X connect 44 0 34 0;
+#X connect 45 0 6 0;
+#X connect 45 0 33 0;
+#X connect 46 0 7 0;
+#X connect 46 0 33 0;
+#X connect 47 0 29 0;
+#X connect 47 0 33 0;
+#X connect 51 0 38 0;
+#X connect 52 0 44 0;
+#X restore 500 97 pd mpba;
+#N canvas 363 22 858 752 mwba 0;
+#X msg 102 145 \$1;
+#X msg 233 316 1, f 1;
+#X obj 14 430 pack 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0, f 37;
+#X msg 402 145 \$1;
+#X obj 40 6 inlet;
+#X obj 14 451 outlet;
+#X floatatom 102 125 5 0 0 0 - - -, f 5;
+#X floatatom 402 125 5 0 0 0 - - -, f 5;
+#X msg 248 316 1, f 1;
+#X msg 263 316 1, f 1;
+#X msg 278 316 1, f 1;
+#X msg 293 316 1, f 1;
+#X msg 308 316 1, f 1;
+#X msg 323 316 1, f 1;
+#X msg 338 316 1, f 1;
+#X msg 353 316 1, f 1;
+#X msg 368 316 1, f 1;
+#X msg 383 316 1, f 1;
+#X msg 398 316 1, f 1;
+#X msg 413 316 1, f 1;
+#X msg 428 316 1, f 1;
+#X msg 443 316 1, f 1;
+#X msg 458 316 1, f 1;
+#X obj 80 110 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X msg 67 316 0, f 1;
+#X obj 40 70 t b b;
+#X obj 102 167 select 1 2 3 4 5 6 7 8 9 10 12 16 20 21 22 23 25;
+#X obj 402 167 select 1 2 3 4 5 6 7 8 9 10 12 16 20 21 22 23 25;
+#X msg 704 145 \$1;
+#X floatatom 704 125 5 0 0 0 - - -, f 5;
+#X obj 704 167 select 1 2 3 4 5 6 7 8 9 10 12 16 20 21 22 23 25;
+#X obj 40 38 t b b;
+#X obj 197 23 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 197 118 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X floatatom 102 507 5 0 0 0 - - -, f 5;
+#X floatatom 402 507 5 0 0 0 - - -, f 5;
+#X floatatom 704 507 5 0 0 0 - - -, f 5;
+#X obj 102 525 spigot;
+#X obj 803 510 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 402 525 spigot;
+#X obj 704 525 spigot;
+#X floatatom 102 546 5 0 0 0 - - -, f 5;
+#X floatatom 402 546 5 0 0 0 - - -, f 5;
+#X floatatom 704 546 5 0 0 0 - - -, f 5;
+#X obj 781 492 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 102 101 r tmwba0;
+#X obj 402 101 r tmwba1;
+#X obj 704 101 r tmwba2;
+#X obj 102 568 s stmwba0;
+#X obj 402 566 s stmwba1;
+#X obj 704 565 s stmwba2;
+#X obj 803 469 r msuscmd2;
+#X obj 781 452 r msuscmd3;
+#X connect 0 0 26 0;
+#X connect 1 0 2 0;
+#X connect 2 0 5 0;
+#X connect 3 0 27 0;
+#X connect 4 0 31 0;
+#X connect 6 0 0 0;
+#X connect 6 0 34 0;
+#X connect 7 0 3 0;
+#X connect 7 0 35 0;
+#X connect 8 0 2 1;
+#X connect 9 0 2 2;
+#X connect 10 0 2 3;
+#X connect 11 0 2 4;
+#X connect 12 0 2 5;
+#X connect 13 0 2 6;
+#X connect 14 0 2 7;
+#X connect 15 0 2 8;
+#X connect 16 0 2 9;
+#X connect 17 0 2 10;
+#X connect 18 0 2 11;
+#X connect 19 0 2 12;
+#X connect 20 0 2 13;
+#X connect 21 0 2 14;
+#X connect 22 0 2 15;
+#X connect 23 0 6 0;
+#X connect 23 0 7 0;
+#X connect 23 0 29 0;
+#X connect 24 0 2 0;
+#X connect 24 0 2 1;
+#X connect 24 0 2 2;
+#X connect 24 0 2 3;
+#X connect 24 0 2 4;
+#X connect 24 0 2 5;
+#X connect 24 0 2 6;
+#X connect 24 0 2 7;
+#X connect 24 0 2 8;
+#X connect 24 0 2 9;
+#X connect 24 0 2 10;
+#X connect 24 0 2 11;
+#X connect 24 0 2 12;
+#X connect 24 0 2 13;
+#X connect 24 0 2 14;
+#X connect 24 0 2 15;
+#X connect 25 0 23 0;
+#X connect 25 1 24 0;
+#X connect 26 0 1 0;
+#X connect 26 1 8 0;
+#X connect 26 2 9 0;
+#X connect 26 3 10 0;
+#X connect 26 4 11 0;
+#X connect 26 5 12 0;
+#X connect 26 6 13 0;
+#X connect 26 7 14 0;
+#X connect 26 8 15 0;
+#X connect 26 9 16 0;
+#X connect 26 10 17 0;
+#X connect 26 11 18 0;
+#X connect 26 12 19 0;
+#X connect 26 13 20 0;
+#X connect 26 14 21 0;
+#X connect 26 15 22 0;
+#X connect 27 0 1 0;
+#X connect 27 1 8 0;
+#X connect 27 2 9 0;
+#X connect 27 3 10 0;
+#X connect 27 4 11 0;
+#X connect 27 5 12 0;
+#X connect 27 6 13 0;
+#X connect 27 7 14 0;
+#X connect 27 8 15 0;
+#X connect 27 9 16 0;
+#X connect 27 10 17 0;
+#X connect 27 11 18 0;
+#X connect 27 12 19 0;
+#X connect 27 13 20 0;
+#X connect 27 14 21 0;
+#X connect 27 15 22 0;
+#X connect 28 0 30 0;
+#X connect 29 0 28 0;
+#X connect 29 0 36 0;
+#X connect 30 0 1 0;
+#X connect 30 1 8 0;
+#X connect 30 2 9 0;
+#X connect 30 3 10 0;
+#X connect 30 4 11 0;
+#X connect 30 5 12 0;
+#X connect 30 6 13 0;
+#X connect 30 7 14 0;
+#X connect 30 8 15 0;
+#X connect 30 9 16 0;
+#X connect 30 10 17 0;
+#X connect 30 11 18 0;
+#X connect 30 12 19 0;
+#X connect 30 13 20 0;
+#X connect 30 14 21 0;
+#X connect 30 15 22 0;
+#X connect 31 0 25 0;
+#X connect 31 1 25 0;
+#X connect 32 0 31 0;
+#X connect 33 0 32 0;
+#X connect 34 0 37 0;
+#X connect 35 0 39 0;
+#X connect 36 0 40 0;
+#X connect 37 0 41 0;
+#X connect 38 0 37 1;
+#X connect 38 0 39 1;
+#X connect 38 0 40 1;
+#X connect 39 0 42 0;
+#X connect 40 0 43 0;
+#X connect 41 0 48 0;
+#X connect 42 0 49 0;
+#X connect 43 0 50 0;
+#X connect 44 0 36 0;
+#X connect 44 0 35 0;
+#X connect 44 0 34 0;
+#X connect 45 0 6 0;
+#X connect 45 0 33 0;
+#X connect 46 0 7 0;
+#X connect 46 0 33 0;
+#X connect 47 0 29 0;
+#X connect 47 0 33 0;
+#X connect 51 0 38 0;
+#X connect 52 0 44 0;
+#X restore 581 97 pd mwba;
 #X connect 1 0 3 0;
 #X connect 2 0 3 1;
 #X connect 3 0 0 0;
@@ -5870,69 +7208,75 @@
 #X connect 53 0 0 0;
 #X connect 54 0 52 0;
 #X connect 55 0 53 0;
-#X coords 0 -1 1 1 310 47 1 100 100;
-#X restore 378 2 pd pbaClock;
-#N canvas 520 22 677 752 pbbClock 0;
-#X obj 72 806 outlet;
-#X obj 72 152 r CPR1;
-#X obj 105 128 tgl 15 0 empty empty 1 4 -7 0 10 -262144 -1 -1 0 1;
-#X obj 72 173 spigot;
-#X obj 124 128 tgl 15 0 empty empty 2 4 -7 0 10 -262144 -1 -1 0 1;
-#X obj 91 214 spigot;
-#X obj 91 193 r CPR2;
-#X obj 143 128 tgl 15 0 empty empty 3 4 -7 0 10 -262144 -1 -1 0 1;
-#X obj 110 255 spigot;
-#X obj 110 234 r CPR3;
-#X obj 162 128 tgl 15 0 empty empty 4 4 -7 0 10 -262144 -1 -1 0 1;
-#X obj 129 296 spigot;
-#X obj 129 275 r CPR4;
-#X obj 181 128 tgl 15 0 empty empty 5 4 -7 0 10 -262144 -1 -1 0 1;
-#X obj 148 337 spigot;
-#X obj 200 128 tgl 15 0 empty empty 6 4 -7 0 10 -262144 -1 -1 0 1;
-#X obj 167 378 spigot;
-#X obj 219 128 tgl 15 0 empty empty 7 4 -7 0 10 -262144 -1 -1 0 1;
-#X obj 186 419 spigot;
-#X obj 238 128 tgl 15 0 empty empty 8 4 -7 0 10 -262144 -1 -1 0 1;
-#X obj 205 460 spigot;
-#X obj 148 316 r CPR5;
-#X obj 167 357 r CPR6;
-#X obj 186 398 r CPR7;
-#X obj 205 439 r CPR8;
-#X obj 257 128 tgl 15 0 empty empty 9 4 -7 0 10 -262144 -1 -1 0 1;
-#X obj 224 502 spigot;
-#X obj 276 128 tgl 15 0 empty empty 10 4 -7 0 10 -262144 -1 -1 0 1
+#X connect 56 0 64 0;
+#X connect 57 0 71 0;
+#X connect 58 0 72 0;
+#X connect 64 0 39 0;
+#X connect 71 0 39 0;
+#X connect 72 0 39 0;
+#X coords 0 -1 1 1 310 70 2 100 100;
+#X restore 378 -44 pd pbaClock;
+#N canvas 0 22 1203 752 pbbClock 0;
+#X obj 72 829 outlet;
+#X obj 72 175 r CPR1;
+#X obj 105 151 tgl 15 0 empty empty 1 4 -7 0 10 -262144 -1 -1 0 1;
+#X obj 72 196 spigot;
+#X obj 124 151 tgl 15 0 empty empty 2 4 -7 0 10 -262144 -1 -1 0 1;
+#X obj 91 237 spigot;
+#X obj 91 216 r CPR2;
+#X obj 143 151 tgl 15 0 empty empty 3 4 -7 0 10 -262144 -1 -1 0 1;
+#X obj 110 278 spigot;
+#X obj 110 257 r CPR3;
+#X obj 162 151 tgl 15 0 empty empty 4 4 -7 0 10 -262144 -1 -1 1 1;
+#X obj 129 319 spigot;
+#X obj 129 298 r CPR4;
+#X obj 181 151 tgl 15 0 empty empty 5 4 -7 0 10 -262144 -1 -1 0 1;
+#X obj 148 360 spigot;
+#X obj 200 151 tgl 15 0 empty empty 6 4 -7 0 10 -262144 -1 -1 1 1;
+#X obj 167 401 spigot;
+#X obj 219 151 tgl 15 0 empty empty 7 4 -7 0 10 -262144 -1 -1 0 1;
+#X obj 186 442 spigot;
+#X obj 238 151 tgl 15 0 empty empty 8 4 -7 0 10 -262144 -1 -1 0 1;
+#X obj 205 483 spigot;
+#X obj 148 339 r CPR5;
+#X obj 167 380 r CPR6;
+#X obj 186 421 r CPR7;
+#X obj 205 462 r CPR8;
+#X obj 257 151 tgl 15 0 empty empty 9 4 -7 0 10 -262144 -1 -1 0 1;
+#X obj 224 525 spigot;
+#X obj 276 151 tgl 15 0 empty empty 10 4 -7 0 10 -262144 -1 -1 0 1
 ;
-#X obj 243 543 spigot;
-#X obj 295 128 tgl 15 0 empty empty 12 4 -7 0 10 -262144 -1 -1 1 1
+#X obj 243 566 spigot;
+#X obj 295 151 tgl 15 0 empty empty 12 4 -7 0 10 -262144 -1 -1 0 1
 ;
-#X obj 262 584 spigot;
-#X obj 314 128 tgl 15 0 empty empty 16 4 -7 0 10 -262144 -1 -1 0 1
+#X obj 262 607 spigot;
+#X obj 314 151 tgl 15 0 empty empty 16 4 -7 0 10 -262144 -1 -1 0 1
 ;
-#X obj 281 625 spigot;
-#X obj 224 481 r CPR9;
-#X obj 243 522 r CPR10;
-#X obj 262 563 r CPR12;
-#X obj 281 604 r CPR16;
-#X obj 414 48 r normalBeat;
-#X obj 494 48 r panicBeat;
-#X obj 414 111 unpack 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
-#X obj 568 48 r weirdBeat;
-#X obj 333 128 tgl 15 0 empty empty CM1 0 -7 0 10 -262144 -1 -1 0 1
+#X obj 281 648 spigot;
+#X obj 224 504 r CPR9;
+#X obj 243 545 r CPR10;
+#X obj 262 586 r CPR12;
+#X obj 281 627 r CPR16;
+#X obj 661 75 r normalBeat;
+#X obj 741 75 r panicBeat;
+#X obj 414 134 unpack 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
+#X obj 815 75 r weirdBeat;
+#X obj 333 151 tgl 15 0 empty empty CM1 0 -7 0 10 -262144 -1 -1 0 1
 ;
-#X obj 352 128 tgl 15 0 empty empty CM2 0 -7 0 10 -262144 -1 -1 0 1
+#X obj 352 151 tgl 15 0 empty empty CM2 0 -7 0 10 -262144 -1 -1 0 1
 ;
-#X obj 371 128 tgl 15 0 empty empty CM3 0 -7 0 10 -262144 -1 -1 0 1
+#X obj 371 151 tgl 15 0 empty empty CM3 0 -7 0 10 -262144 -1 -1 0 1
 ;
-#X obj 390 128 tgl 15 0 empty empty CM4 0 -7 0 10 -262144 -1 -1 0 1
+#X obj 390 151 tgl 15 0 empty empty CM4 0 -7 0 10 -262144 -1 -1 0 1
 ;
-#X obj 300 666 spigot;
-#X obj 300 645 r CM1;
-#X obj 319 707 spigot;
-#X obj 319 686 r CM2;
-#X obj 338 748 spigot;
-#X obj 357 789 spigot;
-#X obj 338 727 r CM3;
-#X obj 357 768 r CM4;
+#X obj 300 689 spigot;
+#X obj 300 668 r CM1;
+#X obj 319 730 spigot;
+#X obj 319 709 r CM2;
+#X obj 338 771 spigot;
+#X obj 357 812 spigot;
+#X obj 338 750 r CM3;
+#X obj 357 791 r CM4;
 #N canvas 13 22 766 605 pnbb 0;
 #X msg 102 145 \$1;
 #X msg 233 316 1, f 1;
@@ -6072,7 +7416,7 @@
 #X connect 34 0 30 0;
 #X connect 35 0 25 0;
 #X connect 36 0 25 0;
-#X restore 414 69 pd pnbb;
+#X restore 661 96 pd pnbb;
 #N canvas 13 22 842 637 ppbb 0;
 #X msg 102 145 \$1;
 #X msg 233 316 1, f 1;
@@ -6212,7 +7556,7 @@
 #X connect 34 0 6 0;
 #X connect 35 0 7 0;
 #X connect 36 0 30 0;
-#X restore 494 69 pd ppbb;
+#X restore 741 96 pd ppbb;
 #N canvas 13 22 842 637 pwbb 0;
 #X msg 102 145 \$1;
 #X msg 233 316 1, f 1;
@@ -6352,7 +7696,568 @@
 #X connect 34 0 6 0;
 #X connect 35 0 7 0;
 #X connect 36 0 30 0;
-#X restore 568 69 pd pwbb;
+#X restore 815 96 pd pwbb;
+#X obj 414 74 r mnormalBeat;
+#X obj 500 74 r mpanicBeat;
+#X obj 581 74 r mweirdBeat;
+#X floatatom 110 121 3 0 25 2 mnb0 - tmnbb0, f 3;
+#X floatatom 138 121 3 0 25 2 mnb1 - tmnbb1, f 3;
+#X floatatom 166 121 3 0 25 2 mnb2 - tmnbb2, f 3;
+#X floatatom 218 121 3 0 25 2 mpb0 - tmpbb0, f 3;
+#X floatatom 246 121 3 0 25 2 mpb1 - tmpbb1, f 3;
+#X floatatom 274 121 3 0 25 2 mpb2 - tmpbb2, f 3;
+#X floatatom 324 121 3 0 25 2 mwb0 - tmwbb0, f 3;
+#X floatatom 352 121 3 0 25 2 mwb1 - tmwbb1, f 3;
+#X floatatom 380 121 3 0 25 2 mwb2 - tmwbb2, f 3;
+#N canvas 37 22 858 752 mnbb 0;
+#X msg 102 145 \$1;
+#X msg 233 316 1, f 1;
+#X obj 14 430 pack 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0, f 37;
+#X msg 402 145 \$1;
+#X obj 40 6 inlet;
+#X obj 14 451 outlet;
+#X floatatom 102 125 5 0 0 0 - - -, f 5;
+#X floatatom 402 125 5 0 0 0 - - -, f 5;
+#X msg 248 316 1, f 1;
+#X msg 263 316 1, f 1;
+#X msg 278 316 1, f 1;
+#X msg 293 316 1, f 1;
+#X msg 308 316 1, f 1;
+#X msg 323 316 1, f 1;
+#X msg 338 316 1, f 1;
+#X msg 353 316 1, f 1;
+#X msg 368 316 1, f 1;
+#X msg 383 316 1, f 1;
+#X msg 398 316 1, f 1;
+#X msg 413 316 1, f 1;
+#X msg 428 316 1, f 1;
+#X msg 443 316 1, f 1;
+#X msg 458 316 1, f 1;
+#X obj 80 110 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X msg 67 316 0, f 1;
+#X obj 40 70 t b b;
+#X obj 102 167 select 1 2 3 4 5 6 7 8 9 10 12 16 20 21 22 23 25;
+#X obj 402 167 select 1 2 3 4 5 6 7 8 9 10 12 16 20 21 22 23 25;
+#X msg 704 145 \$1;
+#X floatatom 704 125 5 0 0 0 - - -, f 5;
+#X obj 704 167 select 1 2 3 4 5 6 7 8 9 10 12 16 20 21 22 23 25;
+#X obj 40 38 t b b;
+#X obj 197 23 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 197 118 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X floatatom 102 507 5 0 0 0 - - -, f 5;
+#X floatatom 402 507 5 0 0 0 - - -, f 5;
+#X floatatom 704 507 5 0 0 0 - - -, f 5;
+#X obj 102 525 spigot;
+#X obj 803 510 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 402 525 spigot;
+#X obj 704 525 spigot;
+#X floatatom 102 546 5 0 0 0 - - -, f 5;
+#X floatatom 402 546 5 0 0 0 - - -, f 5;
+#X floatatom 704 546 5 0 0 0 - - -, f 5;
+#X obj 781 492 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 803 469 r msuscmd2;
+#X obj 781 452 r msuscmd3;
+#X obj 102 101 r tmnbb0;
+#X obj 402 101 r tmnbb1;
+#X obj 704 101 r tmnbb2;
+#X obj 102 568 s stmnbb0;
+#X obj 402 566 s stmnbb1;
+#X obj 704 565 s stmnbb2;
+#X connect 0 0 26 0;
+#X connect 1 0 2 0;
+#X connect 2 0 5 0;
+#X connect 3 0 27 0;
+#X connect 4 0 31 0;
+#X connect 6 0 0 0;
+#X connect 6 0 34 0;
+#X connect 7 0 3 0;
+#X connect 7 0 35 0;
+#X connect 8 0 2 1;
+#X connect 9 0 2 2;
+#X connect 10 0 2 3;
+#X connect 11 0 2 4;
+#X connect 12 0 2 5;
+#X connect 13 0 2 6;
+#X connect 14 0 2 7;
+#X connect 15 0 2 8;
+#X connect 16 0 2 9;
+#X connect 17 0 2 10;
+#X connect 18 0 2 11;
+#X connect 19 0 2 12;
+#X connect 20 0 2 13;
+#X connect 21 0 2 14;
+#X connect 22 0 2 15;
+#X connect 23 0 6 0;
+#X connect 23 0 7 0;
+#X connect 23 0 29 0;
+#X connect 24 0 2 0;
+#X connect 24 0 2 1;
+#X connect 24 0 2 2;
+#X connect 24 0 2 3;
+#X connect 24 0 2 4;
+#X connect 24 0 2 5;
+#X connect 24 0 2 6;
+#X connect 24 0 2 7;
+#X connect 24 0 2 8;
+#X connect 24 0 2 9;
+#X connect 24 0 2 10;
+#X connect 24 0 2 11;
+#X connect 24 0 2 12;
+#X connect 24 0 2 13;
+#X connect 24 0 2 14;
+#X connect 24 0 2 15;
+#X connect 25 0 23 0;
+#X connect 25 1 24 0;
+#X connect 26 0 1 0;
+#X connect 26 1 8 0;
+#X connect 26 2 9 0;
+#X connect 26 3 10 0;
+#X connect 26 4 11 0;
+#X connect 26 5 12 0;
+#X connect 26 6 13 0;
+#X connect 26 7 14 0;
+#X connect 26 8 15 0;
+#X connect 26 9 16 0;
+#X connect 26 10 17 0;
+#X connect 26 11 18 0;
+#X connect 26 12 19 0;
+#X connect 26 13 20 0;
+#X connect 26 14 21 0;
+#X connect 26 15 22 0;
+#X connect 27 0 1 0;
+#X connect 27 1 8 0;
+#X connect 27 2 9 0;
+#X connect 27 3 10 0;
+#X connect 27 4 11 0;
+#X connect 27 5 12 0;
+#X connect 27 6 13 0;
+#X connect 27 7 14 0;
+#X connect 27 8 15 0;
+#X connect 27 9 16 0;
+#X connect 27 10 17 0;
+#X connect 27 11 18 0;
+#X connect 27 12 19 0;
+#X connect 27 13 20 0;
+#X connect 27 14 21 0;
+#X connect 27 15 22 0;
+#X connect 28 0 30 0;
+#X connect 29 0 28 0;
+#X connect 29 0 36 0;
+#X connect 30 0 1 0;
+#X connect 30 1 8 0;
+#X connect 30 2 9 0;
+#X connect 30 3 10 0;
+#X connect 30 4 11 0;
+#X connect 30 5 12 0;
+#X connect 30 6 13 0;
+#X connect 30 7 14 0;
+#X connect 30 8 15 0;
+#X connect 30 9 16 0;
+#X connect 30 10 17 0;
+#X connect 30 11 18 0;
+#X connect 30 12 19 0;
+#X connect 30 13 20 0;
+#X connect 30 14 21 0;
+#X connect 30 15 22 0;
+#X connect 31 0 25 0;
+#X connect 31 1 25 0;
+#X connect 32 0 31 0;
+#X connect 33 0 32 0;
+#X connect 34 0 37 0;
+#X connect 35 0 39 0;
+#X connect 36 0 40 0;
+#X connect 37 0 41 0;
+#X connect 38 0 37 1;
+#X connect 38 0 39 1;
+#X connect 38 0 40 1;
+#X connect 39 0 42 0;
+#X connect 40 0 43 0;
+#X connect 41 0 50 0;
+#X connect 42 0 51 0;
+#X connect 43 0 52 0;
+#X connect 44 0 36 0;
+#X connect 44 0 35 0;
+#X connect 44 0 34 0;
+#X connect 45 0 38 0;
+#X connect 46 0 44 0;
+#X connect 47 0 6 0;
+#X connect 47 0 33 0;
+#X connect 48 0 7 0;
+#X connect 48 0 33 0;
+#X connect 49 0 29 0;
+#X connect 49 0 33 0;
+#X restore 414 95 pd mnbb;
+#N canvas 363 22 858 752 mpbb 0;
+#X msg 102 145 \$1;
+#X msg 233 316 1, f 1;
+#X obj 14 430 pack 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0, f 37;
+#X msg 402 145 \$1;
+#X obj 40 6 inlet;
+#X obj 14 451 outlet;
+#X floatatom 102 125 5 0 0 0 - - -, f 5;
+#X floatatom 402 125 5 0 0 0 - - -, f 5;
+#X msg 248 316 1, f 1;
+#X msg 263 316 1, f 1;
+#X msg 278 316 1, f 1;
+#X msg 293 316 1, f 1;
+#X msg 308 316 1, f 1;
+#X msg 323 316 1, f 1;
+#X msg 338 316 1, f 1;
+#X msg 353 316 1, f 1;
+#X msg 368 316 1, f 1;
+#X msg 383 316 1, f 1;
+#X msg 398 316 1, f 1;
+#X msg 413 316 1, f 1;
+#X msg 428 316 1, f 1;
+#X msg 443 316 1, f 1;
+#X msg 458 316 1, f 1;
+#X obj 80 110 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X msg 67 316 0, f 1;
+#X obj 40 70 t b b;
+#X obj 102 167 select 1 2 3 4 5 6 7 8 9 10 12 16 20 21 22 23 25;
+#X obj 402 167 select 1 2 3 4 5 6 7 8 9 10 12 16 20 21 22 23 25;
+#X msg 704 145 \$1;
+#X floatatom 704 125 5 0 0 0 - - -, f 5;
+#X obj 704 167 select 1 2 3 4 5 6 7 8 9 10 12 16 20 21 22 23 25;
+#X obj 40 38 t b b;
+#X obj 197 23 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 197 118 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X floatatom 102 507 5 0 0 0 - - -, f 5;
+#X floatatom 402 507 5 0 0 0 - - -, f 5;
+#X floatatom 704 507 5 0 0 0 - - -, f 5;
+#X obj 102 525 spigot;
+#X obj 803 510 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 402 525 spigot;
+#X obj 704 525 spigot;
+#X floatatom 102 546 5 0 0 0 - - -, f 5;
+#X floatatom 402 546 5 0 0 0 - - -, f 5;
+#X floatatom 704 546 5 0 0 0 - - -, f 5;
+#X obj 781 492 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 803 469 r msuscmd2;
+#X obj 781 452 r msuscmd3;
+#X obj 102 101 r tmpbb0;
+#X obj 402 101 r tmpbb1;
+#X obj 704 101 r tmpbb2;
+#X obj 102 568 s stmpbb0;
+#X obj 402 566 s stmpbb1;
+#X obj 704 565 s stmpbb2;
+#X connect 0 0 26 0;
+#X connect 1 0 2 0;
+#X connect 2 0 5 0;
+#X connect 3 0 27 0;
+#X connect 4 0 31 0;
+#X connect 6 0 0 0;
+#X connect 6 0 34 0;
+#X connect 7 0 3 0;
+#X connect 7 0 35 0;
+#X connect 8 0 2 1;
+#X connect 9 0 2 2;
+#X connect 10 0 2 3;
+#X connect 11 0 2 4;
+#X connect 12 0 2 5;
+#X connect 13 0 2 6;
+#X connect 14 0 2 7;
+#X connect 15 0 2 8;
+#X connect 16 0 2 9;
+#X connect 17 0 2 10;
+#X connect 18 0 2 11;
+#X connect 19 0 2 12;
+#X connect 20 0 2 13;
+#X connect 21 0 2 14;
+#X connect 22 0 2 15;
+#X connect 23 0 6 0;
+#X connect 23 0 7 0;
+#X connect 23 0 29 0;
+#X connect 24 0 2 0;
+#X connect 24 0 2 1;
+#X connect 24 0 2 2;
+#X connect 24 0 2 3;
+#X connect 24 0 2 4;
+#X connect 24 0 2 5;
+#X connect 24 0 2 6;
+#X connect 24 0 2 7;
+#X connect 24 0 2 8;
+#X connect 24 0 2 9;
+#X connect 24 0 2 10;
+#X connect 24 0 2 11;
+#X connect 24 0 2 12;
+#X connect 24 0 2 13;
+#X connect 24 0 2 14;
+#X connect 24 0 2 15;
+#X connect 25 0 23 0;
+#X connect 25 1 24 0;
+#X connect 26 0 1 0;
+#X connect 26 1 8 0;
+#X connect 26 2 9 0;
+#X connect 26 3 10 0;
+#X connect 26 4 11 0;
+#X connect 26 5 12 0;
+#X connect 26 6 13 0;
+#X connect 26 7 14 0;
+#X connect 26 8 15 0;
+#X connect 26 9 16 0;
+#X connect 26 10 17 0;
+#X connect 26 11 18 0;
+#X connect 26 12 19 0;
+#X connect 26 13 20 0;
+#X connect 26 14 21 0;
+#X connect 26 15 22 0;
+#X connect 27 0 1 0;
+#X connect 27 1 8 0;
+#X connect 27 2 9 0;
+#X connect 27 3 10 0;
+#X connect 27 4 11 0;
+#X connect 27 5 12 0;
+#X connect 27 6 13 0;
+#X connect 27 7 14 0;
+#X connect 27 8 15 0;
+#X connect 27 9 16 0;
+#X connect 27 10 17 0;
+#X connect 27 11 18 0;
+#X connect 27 12 19 0;
+#X connect 27 13 20 0;
+#X connect 27 14 21 0;
+#X connect 27 15 22 0;
+#X connect 28 0 30 0;
+#X connect 29 0 28 0;
+#X connect 29 0 36 0;
+#X connect 30 0 1 0;
+#X connect 30 1 8 0;
+#X connect 30 2 9 0;
+#X connect 30 3 10 0;
+#X connect 30 4 11 0;
+#X connect 30 5 12 0;
+#X connect 30 6 13 0;
+#X connect 30 7 14 0;
+#X connect 30 8 15 0;
+#X connect 30 9 16 0;
+#X connect 30 10 17 0;
+#X connect 30 11 18 0;
+#X connect 30 12 19 0;
+#X connect 30 13 20 0;
+#X connect 30 14 21 0;
+#X connect 30 15 22 0;
+#X connect 31 0 25 0;
+#X connect 31 1 25 0;
+#X connect 32 0 31 0;
+#X connect 33 0 32 0;
+#X connect 34 0 37 0;
+#X connect 35 0 39 0;
+#X connect 36 0 40 0;
+#X connect 37 0 41 0;
+#X connect 38 0 37 1;
+#X connect 38 0 39 1;
+#X connect 38 0 40 1;
+#X connect 39 0 42 0;
+#X connect 40 0 43 0;
+#X connect 41 0 50 0;
+#X connect 42 0 51 0;
+#X connect 43 0 52 0;
+#X connect 44 0 36 0;
+#X connect 44 0 35 0;
+#X connect 44 0 34 0;
+#X connect 45 0 38 0;
+#X connect 46 0 44 0;
+#X connect 47 0 6 0;
+#X connect 47 0 33 0;
+#X connect 48 0 7 0;
+#X connect 48 0 33 0;
+#X connect 49 0 29 0;
+#X connect 49 0 33 0;
+#X restore 500 95 pd mpbb;
+#N canvas 277 44 858 752 mwbb 0;
+#X msg 102 145 \$1;
+#X msg 233 316 1, f 1;
+#X obj 14 430 pack 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0, f 37;
+#X msg 402 145 \$1;
+#X obj 40 6 inlet;
+#X obj 14 451 outlet;
+#X floatatom 102 125 5 0 0 0 - - -, f 5;
+#X floatatom 402 125 5 0 0 0 - - -, f 5;
+#X msg 248 316 1, f 1;
+#X msg 263 316 1, f 1;
+#X msg 278 316 1, f 1;
+#X msg 293 316 1, f 1;
+#X msg 308 316 1, f 1;
+#X msg 323 316 1, f 1;
+#X msg 338 316 1, f 1;
+#X msg 353 316 1, f 1;
+#X msg 368 316 1, f 1;
+#X msg 383 316 1, f 1;
+#X msg 398 316 1, f 1;
+#X msg 413 316 1, f 1;
+#X msg 428 316 1, f 1;
+#X msg 443 316 1, f 1;
+#X msg 458 316 1, f 1;
+#X obj 80 110 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X msg 67 316 0, f 1;
+#X obj 40 70 t b b;
+#X obj 102 167 select 1 2 3 4 5 6 7 8 9 10 12 16 20 21 22 23 25;
+#X obj 402 167 select 1 2 3 4 5 6 7 8 9 10 12 16 20 21 22 23 25;
+#X msg 704 145 \$1;
+#X floatatom 704 125 5 0 0 0 - - -, f 5;
+#X obj 704 167 select 1 2 3 4 5 6 7 8 9 10 12 16 20 21 22 23 25;
+#X obj 40 38 t b b;
+#X obj 197 23 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 197 118 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X floatatom 102 507 5 0 0 0 - - -, f 5;
+#X floatatom 402 507 5 0 0 0 - - -, f 5;
+#X floatatom 704 507 5 0 0 0 - - -, f 5;
+#X obj 102 525 spigot;
+#X obj 803 510 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 402 525 spigot;
+#X obj 704 525 spigot;
+#X floatatom 102 546 5 0 0 0 - - -, f 5;
+#X floatatom 402 546 5 0 0 0 - - -, f 5;
+#X floatatom 704 546 5 0 0 0 - - -, f 5;
+#X obj 781 492 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 803 469 r msuscmd2;
+#X obj 781 452 r msuscmd3;
+#X obj 102 101 r tmwbb0;
+#X obj 402 101 r tmwbb1;
+#X obj 704 101 r tmwbb2;
+#X obj 102 568 s stmwbb0;
+#X obj 402 566 s stmwbb1;
+#X obj 704 565 s stmwbb2;
+#X connect 0 0 26 0;
+#X connect 1 0 2 0;
+#X connect 2 0 5 0;
+#X connect 3 0 27 0;
+#X connect 4 0 31 0;
+#X connect 6 0 0 0;
+#X connect 6 0 34 0;
+#X connect 7 0 3 0;
+#X connect 7 0 35 0;
+#X connect 8 0 2 1;
+#X connect 9 0 2 2;
+#X connect 10 0 2 3;
+#X connect 11 0 2 4;
+#X connect 12 0 2 5;
+#X connect 13 0 2 6;
+#X connect 14 0 2 7;
+#X connect 15 0 2 8;
+#X connect 16 0 2 9;
+#X connect 17 0 2 10;
+#X connect 18 0 2 11;
+#X connect 19 0 2 12;
+#X connect 20 0 2 13;
+#X connect 21 0 2 14;
+#X connect 22 0 2 15;
+#X connect 23 0 6 0;
+#X connect 23 0 7 0;
+#X connect 23 0 29 0;
+#X connect 24 0 2 0;
+#X connect 24 0 2 1;
+#X connect 24 0 2 2;
+#X connect 24 0 2 3;
+#X connect 24 0 2 4;
+#X connect 24 0 2 5;
+#X connect 24 0 2 6;
+#X connect 24 0 2 7;
+#X connect 24 0 2 8;
+#X connect 24 0 2 9;
+#X connect 24 0 2 10;
+#X connect 24 0 2 11;
+#X connect 24 0 2 12;
+#X connect 24 0 2 13;
+#X connect 24 0 2 14;
+#X connect 24 0 2 15;
+#X connect 25 0 23 0;
+#X connect 25 1 24 0;
+#X connect 26 0 1 0;
+#X connect 26 1 8 0;
+#X connect 26 2 9 0;
+#X connect 26 3 10 0;
+#X connect 26 4 11 0;
+#X connect 26 5 12 0;
+#X connect 26 6 13 0;
+#X connect 26 7 14 0;
+#X connect 26 8 15 0;
+#X connect 26 9 16 0;
+#X connect 26 10 17 0;
+#X connect 26 11 18 0;
+#X connect 26 12 19 0;
+#X connect 26 13 20 0;
+#X connect 26 14 21 0;
+#X connect 26 15 22 0;
+#X connect 27 0 1 0;
+#X connect 27 1 8 0;
+#X connect 27 2 9 0;
+#X connect 27 3 10 0;
+#X connect 27 4 11 0;
+#X connect 27 5 12 0;
+#X connect 27 6 13 0;
+#X connect 27 7 14 0;
+#X connect 27 8 15 0;
+#X connect 27 9 16 0;
+#X connect 27 10 17 0;
+#X connect 27 11 18 0;
+#X connect 27 12 19 0;
+#X connect 27 13 20 0;
+#X connect 27 14 21 0;
+#X connect 27 15 22 0;
+#X connect 28 0 30 0;
+#X connect 29 0 28 0;
+#X connect 29 0 36 0;
+#X connect 30 0 1 0;
+#X connect 30 1 8 0;
+#X connect 30 2 9 0;
+#X connect 30 3 10 0;
+#X connect 30 4 11 0;
+#X connect 30 5 12 0;
+#X connect 30 6 13 0;
+#X connect 30 7 14 0;
+#X connect 30 8 15 0;
+#X connect 30 9 16 0;
+#X connect 30 10 17 0;
+#X connect 30 11 18 0;
+#X connect 30 12 19 0;
+#X connect 30 13 20 0;
+#X connect 30 14 21 0;
+#X connect 30 15 22 0;
+#X connect 31 0 25 0;
+#X connect 31 1 25 0;
+#X connect 32 0 31 0;
+#X connect 33 0 32 0;
+#X connect 34 0 37 0;
+#X connect 35 0 39 0;
+#X connect 36 0 40 0;
+#X connect 37 0 41 0;
+#X connect 38 0 37 1;
+#X connect 38 0 39 1;
+#X connect 38 0 40 1;
+#X connect 39 0 42 0;
+#X connect 40 0 43 0;
+#X connect 41 0 50 0;
+#X connect 42 0 51 0;
+#X connect 43 0 52 0;
+#X connect 44 0 36 0;
+#X connect 44 0 35 0;
+#X connect 44 0 34 0;
+#X connect 45 0 38 0;
+#X connect 46 0 44 0;
+#X connect 47 0 6 0;
+#X connect 47 0 33 0;
+#X connect 48 0 7 0;
+#X connect 48 0 33 0;
+#X connect 49 0 29 0;
+#X connect 49 0 33 0;
+#X restore 581 95 pd mwbb;
 #X connect 1 0 3 0;
 #X connect 2 0 3 1;
 #X connect 3 0 0 0;
@@ -6423,69 +8328,75 @@
 #X connect 53 0 39 0;
 #X connect 54 0 39 0;
 #X connect 55 0 39 0;
-#X coords 0 -1 1 1 310 47 1 100 100;
-#X restore 533 56 pd pbbClock;
-#N canvas 554 22 677 752 pbcClock 0;
-#X obj 72 806 outlet;
-#X obj 72 152 r CPR1;
-#X obj 105 128 tgl 15 0 empty empty 1 4 -7 0 10 -262144 -1 -1 0 1;
-#X obj 72 173 spigot;
-#X obj 124 128 tgl 15 0 empty empty 2 4 -7 0 10 -262144 -1 -1 0 1;
-#X obj 91 214 spigot;
-#X obj 91 193 r CPR2;
-#X obj 143 128 tgl 15 0 empty empty 3 4 -7 0 10 -262144 -1 -1 0 1;
-#X obj 110 255 spigot;
-#X obj 110 234 r CPR3;
-#X obj 162 128 tgl 15 0 empty empty 4 4 -7 0 10 -262144 -1 -1 0 1;
-#X obj 129 296 spigot;
-#X obj 129 275 r CPR4;
-#X obj 181 128 tgl 15 0 empty empty 5 4 -7 0 10 -262144 -1 -1 0 1;
-#X obj 148 337 spigot;
-#X obj 200 128 tgl 15 0 empty empty 6 4 -7 0 10 -262144 -1 -1 1 1;
-#X obj 167 378 spigot;
-#X obj 219 128 tgl 15 0 empty empty 7 4 -7 0 10 -262144 -1 -1 0 1;
-#X obj 186 419 spigot;
-#X obj 238 128 tgl 15 0 empty empty 8 4 -7 0 10 -262144 -1 -1 0 1;
-#X obj 205 460 spigot;
-#X obj 148 316 r CPR5;
-#X obj 167 357 r CPR6;
-#X obj 186 398 r CPR7;
-#X obj 205 439 r CPR8;
-#X obj 257 128 tgl 15 0 empty empty 9 4 -7 0 10 -262144 -1 -1 0 1;
-#X obj 224 502 spigot;
-#X obj 276 128 tgl 15 0 empty empty 10 4 -7 0 10 -262144 -1 -1 0 1
+#X connect 56 0 68 0;
+#X connect 57 0 69 0;
+#X connect 58 0 70 0;
+#X connect 68 0 39 0;
+#X connect 69 0 39 0;
+#X connect 70 0 39 0;
+#X coords 0 -1 1 1 310 70 2 100 100;
+#X restore 533 34 pd pbbClock;
+#N canvas 81 187 1213 752 pbcClock 0;
+#X obj 72 830 outlet;
+#X obj 72 176 r CPR1;
+#X obj 105 152 tgl 15 0 empty empty 1 4 -7 0 10 -262144 -1 -1 0 1;
+#X obj 72 197 spigot;
+#X obj 124 152 tgl 15 0 empty empty 2 4 -7 0 10 -262144 -1 -1 0 1;
+#X obj 91 238 spigot;
+#X obj 91 217 r CPR2;
+#X obj 143 152 tgl 15 0 empty empty 3 4 -7 0 10 -262144 -1 -1 1 1;
+#X obj 110 279 spigot;
+#X obj 110 258 r CPR3;
+#X obj 162 152 tgl 15 0 empty empty 4 4 -7 0 10 -262144 -1 -1 0 1;
+#X obj 129 320 spigot;
+#X obj 129 299 r CPR4;
+#X obj 181 152 tgl 15 0 empty empty 5 4 -7 0 10 -262144 -1 -1 0 1;
+#X obj 148 361 spigot;
+#X obj 200 152 tgl 15 0 empty empty 6 4 -7 0 10 -262144 -1 -1 0 1;
+#X obj 167 402 spigot;
+#X obj 219 152 tgl 15 0 empty empty 7 4 -7 0 10 -262144 -1 -1 0 1;
+#X obj 186 443 spigot;
+#X obj 238 152 tgl 15 0 empty empty 8 4 -7 0 10 -262144 -1 -1 0 1;
+#X obj 205 484 spigot;
+#X obj 148 340 r CPR5;
+#X obj 167 381 r CPR6;
+#X obj 186 422 r CPR7;
+#X obj 205 463 r CPR8;
+#X obj 257 152 tgl 15 0 empty empty 9 4 -7 0 10 -262144 -1 -1 0 1;
+#X obj 224 526 spigot;
+#X obj 276 152 tgl 15 0 empty empty 10 4 -7 0 10 -262144 -1 -1 0 1
 ;
-#X obj 243 543 spigot;
-#X obj 295 128 tgl 15 0 empty empty 12 4 -7 0 10 -262144 -1 -1 0 1
+#X obj 243 567 spigot;
+#X obj 295 152 tgl 15 0 empty empty 12 4 -7 0 10 -262144 -1 -1 0 1
 ;
-#X obj 262 584 spigot;
-#X obj 314 128 tgl 15 0 empty empty 16 4 -7 0 10 -262144 -1 -1 0 1
+#X obj 262 608 spigot;
+#X obj 314 152 tgl 15 0 empty empty 16 4 -7 0 10 -262144 -1 -1 0 1
 ;
-#X obj 281 625 spigot;
-#X obj 224 481 r CPR9;
-#X obj 243 522 r CPR10;
-#X obj 262 563 r CPR12;
-#X obj 281 604 r CPR16;
-#X obj 414 48 r normalBeat;
-#X obj 494 48 r panicBeat;
-#X obj 414 111 unpack 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
-#X obj 568 48 r weirdBeat;
-#X obj 333 128 tgl 15 0 empty empty CM1 0 -7 0 10 -262144 -1 -1 0 1
+#X obj 281 649 spigot;
+#X obj 224 505 r CPR9;
+#X obj 243 546 r CPR10;
+#X obj 262 587 r CPR12;
+#X obj 281 628 r CPR16;
+#X obj 663 73 r normalBeat;
+#X obj 743 73 r panicBeat;
+#X obj 414 135 unpack 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
+#X obj 817 73 r weirdBeat;
+#X obj 333 152 tgl 15 0 empty empty CM1 0 -7 0 10 -262144 -1 -1 0 1
 ;
-#X obj 352 128 tgl 15 0 empty empty CM2 0 -7 0 10 -262144 -1 -1 0 1
+#X obj 352 152 tgl 15 0 empty empty CM2 0 -7 0 10 -262144 -1 -1 0 1
 ;
-#X obj 371 128 tgl 15 0 empty empty CM3 0 -7 0 10 -262144 -1 -1 0 1
+#X obj 371 152 tgl 15 0 empty empty CM3 0 -7 0 10 -262144 -1 -1 0 1
 ;
-#X obj 390 128 tgl 15 0 empty empty CM4 0 -7 0 10 -262144 -1 -1 0 1
+#X obj 390 152 tgl 15 0 empty empty CM4 0 -7 0 10 -262144 -1 -1 0 1
 ;
-#X obj 300 666 spigot;
-#X obj 300 645 r CM1;
-#X obj 319 707 spigot;
-#X obj 319 686 r CM2;
-#X obj 338 748 spigot;
-#X obj 357 789 spigot;
-#X obj 338 727 r CM3;
-#X obj 357 768 r CM4;
+#X obj 300 690 spigot;
+#X obj 300 669 r CM1;
+#X obj 319 731 spigot;
+#X obj 319 710 r CM2;
+#X obj 338 772 spigot;
+#X obj 357 813 spigot;
+#X obj 338 751 r CM3;
+#X obj 357 792 r CM4;
 #N canvas 13 22 766 605 pnbc 0;
 #X msg 102 145 \$1;
 #X msg 233 316 1, f 1;
@@ -6625,7 +8536,7 @@
 #X connect 34 0 30 0;
 #X connect 35 0 25 0;
 #X connect 36 0 25 0;
-#X restore 414 69 pd pnbc;
+#X restore 663 94 pd pnbc;
 #N canvas 13 22 842 637 ppbc 0;
 #X msg 102 145 \$1;
 #X msg 233 316 1, f 1;
@@ -6765,7 +8676,7 @@
 #X connect 34 0 6 0;
 #X connect 35 0 7 0;
 #X connect 36 0 30 0;
-#X restore 494 69 pd ppbc;
+#X restore 743 94 pd ppbc;
 #N canvas 13 22 842 637 pwbc 0;
 #X msg 102 145 \$1;
 #X msg 233 316 1, f 1;
@@ -6905,7 +8816,568 @@
 #X connect 34 0 6 0;
 #X connect 35 0 7 0;
 #X connect 36 0 30 0;
-#X restore 568 69 pd pwbc;
+#X restore 817 94 pd pwbc;
+#X obj 414 73 r mnormalBeat;
+#X obj 500 73 r mpanicBeat;
+#X obj 581 73 r mweirdBeat;
+#X floatatom 108 122 3 0 25 2 mnb0 - tmnbc0, f 3;
+#X floatatom 136 122 3 0 25 2 mnb1 - tmnbc1, f 3;
+#X floatatom 164 122 3 0 25 2 mnb2 - tmnbc2, f 3;
+#X floatatom 216 122 3 0 25 2 mpb0 - tmpbc0, f 3;
+#X floatatom 244 122 3 0 25 2 mpb1 - tmpbc1, f 3;
+#X floatatom 272 122 3 0 25 2 mpb2 - tmpbc2, f 3;
+#X floatatom 322 122 3 0 25 2 mwb0 - tmwbc0, f 3;
+#X floatatom 350 122 3 0 25 2 mwb1 - tmwbc1, f 3;
+#X floatatom 378 122 3 0 25 2 mwb2 - tmwbc2, f 3;
+#N canvas 84 140 858 752 mnbc 0;
+#X msg 102 145 \$1;
+#X msg 233 316 1, f 1;
+#X obj 14 430 pack 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0, f 37;
+#X msg 402 145 \$1;
+#X obj 40 6 inlet;
+#X obj 14 451 outlet;
+#X floatatom 102 125 5 0 0 0 - - -, f 5;
+#X floatatom 402 125 5 0 0 0 - - -, f 5;
+#X msg 248 316 1, f 1;
+#X msg 263 316 1, f 1;
+#X msg 278 316 1, f 1;
+#X msg 293 316 1, f 1;
+#X msg 308 316 1, f 1;
+#X msg 323 316 1, f 1;
+#X msg 338 316 1, f 1;
+#X msg 353 316 1, f 1;
+#X msg 368 316 1, f 1;
+#X msg 383 316 1, f 1;
+#X msg 398 316 1, f 1;
+#X msg 413 316 1, f 1;
+#X msg 428 316 1, f 1;
+#X msg 443 316 1, f 1;
+#X msg 458 316 1, f 1;
+#X obj 80 110 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X msg 67 316 0, f 1;
+#X obj 40 70 t b b;
+#X obj 102 167 select 1 2 3 4 5 6 7 8 9 10 12 16 20 21 22 23 25;
+#X obj 402 167 select 1 2 3 4 5 6 7 8 9 10 12 16 20 21 22 23 25;
+#X msg 704 145 \$1;
+#X floatatom 704 125 5 0 0 0 - - -, f 5;
+#X obj 704 167 select 1 2 3 4 5 6 7 8 9 10 12 16 20 21 22 23 25;
+#X obj 40 38 t b b;
+#X obj 197 23 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 197 118 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X floatatom 102 507 5 0 0 0 - - -, f 5;
+#X floatatom 402 507 5 0 0 0 - - -, f 5;
+#X floatatom 704 507 5 0 0 0 - - -, f 5;
+#X obj 102 525 spigot;
+#X obj 803 510 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 402 525 spigot;
+#X obj 704 525 spigot;
+#X floatatom 102 546 5 0 0 0 - - -, f 5;
+#X floatatom 402 546 5 0 0 0 - - -, f 5;
+#X floatatom 704 546 5 0 0 0 - - -, f 5;
+#X obj 781 492 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 803 469 r msuscmd2;
+#X obj 781 452 r msuscmd3;
+#X obj 102 101 r tmnbc0;
+#X obj 402 101 r tmnbc1;
+#X obj 704 101 r tmnbc2;
+#X obj 102 568 s stmnbc0;
+#X obj 402 566 s stmnbc1;
+#X obj 704 565 s stmnbc2;
+#X connect 0 0 26 0;
+#X connect 1 0 2 0;
+#X connect 2 0 5 0;
+#X connect 3 0 27 0;
+#X connect 4 0 31 0;
+#X connect 6 0 0 0;
+#X connect 6 0 34 0;
+#X connect 7 0 3 0;
+#X connect 7 0 35 0;
+#X connect 8 0 2 1;
+#X connect 9 0 2 2;
+#X connect 10 0 2 3;
+#X connect 11 0 2 4;
+#X connect 12 0 2 5;
+#X connect 13 0 2 6;
+#X connect 14 0 2 7;
+#X connect 15 0 2 8;
+#X connect 16 0 2 9;
+#X connect 17 0 2 10;
+#X connect 18 0 2 11;
+#X connect 19 0 2 12;
+#X connect 20 0 2 13;
+#X connect 21 0 2 14;
+#X connect 22 0 2 15;
+#X connect 23 0 6 0;
+#X connect 23 0 7 0;
+#X connect 23 0 29 0;
+#X connect 24 0 2 0;
+#X connect 24 0 2 1;
+#X connect 24 0 2 2;
+#X connect 24 0 2 3;
+#X connect 24 0 2 4;
+#X connect 24 0 2 5;
+#X connect 24 0 2 6;
+#X connect 24 0 2 7;
+#X connect 24 0 2 8;
+#X connect 24 0 2 9;
+#X connect 24 0 2 10;
+#X connect 24 0 2 11;
+#X connect 24 0 2 12;
+#X connect 24 0 2 13;
+#X connect 24 0 2 14;
+#X connect 24 0 2 15;
+#X connect 25 0 23 0;
+#X connect 25 1 24 0;
+#X connect 26 0 1 0;
+#X connect 26 1 8 0;
+#X connect 26 2 9 0;
+#X connect 26 3 10 0;
+#X connect 26 4 11 0;
+#X connect 26 5 12 0;
+#X connect 26 6 13 0;
+#X connect 26 7 14 0;
+#X connect 26 8 15 0;
+#X connect 26 9 16 0;
+#X connect 26 10 17 0;
+#X connect 26 11 18 0;
+#X connect 26 12 19 0;
+#X connect 26 13 20 0;
+#X connect 26 14 21 0;
+#X connect 26 15 22 0;
+#X connect 27 0 1 0;
+#X connect 27 1 8 0;
+#X connect 27 2 9 0;
+#X connect 27 3 10 0;
+#X connect 27 4 11 0;
+#X connect 27 5 12 0;
+#X connect 27 6 13 0;
+#X connect 27 7 14 0;
+#X connect 27 8 15 0;
+#X connect 27 9 16 0;
+#X connect 27 10 17 0;
+#X connect 27 11 18 0;
+#X connect 27 12 19 0;
+#X connect 27 13 20 0;
+#X connect 27 14 21 0;
+#X connect 27 15 22 0;
+#X connect 28 0 30 0;
+#X connect 29 0 28 0;
+#X connect 29 0 36 0;
+#X connect 30 0 1 0;
+#X connect 30 1 8 0;
+#X connect 30 2 9 0;
+#X connect 30 3 10 0;
+#X connect 30 4 11 0;
+#X connect 30 5 12 0;
+#X connect 30 6 13 0;
+#X connect 30 7 14 0;
+#X connect 30 8 15 0;
+#X connect 30 9 16 0;
+#X connect 30 10 17 0;
+#X connect 30 11 18 0;
+#X connect 30 12 19 0;
+#X connect 30 13 20 0;
+#X connect 30 14 21 0;
+#X connect 30 15 22 0;
+#X connect 31 0 25 0;
+#X connect 31 1 25 0;
+#X connect 32 0 31 0;
+#X connect 33 0 32 0;
+#X connect 34 0 37 0;
+#X connect 35 0 39 0;
+#X connect 36 0 40 0;
+#X connect 37 0 41 0;
+#X connect 38 0 37 1;
+#X connect 38 0 39 1;
+#X connect 38 0 40 1;
+#X connect 39 0 42 0;
+#X connect 40 0 43 0;
+#X connect 41 0 50 0;
+#X connect 42 0 51 0;
+#X connect 43 0 52 0;
+#X connect 44 0 36 0;
+#X connect 44 0 35 0;
+#X connect 44 0 34 0;
+#X connect 45 0 38 0;
+#X connect 46 0 44 0;
+#X connect 47 0 6 0;
+#X connect 47 0 33 0;
+#X connect 48 0 7 0;
+#X connect 48 0 33 0;
+#X connect 49 0 29 0;
+#X connect 49 0 33 0;
+#X restore 414 94 pd mnbc;
+#N canvas 85 22 858 752 mpbc 0;
+#X msg 102 145 \$1;
+#X msg 233 316 1, f 1;
+#X obj 14 430 pack 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0, f 37;
+#X msg 402 145 \$1;
+#X obj 40 6 inlet;
+#X obj 14 451 outlet;
+#X floatatom 102 125 5 0 0 0 - - -, f 5;
+#X floatatom 402 125 5 0 0 0 - - -, f 5;
+#X msg 248 316 1, f 1;
+#X msg 263 316 1, f 1;
+#X msg 278 316 1, f 1;
+#X msg 293 316 1, f 1;
+#X msg 308 316 1, f 1;
+#X msg 323 316 1, f 1;
+#X msg 338 316 1, f 1;
+#X msg 353 316 1, f 1;
+#X msg 368 316 1, f 1;
+#X msg 383 316 1, f 1;
+#X msg 398 316 1, f 1;
+#X msg 413 316 1, f 1;
+#X msg 428 316 1, f 1;
+#X msg 443 316 1, f 1;
+#X msg 458 316 1, f 1;
+#X obj 80 110 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X msg 67 316 0, f 1;
+#X obj 40 70 t b b;
+#X obj 102 167 select 1 2 3 4 5 6 7 8 9 10 12 16 20 21 22 23 25;
+#X obj 402 167 select 1 2 3 4 5 6 7 8 9 10 12 16 20 21 22 23 25;
+#X msg 704 145 \$1;
+#X floatatom 704 125 5 0 0 0 - - -, f 5;
+#X obj 704 167 select 1 2 3 4 5 6 7 8 9 10 12 16 20 21 22 23 25;
+#X obj 40 38 t b b;
+#X obj 197 23 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 197 118 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X floatatom 102 507 5 0 0 0 - - -, f 5;
+#X floatatom 402 507 5 0 0 0 - - -, f 5;
+#X floatatom 704 507 5 0 0 0 - - -, f 5;
+#X obj 102 525 spigot;
+#X obj 803 510 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 402 525 spigot;
+#X obj 704 525 spigot;
+#X floatatom 102 546 5 0 0 0 - - -, f 5;
+#X floatatom 402 546 5 0 0 0 - - -, f 5;
+#X floatatom 704 546 5 0 0 0 - - -, f 5;
+#X obj 781 492 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 803 469 r msuscmd2;
+#X obj 781 452 r msuscmd3;
+#X obj 102 101 r tmpbc0;
+#X obj 402 101 r tmpbc1;
+#X obj 704 101 r tmpbc2;
+#X obj 102 568 s stmpbc0;
+#X obj 402 566 s stmpbc1;
+#X obj 704 565 s stmpbc2;
+#X connect 0 0 26 0;
+#X connect 1 0 2 0;
+#X connect 2 0 5 0;
+#X connect 3 0 27 0;
+#X connect 4 0 31 0;
+#X connect 6 0 0 0;
+#X connect 6 0 34 0;
+#X connect 7 0 3 0;
+#X connect 7 0 35 0;
+#X connect 8 0 2 1;
+#X connect 9 0 2 2;
+#X connect 10 0 2 3;
+#X connect 11 0 2 4;
+#X connect 12 0 2 5;
+#X connect 13 0 2 6;
+#X connect 14 0 2 7;
+#X connect 15 0 2 8;
+#X connect 16 0 2 9;
+#X connect 17 0 2 10;
+#X connect 18 0 2 11;
+#X connect 19 0 2 12;
+#X connect 20 0 2 13;
+#X connect 21 0 2 14;
+#X connect 22 0 2 15;
+#X connect 23 0 6 0;
+#X connect 23 0 7 0;
+#X connect 23 0 29 0;
+#X connect 24 0 2 0;
+#X connect 24 0 2 1;
+#X connect 24 0 2 2;
+#X connect 24 0 2 3;
+#X connect 24 0 2 4;
+#X connect 24 0 2 5;
+#X connect 24 0 2 6;
+#X connect 24 0 2 7;
+#X connect 24 0 2 8;
+#X connect 24 0 2 9;
+#X connect 24 0 2 10;
+#X connect 24 0 2 11;
+#X connect 24 0 2 12;
+#X connect 24 0 2 13;
+#X connect 24 0 2 14;
+#X connect 24 0 2 15;
+#X connect 25 0 23 0;
+#X connect 25 1 24 0;
+#X connect 26 0 1 0;
+#X connect 26 1 8 0;
+#X connect 26 2 9 0;
+#X connect 26 3 10 0;
+#X connect 26 4 11 0;
+#X connect 26 5 12 0;
+#X connect 26 6 13 0;
+#X connect 26 7 14 0;
+#X connect 26 8 15 0;
+#X connect 26 9 16 0;
+#X connect 26 10 17 0;
+#X connect 26 11 18 0;
+#X connect 26 12 19 0;
+#X connect 26 13 20 0;
+#X connect 26 14 21 0;
+#X connect 26 15 22 0;
+#X connect 27 0 1 0;
+#X connect 27 1 8 0;
+#X connect 27 2 9 0;
+#X connect 27 3 10 0;
+#X connect 27 4 11 0;
+#X connect 27 5 12 0;
+#X connect 27 6 13 0;
+#X connect 27 7 14 0;
+#X connect 27 8 15 0;
+#X connect 27 9 16 0;
+#X connect 27 10 17 0;
+#X connect 27 11 18 0;
+#X connect 27 12 19 0;
+#X connect 27 13 20 0;
+#X connect 27 14 21 0;
+#X connect 27 15 22 0;
+#X connect 28 0 30 0;
+#X connect 29 0 28 0;
+#X connect 29 0 36 0;
+#X connect 30 0 1 0;
+#X connect 30 1 8 0;
+#X connect 30 2 9 0;
+#X connect 30 3 10 0;
+#X connect 30 4 11 0;
+#X connect 30 5 12 0;
+#X connect 30 6 13 0;
+#X connect 30 7 14 0;
+#X connect 30 8 15 0;
+#X connect 30 9 16 0;
+#X connect 30 10 17 0;
+#X connect 30 11 18 0;
+#X connect 30 12 19 0;
+#X connect 30 13 20 0;
+#X connect 30 14 21 0;
+#X connect 30 15 22 0;
+#X connect 31 0 25 0;
+#X connect 31 1 25 0;
+#X connect 32 0 31 0;
+#X connect 33 0 32 0;
+#X connect 34 0 37 0;
+#X connect 35 0 39 0;
+#X connect 36 0 40 0;
+#X connect 37 0 41 0;
+#X connect 38 0 37 1;
+#X connect 38 0 39 1;
+#X connect 38 0 40 1;
+#X connect 39 0 42 0;
+#X connect 40 0 43 0;
+#X connect 41 0 50 0;
+#X connect 42 0 51 0;
+#X connect 43 0 52 0;
+#X connect 44 0 36 0;
+#X connect 44 0 35 0;
+#X connect 44 0 34 0;
+#X connect 45 0 38 0;
+#X connect 46 0 44 0;
+#X connect 47 0 6 0;
+#X connect 47 0 33 0;
+#X connect 48 0 7 0;
+#X connect 48 0 33 0;
+#X connect 49 0 29 0;
+#X connect 49 0 33 0;
+#X restore 500 94 pd mpbc;
+#N canvas 277 44 858 752 mwbc 0;
+#X msg 102 145 \$1;
+#X msg 233 316 1, f 1;
+#X obj 14 430 pack 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0, f 37;
+#X msg 402 145 \$1;
+#X obj 40 6 inlet;
+#X obj 14 451 outlet;
+#X floatatom 102 125 5 0 0 0 - - -, f 5;
+#X floatatom 402 125 5 0 0 0 - - -, f 5;
+#X msg 248 316 1, f 1;
+#X msg 263 316 1, f 1;
+#X msg 278 316 1, f 1;
+#X msg 293 316 1, f 1;
+#X msg 308 316 1, f 1;
+#X msg 323 316 1, f 1;
+#X msg 338 316 1, f 1;
+#X msg 353 316 1, f 1;
+#X msg 368 316 1, f 1;
+#X msg 383 316 1, f 1;
+#X msg 398 316 1, f 1;
+#X msg 413 316 1, f 1;
+#X msg 428 316 1, f 1;
+#X msg 443 316 1, f 1;
+#X msg 458 316 1, f 1;
+#X obj 80 110 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X msg 67 316 0, f 1;
+#X obj 40 70 t b b;
+#X obj 102 167 select 1 2 3 4 5 6 7 8 9 10 12 16 20 21 22 23 25;
+#X obj 402 167 select 1 2 3 4 5 6 7 8 9 10 12 16 20 21 22 23 25;
+#X msg 704 145 \$1;
+#X floatatom 704 125 5 0 0 0 - - -, f 5;
+#X obj 704 167 select 1 2 3 4 5 6 7 8 9 10 12 16 20 21 22 23 25;
+#X obj 40 38 t b b;
+#X obj 197 23 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 197 118 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X floatatom 102 507 5 0 0 0 - - -, f 5;
+#X floatatom 402 507 5 0 0 0 - - -, f 5;
+#X floatatom 704 507 5 0 0 0 - - -, f 5;
+#X obj 102 525 spigot;
+#X obj 803 510 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 402 525 spigot;
+#X obj 704 525 spigot;
+#X floatatom 102 546 5 0 0 0 - - -, f 5;
+#X floatatom 402 546 5 0 0 0 - - -, f 5;
+#X floatatom 704 546 5 0 0 0 - - -, f 5;
+#X obj 781 492 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 803 469 r msuscmd2;
+#X obj 781 452 r msuscmd3;
+#X obj 102 101 r tmwbc0;
+#X obj 402 101 r tmwbc1;
+#X obj 704 101 r tmwbc2;
+#X obj 102 568 s stmwbc0;
+#X obj 402 566 s stmwbc1;
+#X obj 704 565 s stmwbc2;
+#X connect 0 0 26 0;
+#X connect 1 0 2 0;
+#X connect 2 0 5 0;
+#X connect 3 0 27 0;
+#X connect 4 0 31 0;
+#X connect 6 0 0 0;
+#X connect 6 0 34 0;
+#X connect 7 0 3 0;
+#X connect 7 0 35 0;
+#X connect 8 0 2 1;
+#X connect 9 0 2 2;
+#X connect 10 0 2 3;
+#X connect 11 0 2 4;
+#X connect 12 0 2 5;
+#X connect 13 0 2 6;
+#X connect 14 0 2 7;
+#X connect 15 0 2 8;
+#X connect 16 0 2 9;
+#X connect 17 0 2 10;
+#X connect 18 0 2 11;
+#X connect 19 0 2 12;
+#X connect 20 0 2 13;
+#X connect 21 0 2 14;
+#X connect 22 0 2 15;
+#X connect 23 0 6 0;
+#X connect 23 0 7 0;
+#X connect 23 0 29 0;
+#X connect 24 0 2 0;
+#X connect 24 0 2 1;
+#X connect 24 0 2 2;
+#X connect 24 0 2 3;
+#X connect 24 0 2 4;
+#X connect 24 0 2 5;
+#X connect 24 0 2 6;
+#X connect 24 0 2 7;
+#X connect 24 0 2 8;
+#X connect 24 0 2 9;
+#X connect 24 0 2 10;
+#X connect 24 0 2 11;
+#X connect 24 0 2 12;
+#X connect 24 0 2 13;
+#X connect 24 0 2 14;
+#X connect 24 0 2 15;
+#X connect 25 0 23 0;
+#X connect 25 1 24 0;
+#X connect 26 0 1 0;
+#X connect 26 1 8 0;
+#X connect 26 2 9 0;
+#X connect 26 3 10 0;
+#X connect 26 4 11 0;
+#X connect 26 5 12 0;
+#X connect 26 6 13 0;
+#X connect 26 7 14 0;
+#X connect 26 8 15 0;
+#X connect 26 9 16 0;
+#X connect 26 10 17 0;
+#X connect 26 11 18 0;
+#X connect 26 12 19 0;
+#X connect 26 13 20 0;
+#X connect 26 14 21 0;
+#X connect 26 15 22 0;
+#X connect 27 0 1 0;
+#X connect 27 1 8 0;
+#X connect 27 2 9 0;
+#X connect 27 3 10 0;
+#X connect 27 4 11 0;
+#X connect 27 5 12 0;
+#X connect 27 6 13 0;
+#X connect 27 7 14 0;
+#X connect 27 8 15 0;
+#X connect 27 9 16 0;
+#X connect 27 10 17 0;
+#X connect 27 11 18 0;
+#X connect 27 12 19 0;
+#X connect 27 13 20 0;
+#X connect 27 14 21 0;
+#X connect 27 15 22 0;
+#X connect 28 0 30 0;
+#X connect 29 0 28 0;
+#X connect 29 0 36 0;
+#X connect 30 0 1 0;
+#X connect 30 1 8 0;
+#X connect 30 2 9 0;
+#X connect 30 3 10 0;
+#X connect 30 4 11 0;
+#X connect 30 5 12 0;
+#X connect 30 6 13 0;
+#X connect 30 7 14 0;
+#X connect 30 8 15 0;
+#X connect 30 9 16 0;
+#X connect 30 10 17 0;
+#X connect 30 11 18 0;
+#X connect 30 12 19 0;
+#X connect 30 13 20 0;
+#X connect 30 14 21 0;
+#X connect 30 15 22 0;
+#X connect 31 0 25 0;
+#X connect 31 1 25 0;
+#X connect 32 0 31 0;
+#X connect 33 0 32 0;
+#X connect 34 0 37 0;
+#X connect 35 0 39 0;
+#X connect 36 0 40 0;
+#X connect 37 0 41 0;
+#X connect 38 0 37 1;
+#X connect 38 0 39 1;
+#X connect 38 0 40 1;
+#X connect 39 0 42 0;
+#X connect 40 0 43 0;
+#X connect 41 0 50 0;
+#X connect 42 0 51 0;
+#X connect 43 0 52 0;
+#X connect 44 0 36 0;
+#X connect 44 0 35 0;
+#X connect 44 0 34 0;
+#X connect 45 0 38 0;
+#X connect 46 0 44 0;
+#X connect 47 0 6 0;
+#X connect 47 0 33 0;
+#X connect 48 0 7 0;
+#X connect 48 0 33 0;
+#X connect 49 0 29 0;
+#X connect 49 0 33 0;
+#X restore 581 94 pd mwbc;
 #X connect 1 0 3 0;
 #X connect 2 0 3 1;
 #X connect 3 0 0 0;
@@ -6976,69 +9448,75 @@
 #X connect 53 0 39 0;
 #X connect 54 0 39 0;
 #X connect 55 0 39 0;
-#X coords 0 -1 1 1 310 47 1 100 100;
-#X restore 688 110 pd pbcClock;
-#N canvas 520 22 677 752 pbdClock 0;
-#X obj 72 806 outlet;
-#X obj 72 152 r CPR1;
-#X obj 105 128 tgl 15 0 empty empty 1 4 -7 0 10 -262144 -1 -1 0 1;
-#X obj 72 173 spigot;
-#X obj 124 128 tgl 15 0 empty empty 2 4 -7 0 10 -262144 -1 -1 0 1;
-#X obj 91 214 spigot;
-#X obj 91 193 r CPR2;
-#X obj 143 128 tgl 15 0 empty empty 3 4 -7 0 10 -262144 -1 -1 0 1;
-#X obj 110 255 spigot;
-#X obj 110 234 r CPR3;
-#X obj 162 128 tgl 15 0 empty empty 4 4 -7 0 10 -262144 -1 -1 1 1;
-#X obj 129 296 spigot;
-#X obj 129 275 r CPR4;
-#X obj 181 128 tgl 15 0 empty empty 5 4 -7 0 10 -262144 -1 -1 0 1;
-#X obj 148 337 spigot;
-#X obj 200 128 tgl 15 0 empty empty 6 4 -7 0 10 -262144 -1 -1 0 1;
-#X obj 167 378 spigot;
-#X obj 219 128 tgl 15 0 empty empty 7 4 -7 0 10 -262144 -1 -1 0 1;
-#X obj 186 419 spigot;
-#X obj 238 128 tgl 15 0 empty empty 8 4 -7 0 10 -262144 -1 -1 0 1;
-#X obj 205 460 spigot;
-#X obj 148 316 r CPR5;
-#X obj 167 357 r CPR6;
-#X obj 186 398 r CPR7;
-#X obj 205 439 r CPR8;
-#X obj 257 128 tgl 15 0 empty empty 9 4 -7 0 10 -262144 -1 -1 0 1;
-#X obj 224 502 spigot;
-#X obj 276 128 tgl 15 0 empty empty 10 4 -7 0 10 -262144 -1 -1 0 1
+#X connect 56 0 68 0;
+#X connect 57 0 69 0;
+#X connect 58 0 70 0;
+#X connect 68 0 39 0;
+#X connect 69 0 39 0;
+#X connect 70 0 39 0;
+#X coords 0 -1 1 1 310 70 2 100 100;
+#X restore 689 108 pd pbcClock;
+#N canvas 69 146 1231 752 pbdClock 0;
+#X obj 72 829 outlet;
+#X obj 72 175 r CPR1;
+#X obj 105 151 tgl 15 0 empty empty 1 4 -7 0 10 -262144 -1 -1 0 1;
+#X obj 72 196 spigot;
+#X obj 124 151 tgl 15 0 empty empty 2 4 -7 0 10 -262144 -1 -1 1 1;
+#X obj 91 237 spigot;
+#X obj 91 216 r CPR2;
+#X obj 143 151 tgl 15 0 empty empty 3 4 -7 0 10 -262144 -1 -1 0 1;
+#X obj 110 278 spigot;
+#X obj 110 257 r CPR3;
+#X obj 162 151 tgl 15 0 empty empty 4 4 -7 0 10 -262144 -1 -1 0 1;
+#X obj 129 319 spigot;
+#X obj 129 298 r CPR4;
+#X obj 181 151 tgl 15 0 empty empty 5 4 -7 0 10 -262144 -1 -1 0 1;
+#X obj 148 360 spigot;
+#X obj 200 151 tgl 15 0 empty empty 6 4 -7 0 10 -262144 -1 -1 0 1;
+#X obj 167 401 spigot;
+#X obj 219 151 tgl 15 0 empty empty 7 4 -7 0 10 -262144 -1 -1 0 1;
+#X obj 186 442 spigot;
+#X obj 238 151 tgl 15 0 empty empty 8 4 -7 0 10 -262144 -1 -1 0 1;
+#X obj 205 483 spigot;
+#X obj 148 339 r CPR5;
+#X obj 167 380 r CPR6;
+#X obj 186 421 r CPR7;
+#X obj 205 462 r CPR8;
+#X obj 257 151 tgl 15 0 empty empty 9 4 -7 0 10 -262144 -1 -1 0 1;
+#X obj 224 525 spigot;
+#X obj 276 151 tgl 15 0 empty empty 10 4 -7 0 10 -262144 -1 -1 0 1
 ;
-#X obj 243 543 spigot;
-#X obj 295 128 tgl 15 0 empty empty 12 4 -7 0 10 -262144 -1 -1 0 1
+#X obj 243 566 spigot;
+#X obj 295 151 tgl 15 0 empty empty 12 4 -7 0 10 -262144 -1 -1 0 1
 ;
-#X obj 262 584 spigot;
-#X obj 314 128 tgl 15 0 empty empty 16 4 -7 0 10 -262144 -1 -1 0 1
+#X obj 262 607 spigot;
+#X obj 314 151 tgl 15 0 empty empty 16 4 -7 0 10 -262144 -1 -1 0 1
 ;
-#X obj 281 625 spigot;
-#X obj 224 481 r CPR9;
-#X obj 243 522 r CPR10;
-#X obj 262 563 r CPR12;
-#X obj 281 604 r CPR16;
-#X obj 414 48 r normalBeat;
-#X obj 494 48 r panicBeat;
-#X obj 414 111 unpack 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
-#X obj 568 48 r weirdBeat;
-#X obj 333 128 tgl 15 0 empty empty CM1 0 -7 0 10 -262144 -1 -1 0 1
+#X obj 281 648 spigot;
+#X obj 224 504 r CPR9;
+#X obj 243 545 r CPR10;
+#X obj 262 586 r CPR12;
+#X obj 281 627 r CPR16;
+#X obj 661 66 r normalBeat;
+#X obj 741 66 r panicBeat;
+#X obj 414 134 unpack 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
+#X obj 815 66 r weirdBeat;
+#X obj 333 151 tgl 15 0 empty empty CM1 0 -7 0 10 -262144 -1 -1 0 1
 ;
-#X obj 352 128 tgl 15 0 empty empty CM2 0 -7 0 10 -262144 -1 -1 0 1
+#X obj 352 151 tgl 15 0 empty empty CM2 0 -7 0 10 -262144 -1 -1 0 1
 ;
-#X obj 371 128 tgl 15 0 empty empty CM3 0 -7 0 10 -262144 -1 -1 0 1
+#X obj 371 151 tgl 15 0 empty empty CM3 0 -7 0 10 -262144 -1 -1 0 1
 ;
-#X obj 390 128 tgl 15 0 empty empty CM4 0 -7 0 10 -262144 -1 -1 0 1
+#X obj 390 151 tgl 15 0 empty empty CM4 0 -7 0 10 -262144 -1 -1 0 1
 ;
-#X obj 300 666 spigot;
-#X obj 300 645 r CM1;
-#X obj 319 707 spigot;
-#X obj 319 686 r CM2;
-#X obj 338 748 spigot;
-#X obj 357 789 spigot;
-#X obj 338 727 r CM3;
-#X obj 357 768 r CM4;
+#X obj 300 689 spigot;
+#X obj 300 668 r CM1;
+#X obj 319 730 spigot;
+#X obj 319 709 r CM2;
+#X obj 338 771 spigot;
+#X obj 357 812 spigot;
+#X obj 338 750 r CM3;
+#X obj 357 791 r CM4;
 #N canvas 13 22 766 605 pnbd 0;
 #X msg 102 145 \$1;
 #X msg 233 316 1, f 1;
@@ -7178,7 +9656,7 @@
 #X connect 34 0 30 0;
 #X connect 35 0 25 0;
 #X connect 36 0 25 0;
-#X restore 414 69 pd pnbd;
+#X restore 661 87 pd pnbd;
 #N canvas 13 22 842 637 ppbd 0;
 #X msg 102 145 \$1;
 #X msg 233 316 1, f 1;
@@ -7318,7 +9796,7 @@
 #X connect 34 0 6 0;
 #X connect 35 0 7 0;
 #X connect 36 0 30 0;
-#X restore 494 69 pd ppbd;
+#X restore 741 87 pd ppbd;
 #N canvas 13 22 1054 568 pwbd 0;
 #X msg 102 145 \$1;
 #X msg 233 316 1, f 1;
@@ -7458,7 +9936,568 @@
 #X connect 34 0 6 0;
 #X connect 35 0 7 0;
 #X connect 36 0 30 0;
-#X restore 568 69 pd pwbd;
+#X restore 815 87 pd pwbd;
+#X obj 414 66 r mnormalBeat;
+#X obj 500 66 r mpanicBeat;
+#X obj 581 66 r mweirdBeat;
+#X floatatom 111 121 3 0 25 2 mnb0 - tmnbd0, f 3;
+#X floatatom 139 121 3 0 25 2 mnb1 - tmnbd1, f 3;
+#X floatatom 167 121 3 0 25 2 mnb2 - tmnbd2, f 3;
+#X floatatom 219 121 3 0 25 2 mpb0 - tmpbd0, f 3;
+#X floatatom 247 121 3 0 25 2 mpb1 - tmpbd1, f 3;
+#X floatatom 275 121 3 0 25 2 mpb2 - tmpbd2, f 3;
+#X floatatom 325 121 3 0 25 2 mwb0 - tmwbd0, f 3;
+#X floatatom 353 121 3 0 25 2 mwb1 - tmwbd1, f 3;
+#X floatatom 381 121 3 0 25 2 mwb2 - tmwbd2, f 3;
+#N canvas 37 22 858 752 mnbd 0;
+#X msg 102 145 \$1;
+#X msg 233 316 1, f 1;
+#X obj 14 430 pack 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0, f 37;
+#X msg 402 145 \$1;
+#X obj 40 6 inlet;
+#X obj 14 451 outlet;
+#X floatatom 102 125 5 0 0 0 - - -, f 5;
+#X floatatom 402 125 5 0 0 0 - - -, f 5;
+#X msg 248 316 1, f 1;
+#X msg 263 316 1, f 1;
+#X msg 278 316 1, f 1;
+#X msg 293 316 1, f 1;
+#X msg 308 316 1, f 1;
+#X msg 323 316 1, f 1;
+#X msg 338 316 1, f 1;
+#X msg 353 316 1, f 1;
+#X msg 368 316 1, f 1;
+#X msg 383 316 1, f 1;
+#X msg 398 316 1, f 1;
+#X msg 413 316 1, f 1;
+#X msg 428 316 1, f 1;
+#X msg 443 316 1, f 1;
+#X msg 458 316 1, f 1;
+#X obj 80 110 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X msg 67 316 0, f 1;
+#X obj 40 70 t b b;
+#X obj 102 167 select 1 2 3 4 5 6 7 8 9 10 12 16 20 21 22 23 25;
+#X obj 402 167 select 1 2 3 4 5 6 7 8 9 10 12 16 20 21 22 23 25;
+#X msg 704 145 \$1;
+#X floatatom 704 125 5 0 0 0 - - -, f 5;
+#X obj 704 167 select 1 2 3 4 5 6 7 8 9 10 12 16 20 21 22 23 25;
+#X obj 40 38 t b b;
+#X obj 197 23 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 197 118 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X floatatom 102 507 5 0 0 0 - - -, f 5;
+#X floatatom 402 507 5 0 0 0 - - -, f 5;
+#X floatatom 704 507 5 0 0 0 - - -, f 5;
+#X obj 102 525 spigot;
+#X obj 803 510 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 402 525 spigot;
+#X obj 704 525 spigot;
+#X floatatom 102 546 5 0 0 0 - - -, f 5;
+#X floatatom 402 546 5 0 0 0 - - -, f 5;
+#X floatatom 704 546 5 0 0 0 - - -, f 5;
+#X obj 781 492 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 803 469 r msuscmd2;
+#X obj 781 452 r msuscmd3;
+#X obj 102 101 r tmnbd0;
+#X obj 402 101 r tmnbd1;
+#X obj 704 101 r tmnbd2;
+#X obj 704 565 s stmnbd2;
+#X obj 402 566 s stmnbd1;
+#X obj 102 568 s stmnbd0;
+#X connect 0 0 26 0;
+#X connect 1 0 2 0;
+#X connect 2 0 5 0;
+#X connect 3 0 27 0;
+#X connect 4 0 31 0;
+#X connect 6 0 0 0;
+#X connect 6 0 34 0;
+#X connect 7 0 3 0;
+#X connect 7 0 35 0;
+#X connect 8 0 2 1;
+#X connect 9 0 2 2;
+#X connect 10 0 2 3;
+#X connect 11 0 2 4;
+#X connect 12 0 2 5;
+#X connect 13 0 2 6;
+#X connect 14 0 2 7;
+#X connect 15 0 2 8;
+#X connect 16 0 2 9;
+#X connect 17 0 2 10;
+#X connect 18 0 2 11;
+#X connect 19 0 2 12;
+#X connect 20 0 2 13;
+#X connect 21 0 2 14;
+#X connect 22 0 2 15;
+#X connect 23 0 6 0;
+#X connect 23 0 7 0;
+#X connect 23 0 29 0;
+#X connect 24 0 2 0;
+#X connect 24 0 2 1;
+#X connect 24 0 2 2;
+#X connect 24 0 2 3;
+#X connect 24 0 2 4;
+#X connect 24 0 2 5;
+#X connect 24 0 2 6;
+#X connect 24 0 2 7;
+#X connect 24 0 2 8;
+#X connect 24 0 2 9;
+#X connect 24 0 2 10;
+#X connect 24 0 2 11;
+#X connect 24 0 2 12;
+#X connect 24 0 2 13;
+#X connect 24 0 2 14;
+#X connect 24 0 2 15;
+#X connect 25 0 23 0;
+#X connect 25 1 24 0;
+#X connect 26 0 1 0;
+#X connect 26 1 8 0;
+#X connect 26 2 9 0;
+#X connect 26 3 10 0;
+#X connect 26 4 11 0;
+#X connect 26 5 12 0;
+#X connect 26 6 13 0;
+#X connect 26 7 14 0;
+#X connect 26 8 15 0;
+#X connect 26 9 16 0;
+#X connect 26 10 17 0;
+#X connect 26 11 18 0;
+#X connect 26 12 19 0;
+#X connect 26 13 20 0;
+#X connect 26 14 21 0;
+#X connect 26 15 22 0;
+#X connect 27 0 1 0;
+#X connect 27 1 8 0;
+#X connect 27 2 9 0;
+#X connect 27 3 10 0;
+#X connect 27 4 11 0;
+#X connect 27 5 12 0;
+#X connect 27 6 13 0;
+#X connect 27 7 14 0;
+#X connect 27 8 15 0;
+#X connect 27 9 16 0;
+#X connect 27 10 17 0;
+#X connect 27 11 18 0;
+#X connect 27 12 19 0;
+#X connect 27 13 20 0;
+#X connect 27 14 21 0;
+#X connect 27 15 22 0;
+#X connect 28 0 30 0;
+#X connect 29 0 28 0;
+#X connect 29 0 36 0;
+#X connect 30 0 1 0;
+#X connect 30 1 8 0;
+#X connect 30 2 9 0;
+#X connect 30 3 10 0;
+#X connect 30 4 11 0;
+#X connect 30 5 12 0;
+#X connect 30 6 13 0;
+#X connect 30 7 14 0;
+#X connect 30 8 15 0;
+#X connect 30 9 16 0;
+#X connect 30 10 17 0;
+#X connect 30 11 18 0;
+#X connect 30 12 19 0;
+#X connect 30 13 20 0;
+#X connect 30 14 21 0;
+#X connect 30 15 22 0;
+#X connect 31 0 25 0;
+#X connect 31 1 25 0;
+#X connect 32 0 31 0;
+#X connect 33 0 32 0;
+#X connect 34 0 37 0;
+#X connect 35 0 39 0;
+#X connect 36 0 40 0;
+#X connect 37 0 41 0;
+#X connect 38 0 37 1;
+#X connect 38 0 39 1;
+#X connect 38 0 40 1;
+#X connect 39 0 42 0;
+#X connect 40 0 43 0;
+#X connect 41 0 52 0;
+#X connect 42 0 51 0;
+#X connect 43 0 50 0;
+#X connect 44 0 36 0;
+#X connect 44 0 35 0;
+#X connect 44 0 34 0;
+#X connect 45 0 38 0;
+#X connect 46 0 44 0;
+#X connect 47 0 6 0;
+#X connect 47 0 33 0;
+#X connect 48 0 7 0;
+#X connect 48 0 33 0;
+#X connect 49 0 29 0;
+#X connect 49 0 33 0;
+#X restore 414 87 pd mnbd;
+#N canvas 363 22 858 752 mpbd 0;
+#X msg 102 145 \$1;
+#X msg 233 316 1, f 1;
+#X obj 14 430 pack 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0, f 37;
+#X msg 402 145 \$1;
+#X obj 40 6 inlet;
+#X obj 14 451 outlet;
+#X floatatom 102 125 5 0 0 0 - - -, f 5;
+#X floatatom 402 125 5 0 0 0 - - -, f 5;
+#X msg 248 316 1, f 1;
+#X msg 263 316 1, f 1;
+#X msg 278 316 1, f 1;
+#X msg 293 316 1, f 1;
+#X msg 308 316 1, f 1;
+#X msg 323 316 1, f 1;
+#X msg 338 316 1, f 1;
+#X msg 353 316 1, f 1;
+#X msg 368 316 1, f 1;
+#X msg 383 316 1, f 1;
+#X msg 398 316 1, f 1;
+#X msg 413 316 1, f 1;
+#X msg 428 316 1, f 1;
+#X msg 443 316 1, f 1;
+#X msg 458 316 1, f 1;
+#X obj 80 110 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X msg 67 316 0, f 1;
+#X obj 40 70 t b b;
+#X obj 102 167 select 1 2 3 4 5 6 7 8 9 10 12 16 20 21 22 23 25;
+#X obj 402 167 select 1 2 3 4 5 6 7 8 9 10 12 16 20 21 22 23 25;
+#X msg 704 145 \$1;
+#X floatatom 704 125 5 0 0 0 - - -, f 5;
+#X obj 704 167 select 1 2 3 4 5 6 7 8 9 10 12 16 20 21 22 23 25;
+#X obj 40 38 t b b;
+#X obj 197 23 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 197 118 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X floatatom 102 507 5 0 0 0 - - -, f 5;
+#X floatatom 402 507 5 0 0 0 - - -, f 5;
+#X floatatom 704 507 5 0 0 0 - - -, f 5;
+#X obj 102 525 spigot;
+#X obj 803 510 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 402 525 spigot;
+#X obj 704 525 spigot;
+#X floatatom 102 546 5 0 0 0 - - -, f 5;
+#X floatatom 402 546 5 0 0 0 - - -, f 5;
+#X floatatom 704 546 5 0 0 0 - - -, f 5;
+#X obj 781 492 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 803 469 r msuscmd2;
+#X obj 781 452 r msuscmd3;
+#X obj 102 101 r tmpbb0;
+#X obj 402 101 r tmpbb1;
+#X obj 704 101 r tmpbb2;
+#X obj 102 568 s stmpbb0;
+#X obj 402 566 s stmpbb1;
+#X obj 704 565 s stmpbb2;
+#X connect 0 0 26 0;
+#X connect 1 0 2 0;
+#X connect 2 0 5 0;
+#X connect 3 0 27 0;
+#X connect 4 0 31 0;
+#X connect 6 0 0 0;
+#X connect 6 0 34 0;
+#X connect 7 0 3 0;
+#X connect 7 0 35 0;
+#X connect 8 0 2 1;
+#X connect 9 0 2 2;
+#X connect 10 0 2 3;
+#X connect 11 0 2 4;
+#X connect 12 0 2 5;
+#X connect 13 0 2 6;
+#X connect 14 0 2 7;
+#X connect 15 0 2 8;
+#X connect 16 0 2 9;
+#X connect 17 0 2 10;
+#X connect 18 0 2 11;
+#X connect 19 0 2 12;
+#X connect 20 0 2 13;
+#X connect 21 0 2 14;
+#X connect 22 0 2 15;
+#X connect 23 0 6 0;
+#X connect 23 0 7 0;
+#X connect 23 0 29 0;
+#X connect 24 0 2 0;
+#X connect 24 0 2 1;
+#X connect 24 0 2 2;
+#X connect 24 0 2 3;
+#X connect 24 0 2 4;
+#X connect 24 0 2 5;
+#X connect 24 0 2 6;
+#X connect 24 0 2 7;
+#X connect 24 0 2 8;
+#X connect 24 0 2 9;
+#X connect 24 0 2 10;
+#X connect 24 0 2 11;
+#X connect 24 0 2 12;
+#X connect 24 0 2 13;
+#X connect 24 0 2 14;
+#X connect 24 0 2 15;
+#X connect 25 0 23 0;
+#X connect 25 1 24 0;
+#X connect 26 0 1 0;
+#X connect 26 1 8 0;
+#X connect 26 2 9 0;
+#X connect 26 3 10 0;
+#X connect 26 4 11 0;
+#X connect 26 5 12 0;
+#X connect 26 6 13 0;
+#X connect 26 7 14 0;
+#X connect 26 8 15 0;
+#X connect 26 9 16 0;
+#X connect 26 10 17 0;
+#X connect 26 11 18 0;
+#X connect 26 12 19 0;
+#X connect 26 13 20 0;
+#X connect 26 14 21 0;
+#X connect 26 15 22 0;
+#X connect 27 0 1 0;
+#X connect 27 1 8 0;
+#X connect 27 2 9 0;
+#X connect 27 3 10 0;
+#X connect 27 4 11 0;
+#X connect 27 5 12 0;
+#X connect 27 6 13 0;
+#X connect 27 7 14 0;
+#X connect 27 8 15 0;
+#X connect 27 9 16 0;
+#X connect 27 10 17 0;
+#X connect 27 11 18 0;
+#X connect 27 12 19 0;
+#X connect 27 13 20 0;
+#X connect 27 14 21 0;
+#X connect 27 15 22 0;
+#X connect 28 0 30 0;
+#X connect 29 0 28 0;
+#X connect 29 0 36 0;
+#X connect 30 0 1 0;
+#X connect 30 1 8 0;
+#X connect 30 2 9 0;
+#X connect 30 3 10 0;
+#X connect 30 4 11 0;
+#X connect 30 5 12 0;
+#X connect 30 6 13 0;
+#X connect 30 7 14 0;
+#X connect 30 8 15 0;
+#X connect 30 9 16 0;
+#X connect 30 10 17 0;
+#X connect 30 11 18 0;
+#X connect 30 12 19 0;
+#X connect 30 13 20 0;
+#X connect 30 14 21 0;
+#X connect 30 15 22 0;
+#X connect 31 0 25 0;
+#X connect 31 1 25 0;
+#X connect 32 0 31 0;
+#X connect 33 0 32 0;
+#X connect 34 0 37 0;
+#X connect 35 0 39 0;
+#X connect 36 0 40 0;
+#X connect 37 0 41 0;
+#X connect 38 0 37 1;
+#X connect 38 0 39 1;
+#X connect 38 0 40 1;
+#X connect 39 0 42 0;
+#X connect 40 0 43 0;
+#X connect 41 0 50 0;
+#X connect 42 0 51 0;
+#X connect 43 0 52 0;
+#X connect 44 0 36 0;
+#X connect 44 0 35 0;
+#X connect 44 0 34 0;
+#X connect 45 0 38 0;
+#X connect 46 0 44 0;
+#X connect 47 0 6 0;
+#X connect 47 0 33 0;
+#X connect 48 0 7 0;
+#X connect 48 0 33 0;
+#X connect 49 0 29 0;
+#X connect 49 0 33 0;
+#X restore 500 87 pd mpbd;
+#N canvas 277 44 858 752 mwbd 0;
+#X msg 102 145 \$1;
+#X msg 233 316 1, f 1;
+#X obj 14 430 pack 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0, f 37;
+#X msg 402 145 \$1;
+#X obj 40 6 inlet;
+#X obj 14 451 outlet;
+#X floatatom 102 125 5 0 0 0 - - -, f 5;
+#X floatatom 402 125 5 0 0 0 - - -, f 5;
+#X msg 248 316 1, f 1;
+#X msg 263 316 1, f 1;
+#X msg 278 316 1, f 1;
+#X msg 293 316 1, f 1;
+#X msg 308 316 1, f 1;
+#X msg 323 316 1, f 1;
+#X msg 338 316 1, f 1;
+#X msg 353 316 1, f 1;
+#X msg 368 316 1, f 1;
+#X msg 383 316 1, f 1;
+#X msg 398 316 1, f 1;
+#X msg 413 316 1, f 1;
+#X msg 428 316 1, f 1;
+#X msg 443 316 1, f 1;
+#X msg 458 316 1, f 1;
+#X obj 80 110 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X msg 67 316 0, f 1;
+#X obj 40 70 t b b;
+#X obj 102 167 select 1 2 3 4 5 6 7 8 9 10 12 16 20 21 22 23 25;
+#X obj 402 167 select 1 2 3 4 5 6 7 8 9 10 12 16 20 21 22 23 25;
+#X msg 704 145 \$1;
+#X floatatom 704 125 5 0 0 0 - - -, f 5;
+#X obj 704 167 select 1 2 3 4 5 6 7 8 9 10 12 16 20 21 22 23 25;
+#X obj 40 38 t b b;
+#X obj 197 23 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 197 118 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X floatatom 102 507 5 0 0 0 - - -, f 5;
+#X floatatom 402 507 5 0 0 0 - - -, f 5;
+#X floatatom 704 507 5 0 0 0 - - -, f 5;
+#X obj 102 525 spigot;
+#X obj 803 510 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 402 525 spigot;
+#X obj 704 525 spigot;
+#X floatatom 102 546 5 0 0 0 - - -, f 5;
+#X floatatom 402 546 5 0 0 0 - - -, f 5;
+#X floatatom 704 546 5 0 0 0 - - -, f 5;
+#X obj 781 492 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 803 469 r msuscmd2;
+#X obj 781 452 r msuscmd3;
+#X obj 102 101 r tmwbb0;
+#X obj 402 101 r tmwbb1;
+#X obj 704 101 r tmwbb2;
+#X obj 102 568 s stmwbb0;
+#X obj 402 566 s stmwbb1;
+#X obj 704 565 s stmwbb2;
+#X connect 0 0 26 0;
+#X connect 1 0 2 0;
+#X connect 2 0 5 0;
+#X connect 3 0 27 0;
+#X connect 4 0 31 0;
+#X connect 6 0 0 0;
+#X connect 6 0 34 0;
+#X connect 7 0 3 0;
+#X connect 7 0 35 0;
+#X connect 8 0 2 1;
+#X connect 9 0 2 2;
+#X connect 10 0 2 3;
+#X connect 11 0 2 4;
+#X connect 12 0 2 5;
+#X connect 13 0 2 6;
+#X connect 14 0 2 7;
+#X connect 15 0 2 8;
+#X connect 16 0 2 9;
+#X connect 17 0 2 10;
+#X connect 18 0 2 11;
+#X connect 19 0 2 12;
+#X connect 20 0 2 13;
+#X connect 21 0 2 14;
+#X connect 22 0 2 15;
+#X connect 23 0 6 0;
+#X connect 23 0 7 0;
+#X connect 23 0 29 0;
+#X connect 24 0 2 0;
+#X connect 24 0 2 1;
+#X connect 24 0 2 2;
+#X connect 24 0 2 3;
+#X connect 24 0 2 4;
+#X connect 24 0 2 5;
+#X connect 24 0 2 6;
+#X connect 24 0 2 7;
+#X connect 24 0 2 8;
+#X connect 24 0 2 9;
+#X connect 24 0 2 10;
+#X connect 24 0 2 11;
+#X connect 24 0 2 12;
+#X connect 24 0 2 13;
+#X connect 24 0 2 14;
+#X connect 24 0 2 15;
+#X connect 25 0 23 0;
+#X connect 25 1 24 0;
+#X connect 26 0 1 0;
+#X connect 26 1 8 0;
+#X connect 26 2 9 0;
+#X connect 26 3 10 0;
+#X connect 26 4 11 0;
+#X connect 26 5 12 0;
+#X connect 26 6 13 0;
+#X connect 26 7 14 0;
+#X connect 26 8 15 0;
+#X connect 26 9 16 0;
+#X connect 26 10 17 0;
+#X connect 26 11 18 0;
+#X connect 26 12 19 0;
+#X connect 26 13 20 0;
+#X connect 26 14 21 0;
+#X connect 26 15 22 0;
+#X connect 27 0 1 0;
+#X connect 27 1 8 0;
+#X connect 27 2 9 0;
+#X connect 27 3 10 0;
+#X connect 27 4 11 0;
+#X connect 27 5 12 0;
+#X connect 27 6 13 0;
+#X connect 27 7 14 0;
+#X connect 27 8 15 0;
+#X connect 27 9 16 0;
+#X connect 27 10 17 0;
+#X connect 27 11 18 0;
+#X connect 27 12 19 0;
+#X connect 27 13 20 0;
+#X connect 27 14 21 0;
+#X connect 27 15 22 0;
+#X connect 28 0 30 0;
+#X connect 29 0 28 0;
+#X connect 29 0 36 0;
+#X connect 30 0 1 0;
+#X connect 30 1 8 0;
+#X connect 30 2 9 0;
+#X connect 30 3 10 0;
+#X connect 30 4 11 0;
+#X connect 30 5 12 0;
+#X connect 30 6 13 0;
+#X connect 30 7 14 0;
+#X connect 30 8 15 0;
+#X connect 30 9 16 0;
+#X connect 30 10 17 0;
+#X connect 30 11 18 0;
+#X connect 30 12 19 0;
+#X connect 30 13 20 0;
+#X connect 30 14 21 0;
+#X connect 30 15 22 0;
+#X connect 31 0 25 0;
+#X connect 31 1 25 0;
+#X connect 32 0 31 0;
+#X connect 33 0 32 0;
+#X connect 34 0 37 0;
+#X connect 35 0 39 0;
+#X connect 36 0 40 0;
+#X connect 37 0 41 0;
+#X connect 38 0 37 1;
+#X connect 38 0 39 1;
+#X connect 38 0 40 1;
+#X connect 39 0 42 0;
+#X connect 40 0 43 0;
+#X connect 41 0 50 0;
+#X connect 42 0 51 0;
+#X connect 43 0 52 0;
+#X connect 44 0 36 0;
+#X connect 44 0 35 0;
+#X connect 44 0 34 0;
+#X connect 45 0 38 0;
+#X connect 46 0 44 0;
+#X connect 47 0 6 0;
+#X connect 47 0 33 0;
+#X connect 48 0 7 0;
+#X connect 48 0 33 0;
+#X connect 49 0 29 0;
+#X connect 49 0 33 0;
+#X restore 581 87 pd mwbd;
 #X connect 1 0 3 0;
 #X connect 2 0 3 1;
 #X connect 3 0 0 0;
@@ -7529,27 +10568,358 @@
 #X connect 53 0 39 0;
 #X connect 54 0 39 0;
 #X connect 55 0 39 0;
-#X coords 0 -1 1 1 310 47 1 100 100;
-#X restore 839 161 pd pbdClock;
-#X connect 4 0 42 0;
+#X connect 56 0 68 0;
+#X connect 57 0 69 0;
+#X connect 58 0 70 0;
+#X connect 68 0 39 0;
+#X connect 69 0 39 0;
+#X connect 70 0 39 0;
+#X coords 0 -1 1 1 310 70 2 100 100;
+#X restore 778 206 pd pbdClock;
+#N canvas 256 148 584 403 setupsaver 0;
+#X obj 100 266 textfile;
+#X msg -24 223 clear;
+#X msg -160 24 print;
+#X msg -112 21 write qlist2.txt;
+#X obj 27 529 s msuscmd3;
+#X obj 49 546 s msuscmd2;
+#X obj 59 563 s msuscmd1;
+#X obj 69 580 s msuscmd0;
+#N canvas 227 164 921 456 CMrsaver 0;
+#X obj 48 40 r stmcm1;
+#X obj 48 63 unpack 0 0 0 0;
+#X msg 48 135 add 0 cm1s0 \$1 \;;
+#X msg 75 118 add 0 cm1s1 \$1 \;;
+#X msg 102 101 add 0 cm1s2 \$1 \;;
+#X msg 129 84 add 0 cm1s3 \$1 \;;
+#X obj 251 61 unpack 0 0 0 0;
+#X obj 447 64 unpack 0 0 0 0;
+#X obj 650 62 unpack 0 0 0 0;
+#X obj 251 38 r stmcm2;
+#X obj 447 41 r stmcm3;
+#X obj 650 39 r stmcm4;
+#X msg 332 82 add 0 cm2s3 \$1 \;;
+#X msg 305 99 add 0 cm2s2 \$1 \;;
+#X msg 278 116 add 0 cm2s1 \$1 \;;
+#X msg 251 133 add 0 cm2s0 \$1 \;;
+#X msg 447 136 add 0 cm3s0 \$1 \;;
+#X msg 474 119 add 0 cm3s1 \$1 \;;
+#X msg 501 102 add 0 cm3s2 \$1 \;;
+#X msg 528 85 add 0 cm3s3 \$1 \;;
+#X msg 731 83 add 0 cm4s3 \$1 \;;
+#X msg 704 100 add 0 cm4s2 \$1 \;;
+#X msg 677 117 add 0 cm4s1 \$1 \;;
+#X msg 650 134 add 0 cm4s0 \$1 \;;
+#X obj 48 220 outlet;
+#X obj 75 200 outlet;
+#X obj 102 180 outlet;
+#X obj 129 159 outlet;
+#X obj 251 229 outlet;
+#X obj 278 209 outlet;
+#X obj 305 189 outlet;
+#X obj 332 168 outlet;
+#X obj 447 223 outlet;
+#X obj 474 203 outlet;
+#X obj 501 183 outlet;
+#X obj 528 162 outlet;
+#X obj 650 232 outlet;
+#X obj 677 212 outlet;
+#X obj 704 192 outlet;
+#X obj 731 171 outlet;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 1 1 3 0;
+#X connect 1 2 4 0;
+#X connect 1 3 5 0;
+#X connect 2 0 24 0;
+#X connect 3 0 25 0;
+#X connect 4 0 26 0;
+#X connect 5 0 27 0;
+#X connect 6 0 15 0;
+#X connect 6 1 14 0;
+#X connect 6 2 13 0;
+#X connect 6 3 12 0;
+#X connect 7 0 16 0;
+#X connect 7 1 17 0;
+#X connect 7 2 18 0;
+#X connect 7 3 19 0;
+#X connect 8 0 23 0;
+#X connect 8 1 22 0;
+#X connect 8 2 21 0;
+#X connect 8 3 20 0;
+#X connect 9 0 6 0;
+#X connect 10 0 7 0;
+#X connect 11 0 8 0;
+#X connect 12 0 31 0;
+#X connect 13 0 30 0;
+#X connect 14 0 29 0;
+#X connect 15 0 28 0;
+#X connect 16 0 32 0;
+#X connect 17 0 33 0;
+#X connect 18 0 34 0;
+#X connect 19 0 35 0;
+#X connect 20 0 39 0;
+#X connect 21 0 38 0;
+#X connect 22 0 37 0;
+#X connect 23 0 36 0;
+#X restore 185 161 pd CMrsaver;
+#N canvas 0 22 1258 454 PRBrsaver 0;
+#X obj 151 196 r stmnba0;
+#X obj 250 197 r stmnba1;
+#X obj 349 197 r stmnba2;
+#X msg 151 217 add 0 pnba0 \$1 \;;
+#X msg 250 217 add 0 pnba1 \$1 \;;
+#X msg 349 217 add 0 pnba2 \$1 \;;
+#X obj 448 197 r stmpba0;
+#X obj 547 197 r stmpba1;
+#X obj 646 197 r stmpba2;
+#X msg 448 217 add 0 ppba0 \$1 \;;
+#X msg 547 217 add 0 ppba1 \$1 \;;
+#X msg 646 217 add 0 ppba2 \$1 \;;
+#X msg 744 217 add 0 ppba0 \$1 \;;
+#X msg 842 217 add 0 ppba1 \$1 \;;
+#X msg 940 217 add 0 ppba2 \$1 \;;
+#X obj 744 197 r stmwba0;
+#X obj 842 197 r stmwba1;
+#X obj 940 197 r stmwba2;
+#X obj 151 155 r stmnbb0;
+#X obj 250 155 r stmnbb1;
+#X obj 349 155 r stmnbb2;
+#X obj 448 155 r stmpbb0;
+#X obj 547 155 r stmpbb1;
+#X obj 646 155 r stmpbb2;
+#X obj 744 155 r stmwbb0;
+#X obj 842 155 r stmwbb1;
+#X obj 940 155 r stmwbb2;
+#X msg 940 176 add 0 ppbb2 \$1 \;;
+#X msg 842 176 add 0 ppbb1 \$1 \;;
+#X msg 744 176 add 0 ppbb0 \$1 \;;
+#X msg 646 176 add 0 ppbb2 \$1 \;;
+#X msg 547 176 add 0 ppbb1 \$1 \;;
+#X msg 448 176 add 0 ppbb0 \$1 \;;
+#X msg 349 176 add 0 pnbb2 \$1 \;;
+#X msg 250 176 add 0 pnbb1 \$1 \;;
+#X msg 151 176 add 0 pnbb0 \$1 \;;
+#X obj 151 114 r stmnbc0;
+#X msg 151 135 add 0 pnbc0 \$1 \;;
+#X msg 250 135 add 0 pnbc1 \$1 \;;
+#X obj 250 114 r stmnbc1;
+#X msg 349 135 add 0 pnbc2 \$1 \;;
+#X obj 349 114 r stmnbc2;
+#X obj 448 114 r stmpbc0;
+#X msg 448 135 add 0 ppbc0 \$1 \;;
+#X msg 547 135 add 0 ppbc1 \$1 \;;
+#X obj 547 114 r stmpbc1;
+#X obj 646 114 r stmpbc2;
+#X msg 646 135 add 0 ppbc2 \$1 \;;
+#X msg 744 135 add 0 ppbc0 \$1 \;;
+#X obj 744 114 r stmwbc0;
+#X obj 842 114 r stmwbc1;
+#X msg 842 135 add 0 ppbc1 \$1 \;;
+#X msg 940 135 add 0 ppbc2 \$1 \;;
+#X obj 940 114 r stmwbc2;
+#X obj 151 72 r stmnbd0;
+#X obj 250 72 r stmnbd1;
+#X obj 349 72 r stmnbd2;
+#X obj 448 72 r stmpbd0;
+#X obj 547 72 r stmpbd1;
+#X obj 646 72 r stmpbd2;
+#X obj 744 72 r stmwbd0;
+#X obj 842 72 r stmwbd1;
+#X obj 940 72 r stmwbd2;
+#X msg 940 93 add 0 ppbd2 \$1 \;;
+#X msg 842 93 add 0 ppbd1 \$1 \;;
+#X msg 744 93 add 0 ppbd0 \$1 \;;
+#X msg 646 93 add 0 ppbd2 \$1 \;;
+#X msg 547 93 add 0 ppbd1 \$1 \;;
+#X msg 448 93 add 0 ppbd0 \$1 \;;
+#X msg 349 93 add 0 pnbd2 \$1 \;;
+#X msg 250 93 add 0 pnbd1 \$1 \;;
+#X msg 151 93 add 0 pnbd0 \$1 \;;
+#X obj 151 294 outlet;
+#X obj 151 277 outlet;
+#X obj 151 260 outlet;
+#X obj 151 243 outlet;
+#X obj 250 294 outlet;
+#X obj 250 277 outlet;
+#X obj 250 260 outlet;
+#X obj 250 243 outlet;
+#X obj 349 294 outlet;
+#X obj 349 277 outlet;
+#X obj 349 260 outlet;
+#X obj 349 243 outlet;
+#X obj 448 294 outlet;
+#X obj 448 277 outlet;
+#X obj 448 260 outlet;
+#X obj 448 243 outlet;
+#X obj 547 294 outlet;
+#X obj 547 277 outlet;
+#X obj 547 260 outlet;
+#X obj 547 243 outlet;
+#X obj 646 294 outlet;
+#X obj 646 277 outlet;
+#X obj 646 260 outlet;
+#X obj 646 243 outlet;
+#X obj 744 294 outlet;
+#X obj 744 277 outlet;
+#X obj 744 260 outlet;
+#X obj 744 243 outlet;
+#X obj 842 294 outlet;
+#X obj 842 277 outlet;
+#X obj 842 260 outlet;
+#X obj 842 243 outlet;
+#X obj 940 294 outlet;
+#X obj 940 277 outlet;
+#X obj 940 260 outlet;
+#X obj 940 243 outlet;
+#X connect 0 0 3 0;
+#X connect 1 0 4 0;
+#X connect 2 0 5 0;
+#X connect 3 0 75 0;
+#X connect 4 0 79 0;
+#X connect 5 0 83 0;
+#X connect 6 0 9 0;
+#X connect 7 0 10 0;
+#X connect 8 0 11 0;
+#X connect 9 0 87 0;
+#X connect 10 0 91 0;
+#X connect 11 0 95 0;
+#X connect 12 0 99 0;
+#X connect 13 0 103 0;
+#X connect 14 0 107 0;
+#X connect 15 0 12 0;
+#X connect 16 0 13 0;
+#X connect 17 0 14 0;
+#X connect 18 0 35 0;
+#X connect 19 0 34 0;
+#X connect 20 0 33 0;
+#X connect 21 0 32 0;
+#X connect 22 0 31 0;
+#X connect 23 0 30 0;
+#X connect 24 0 29 0;
+#X connect 25 0 28 0;
+#X connect 26 0 27 0;
+#X connect 27 0 106 0;
+#X connect 28 0 102 0;
+#X connect 29 0 98 0;
+#X connect 30 0 94 0;
+#X connect 31 0 90 0;
+#X connect 32 0 86 0;
+#X connect 33 0 82 0;
+#X connect 34 0 78 0;
+#X connect 35 0 74 0;
+#X connect 36 0 37 0;
+#X connect 37 0 73 0;
+#X connect 38 0 77 0;
+#X connect 39 0 38 0;
+#X connect 40 0 81 0;
+#X connect 41 0 40 0;
+#X connect 42 0 43 0;
+#X connect 43 0 85 0;
+#X connect 44 0 89 0;
+#X connect 45 0 44 0;
+#X connect 46 0 47 0;
+#X connect 47 0 93 0;
+#X connect 48 0 97 0;
+#X connect 49 0 48 0;
+#X connect 50 0 51 0;
+#X connect 51 0 101 0;
+#X connect 52 0 105 0;
+#X connect 53 0 52 0;
+#X connect 54 0 71 0;
+#X connect 55 0 70 0;
+#X connect 56 0 69 0;
+#X connect 57 0 68 0;
+#X connect 58 0 67 0;
+#X connect 59 0 66 0;
+#X connect 60 0 65 0;
+#X connect 61 0 64 0;
+#X connect 62 0 63 0;
+#X connect 63 0 104 0;
+#X connect 64 0 100 0;
+#X connect 65 0 96 0;
+#X connect 66 0 92 0;
+#X connect 67 0 88 0;
+#X connect 68 0 84 0;
+#X connect 69 0 80 0;
+#X connect 70 0 76 0;
+#X connect 71 0 72 0;
+#X restore 101 162 pd PRBrsaver;
+#X connect 1 0 0 0;
+#X connect 2 0 0 0;
+#X connect 3 0 0 0;
+#X connect 8 0 0 0;
+#X connect 8 1 0 0;
+#X connect 8 2 0 0;
+#X connect 8 3 0 0;
+#X connect 8 4 0 0;
+#X connect 8 5 0 0;
+#X connect 8 6 0 0;
+#X connect 8 7 0 0;
+#X connect 8 8 0 0;
+#X connect 8 9 0 0;
+#X connect 8 10 0 0;
+#X connect 8 11 0 0;
+#X connect 8 12 0 0;
+#X connect 8 13 0 0;
+#X connect 8 14 0 0;
+#X connect 8 15 0 0;
+#X connect 9 0 0 0;
+#X connect 9 1 0 0;
+#X connect 9 2 0 0;
+#X connect 9 3 0 0;
+#X connect 9 4 0 0;
+#X connect 9 5 0 0;
+#X connect 9 6 0 0;
+#X connect 9 7 0 0;
+#X connect 9 8 0 0;
+#X connect 9 9 0 0;
+#X connect 9 10 0 0;
+#X connect 9 11 0 0;
+#X connect 9 12 0 0;
+#X connect 9 13 0 0;
+#X connect 9 14 0 0;
+#X connect 9 15 0 0;
+#X connect 9 16 0 0;
+#X connect 9 17 0 0;
+#X connect 9 18 0 0;
+#X connect 9 19 0 0;
+#X connect 9 20 0 0;
+#X connect 9 21 0 0;
+#X connect 9 22 0 0;
+#X connect 9 23 0 0;
+#X connect 9 24 0 0;
+#X connect 9 25 0 0;
+#X connect 9 26 0 0;
+#X connect 9 27 0 0;
+#X connect 9 28 0 0;
+#X connect 9 29 0 0;
+#X connect 9 30 0 0;
+#X connect 9 31 0 0;
+#X connect 9 32 0 0;
+#X connect 9 33 0 0;
+#X connect 9 34 0 0;
+#X connect 9 35 0 0;
+#X restore 79 558 pd setupsaver;
+#X connect 4 0 26 0;
 #X connect 6 0 2 0;
-#X connect 8 0 41 0;
-#X connect 10 0 40 0;
+#X connect 8 0 25 0;
+#X connect 10 0 27 0;
 #X connect 12 0 13 0;
 #X connect 13 0 7 0;
 #X connect 14 0 12 1;
 #X connect 16 0 13 1;
 #X connect 17 0 12 0;
-#X connect 19 0 39 0;
+#X connect 19 0 28 0;
 #X connect 20 0 21 0;
 #X connect 21 0 3 0;
 #X connect 22 0 20 1;
 #X connect 23 0 21 1;
 #X connect 24 0 20 0;
-#X connect 25 0 46 0;
-#X connect 26 0 47 0;
-#X connect 27 0 48 0;
-#X connect 28 0 49 0;
+#X connect 25 0 42 0;
+#X connect 26 0 43 0;
+#X connect 27 0 44 0;
+#X connect 28 0 45 0;
 #X connect 29 0 30 0;
 #X connect 30 0 9 0;
 #X connect 31 0 29 1;
@@ -7560,19 +10930,15 @@
 #X connect 36 0 34 1;
 #X connect 37 0 35 1;
 #X connect 38 0 34 0;
-#X connect 39 0 28 0;
-#X connect 40 0 27 0;
-#X connect 41 0 25 0;
-#X connect 42 0 26 0;
-#X connect 44 0 1 0;
-#X connect 44 1 1 1;
-#X connect 44 2 1 2;
-#X connect 44 3 1 3;
-#X connect 44 4 1 4;
-#X connect 44 5 1 5;
-#X connect 44 6 1 6;
-#X connect 44 7 1 7;
-#X connect 50 0 17 0;
-#X connect 51 0 24 0;
-#X connect 52 0 33 0;
-#X connect 53 0 38 0;
+#X connect 40 0 1 0;
+#X connect 40 1 1 1;
+#X connect 40 2 1 2;
+#X connect 40 3 1 3;
+#X connect 40 4 1 4;
+#X connect 40 5 1 5;
+#X connect 40 6 1 6;
+#X connect 40 7 1 7;
+#X connect 46 0 17 0;
+#X connect 47 0 24 0;
+#X connect 48 0 33 0;
+#X connect 49 0 38 0;

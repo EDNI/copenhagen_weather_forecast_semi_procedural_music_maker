@@ -23,14 +23,9 @@ pertemp = perdic[periodstart]
 
 maxam, maxpm, maxnt = [],[],[]
 minam, minpm, minnt = [],[],[]
-#maxpm=[]
-#minpm=[]
-#maxnt=[]
-#minnt=[]
 maxs=[maxam,maxpm,maxnt]
 mins=[minam,minpm,minnt]
 hums=[[]]
-#decaseq = [0,0,0,0,0,0,0,0,0,0]
 
 filename = "partition.txt"
 f = open(filename, "w")
@@ -80,44 +75,32 @@ dataloop(humidity, "hum", humtag, hums, 1)
 
 ##########DEFAULT#####SETTINGS##############################
 
-#global cm1s, cm2s, cm3s, cm4s
-
 cm1s = [2,3,6,7, "cm1s"]
 cm2s = [3,4,5,0, "cm2s"]
 cm3s = [0,0,0,0, "cm3s"]
 cm4s = [0,0,0,0, "cm4s"]
-
-#global pnba, pnbb, pnbc, pnbd
 
 pnba = [3,4,25, "pnba"]
 pnbb = [4,6,25, "pnbb"]
 pnbc = [3,25,25, "pnbc"]
 pnbd = [2,25,25, "pnbd"]
 
-#global ppba, ppbb, ppbc, ppbd
-
 ppba = [8,25,25, "ppba"]
 ppbb = [12,25,25, "ppbb"]
 ppbc = [6,25,25, "ppbc" ]
 ppbd = [4,25,25, "ppbd" ]
-
-#global pwba, pwbb, pwbc, pwbd
 
 pwba = [7,25,25, "pwba" ]
 pwbb = [10,25,25, "pwbb" ]
 pwbc = [5,25,25, "pwbc" ]
 pwbd = [7,25,25, "pwbd" ]
 
-
-#global ppqtset, pEDOset
 ppqtset = [0,0,3,3,3,6,6,6,8,8,10,11,12,13,14,15,16,17,18,19]
 pEDOset = 10
 
-#global seqcpt1,seqcpt2 
 seqcpt1 = minnt
 seqcpt2 = maxpm
 
-#global bpm, seql
 bpm = daynumb * 2 + 70
 seql = 10
 
@@ -130,24 +113,28 @@ decaseqoffset = [0,0,0,0,0,0,0,0,0,0]
 skeletonset = [4,2,2,10,0,7,2,10]
 #skeletonset = [4,2,2,2,0,1,2,10]
 
-
 osc1s = [1,1500,1000,2, "osc1s"]
 osc2s = [2,0,850,1, "osc2s"]
 osc3s = [2,102,800,1, "osc3s"]
 osc4s = [4,4000,1800,2, "osc4s"]
 
+defaultsettings = [cm1s,cm2s,cm3s,cm4s,pnba,pnbb,pnbc,pnbd,ppba,ppbb,ppbc,ppbd,pwba,pwbb,pwbc,pwbd,ppqtset,pEDOset,seqcpt1,seqcpt2,bpm,seql,usedeca,usedeca4offset,decaseq,decaseqoffset,skeletonset,osc1s,osc2s,osc3s,osc4s]
 
-###########################################################
+settingsdico = {"cm1s":0,"cm2s":1,"cm3s":2,"cm4s":3,"pnba":4,"pnbb":5,"pnbc":6,"pnbd":7,"ppba":8,"ppbb":9,"ppbc":10,"ppbd":11,"pwba":12,"pwbb":13,"pwbc":14,"pwbd":15,"ppqtset":16,"pEDOset":17,"seqcpt1":18,"seqcpt2":19,"bpm":20,"seql":21,"usedeca":22,"usedeca4offset":23,"decaseq":24,"decaseqoffset":25,"skeletonset":26,"osc1s":27,"osc2s":28,"osc3s":29,"osc4s":30}
 
 ########################MOD################################
-modslist = ["Mornings (type 'm')", "Chaos (type 'c')"]
+#modslist = ["Mornings (type 'm')", "Chaos (type 'c')"]
 
-def m1mod():
-  seqcpt1 = minam
-  seqcpt2 = maxam
-  print("m1mod done")
 
-def chmod():
+def m1mod(settings, dico):
+  global maxnt
+  m = settings
+  sd = dico
+  m[sd["seqcpt1"]] = maxnt
+  return m
+
+
+def modename(settings):
   cm1s = [2,3,6,7, "cm1s"]
   cm2s = [3,4,5,0, "cm2s"]
   cm3s = [4,5,7,8, "cm3s"]
@@ -157,10 +144,11 @@ def chmod():
   pnbc = [22,25,25, "pnbc"]
   pnbd = [23,25,25, "pnbd"]
   ppba = [24,25,25, "ppba"]
-  print("chmod done")
+  return settings
 
 
-modsdic = {"m": m1mod, "c": chmod}
+defaultsettings = m1mod(defaultsettings,settingsdico)
+#modsdic = {"m": m1mod, "c": chmod}
 
 #altmodask = input("do you want to use other settings? Y / N ")
 
@@ -175,6 +163,42 @@ modsdic = {"m": m1mod, "c": chmod}
 
 ##########################################################
 
+
+#################FINAL##SETUP#################################
+
+cm1s = defaultsettings[0]
+cm2s = defaultsettings[1]
+cm3s = defaultsettings[2]
+cm4s = defaultsettings[3]
+pnba = defaultsettings[4]
+pnbb = defaultsettings[5]
+pnbc = defaultsettings[6]
+pnbd = defaultsettings[7]
+ppba = defaultsettings[8]
+ppbb = defaultsettings[9]
+ppbc = defaultsettings[10]
+ppbd = defaultsettings[11]
+pwba = defaultsettings[12]
+pwbb = defaultsettings[13]
+pwbc = defaultsettings[14]
+pwbd = defaultsettings[15]
+ppqtset = defaultsettings[16]
+pEDOset = defaultsettings[17]
+seqcpt1 = defaultsettings[18]
+seqcpt2 = defaultsettings[19]
+bpm = defaultsettings[20]
+seql = defaultsettings[21]
+usedeca = defaultsettings[22]
+usedeca4offset = defaultsettings[23]
+decaseq = defaultsettings[24]
+decaseqoffset = defaultsettings[25]
+skeletonset = defaultsettings[26]
+osc1s = defaultsettings[27]
+osc2s = defaultsettings[28]
+osc3s = defaultsettings[29]
+osc4s = defaultsettings[30]
+
+#########################################################
 if usedeca == 1:
   decaseqmaker(seqcpt1, seqcpt2)
 
@@ -193,7 +217,6 @@ format2qlist("seql", seql, 1)
 whileformat("dseq",decaseq,10)
 whileformat("dseqoff",decaseqoffset,10)
 whileformat("sks", skeletonset, 8)
-#whileformat("hum", hums[0], 10)
 format2qlist("pEDOset",pEDOset)
 whileformat("ppqtset",ppqtset,20)
 
